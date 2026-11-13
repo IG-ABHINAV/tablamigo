@@ -1,5 +1,8 @@
 blank_issues_enabled: false
 contact_links:
+  - name: Questions, setup help and Google Summer of Code ideas
+    url: https://github.com/hookstep/tablamigo/discussions
+    about: Ask in GitHub Discussions. Issues are for bugs and agreed work.
   - name: Report a security vulnerability
     url: https://github.com/hookstep/tablamigo/blob/main/SECURITY.md
     about: Do not open a public issue for a vulnerability. Email support@hookstep.in instead.
