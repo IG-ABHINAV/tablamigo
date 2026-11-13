@@ -9,6 +9,9 @@
     "test": "npm --workspace apps/api test",
     "db": "docker compose -f docker-compose.dev.yml up -d",
     "migrate": "npm --workspace apps/api run migrate",
-    "seed": "npm --workspace apps/api run seed"
+    "seed": "npm --workspace apps/api run seed",
+    "web:build": "python3 apps/web/build.py",
+    "web:check": "python3 apps/web/check.py",
+    "web:serve": "python3 apps/web/serve.py 5199"
   }
 }

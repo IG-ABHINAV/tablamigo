@@ -41,8 +41,8 @@ For an Android emulator or a real phone use `npx expo start`; on a phone set `EX
 The website:
 
 ```bash
-python3 apps/web/build.py && python3 apps/web/check.py
-python3 apps/web/serve.py 5199      # preview on http://127.0.0.1:5199
+npm run web:build && npm run web:check
+npm run web:serve                  # preview on http://127.0.0.1:5199
 ```
 
 Every outside service (email, push, payments, AI moderation, photo storage) is optional locally and switches itself off when its key is empty. Never commit a real key: `.env` files are git-ignored and the `.env.example` files hold placeholders only.
