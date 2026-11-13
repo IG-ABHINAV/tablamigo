@@ -1,0 +1,14 @@
+{
+  "name": "tablamigo",
+  "license": "AGPL-3.0-or-later",
+  "private": true,
+  "workspaces": ["apps/api"],
+  "scripts": {
+    "api": "npm --workspace apps/api run dev",
+    "typecheck": "npm --workspace apps/api run typecheck",
+    "test": "npm --workspace apps/api test",
+    "db": "docker compose -f docker-compose.dev.yml up -d",
+    "migrate": "npm --workspace apps/api run migrate",
+    "seed": "npm --workspace apps/api run seed"
+  }
+}

@@ -1,0 +1,23 @@
+# Post a plan from the native map (MapLibre native) and see it open with its group chat.
+appId: com.tablamigo.app
+---
+- runFlow: ../subflows/sign-in.yaml
+- extendedWaitUntil:
+    visible:
+      text: "Post a plan here|Plans nearby"
+    timeout: 20000
+- tapOn: "Post a plan here"
+- tapOn: "Grab street food in Chinatown"
+- inputText: "Maestro street food walk"
+- tapOn: "Search a café, bar, park…"
+- inputText: "Yaowarat"
+- tapOn:
+    text: ".*Yaowarat.*"
+    index: 0
+- scrollUntilVisible:
+    element: "Post plan"
+- tapOn: "Post plan"
+- extendedWaitUntil:
+    visible: "Maestro street food walk"
+    timeout: 15000
+- assertVisible: "Open group chat"

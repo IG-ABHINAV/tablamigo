@@ -1,0 +1,19 @@
+# The Google Play paywall (expo-iap) loads Play's prices and shows the renewal and cancel line under the buy button.
+# View only: it never taps a buy button. Skipped automatically when ALL_FREE is on (no paywall is shown then).
+appId: com.tablamigo.app
+---
+- runFlow: ../subflows/sign-in.yaml
+- tapOn: "Profile"
+- runFlow:
+    when:
+      visible: ".*Plus.*"
+    commands:
+      - tapOn:
+          text: ".*Plus.*"
+          index: 0
+      - extendedWaitUntil:
+          visible:
+            text: ".*(renews|cancel).*"
+          timeout: 15000
+      - assertNotVisible: "Something went wrong on our side.*"
+      - back

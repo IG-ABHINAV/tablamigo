@@ -1,0 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.tablamigo.app",
+      "sha256_cert_fingerprints": [
+        "E6:FD:57:77:7B:31:96:E5:79:DA:13:64:7E:90:6B:45:51:20:60:D4:00:FA:34:71:6B:85:DF:7B:C5:EB:4A:CE",
+        "69:5B:AC:EC:90:93:9F:CA:55:D1:3B:7C:B1:B0:D0:2D:18:C7:C4:E3:47:1A:63:28:A8:7A:EC:7D:D8:B5:9B:DD"
+      ]
+    }
+  }
+]

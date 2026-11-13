@@ -1,0 +1,113 @@
+name: CI
+
+# Tests on every push to main and every pull request, on GitHub-hosted runners. Nothing here deploys or needs a
+# repository secret: the API tests run against a throwaway PostGIS service container with every outside service faked
+# (apps/api/src/tests/network-guard.ts refuses any outside host).
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+env:
+  NODE_VERSION: '24'
+  npm_config_audit: 'false'
+  npm_config_fund: 'false'
+
+jobs:
+  api:
+    name: API (migrations, typecheck, vitest)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    services:
+      postgres:
+        image: postgis/postgis:16-3.4
+        env:
+          POSTGRES_USER: tablamigo
+          POSTGRES_PASSWORD: tablamigo-test
+          POSTGRES_DB: tablamigo_test
+        ports: ['5432:5432']
+        options: >-
+          --health-cmd "pg_isready -U tablamigo -d tablamigo_test"
+          --health-interval 5s --health-timeout 5s --health-retries 30
+    env:
+      DATABASE_URL: postgres://tablamigo:tablamigo-test@127.0.0.1:5432/tablamigo_test
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Face models cache (YuNet + SFace, checked by SHA-256)
+        uses: actions/cache@v4
+        with:
+          path: apps/api/models
+          key: face-models-${{ hashFiles('apps/api/scripts/fetch-face-models.mjs') }}
+      - name: Install
+        run: npm ci
+      - name: Fetch face models (once; cached after)
+        run: node apps/api/scripts/fetch-face-models.mjs
+      - name: Migrations apply to an empty PostGIS, twice (the second run must apply nothing)
+        working-directory: apps/api
+        shell: bash
+        run: |
+          npx tsx src/db/migrate.ts | tee "$RUNNER_TEMP/migrate-1.log"
+          test "$(grep -c '^applied ' "$RUNNER_TEMP/migrate-1.log")" -ge 59
+          npx tsx src/db/migrate.ts | tee "$RUNNER_TEMP/migrate-2.log"
+          if grep -q '^applied ' "$RUNNER_TEMP/migrate-2.log"; then echo "::error::a second migrate run applied migrations again"; exit 1; fi
+      - name: Typecheck
+        run: npm --workspace apps/api run typecheck
+      - name: vitest run (unit, integration, e2e)
+        working-directory: apps/api
+        run: npx vitest run --maxWorkers=2
+
+  web:
+    name: Website (build.py, check.py, unit)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Build and check.py
+        run: python3 apps/web/build.py && python3 apps/web/check.py
+      - name: Build facts (unittest)
+        if: ${{ !cancelled() }}
+        run: python3 -m unittest discover -s apps/web/tests
+      - name: Play-link script, AdSense loader, live counts (node:test)
+        if: ${{ !cancelled() }}
+        run: node --test apps/web/tests/play-links.test.mjs apps/web/tests/os-detect.test.mjs apps/web/tests/ads-loader.test.mjs apps/web/tests/live-counts.test.mjs
+
+  mobile:
+    name: App (typecheck, unit)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: apps/mobile
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: apps/mobile/package-lock.json
+      - name: Install
+        run: npm ci
+      - name: Typecheck
+        run: npm run typecheck
+      - name: Unit (node:test)
+        if: ${{ !cancelled() }}
+        run: npm run test:unit

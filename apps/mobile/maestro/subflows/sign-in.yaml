@@ -1,0 +1,12 @@
+# Sign in with a REVIEW_EMAILS address and the fixed REVIEW_CODE (no email is sent for these accounts).
+appId: com.tablamigo.app
+---
+- launchApp:
+    clearState: true
+- tapOn: "Use email instead"
+- tapOn: "you@example.com"
+- inputText: ${EMAIL}
+- tapOn: "Send code"
+- assertVisible: "Check your email"
+# The code field is invisible and auto-focused; typing the 6 digits verifies by itself.
+- inputText: ${CODE}

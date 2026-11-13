@@ -1,0 +1,17 @@
+# Maestro flows for the Android app's native-only paths (TESTING.md, "Native app: Maestro flows").
+# Local only: no device E2E runs in CI. Run against a release-variant APK built with EXPO_PUBLIC_API_URL pointing at a LOCAL
+# API (http://10.0.2.2:4100 from the emulator) whose REVIEW_EMAILS lists the addresses below, never production:
+#   maestro test --env EMAIL=qa1@review.test --env CODE=<REVIEW_CODE> apps/mobile/maestro
+# Selectors are the visible texts in the app (it has no testIDs); a renamed button breaks the flow on purpose.
+flows:
+  - "flows/*"
+executionOrder:
+  continueOnFailure: false
+  flowsOrder:
+    - 01-sign-in
+    - 02-onboarding
+    - 03-plan-create-and-join
+    - 04-chat-and-poll
+    - 05-selfie-is-camera-only
+    - 06-paywall-view-only
+    - 07-deep-links

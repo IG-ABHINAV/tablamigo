@@ -1,0 +1,36 @@
+node_modules
+.env
+.env.*
+!.env.example
+dist
+*.keystore
+*.jks
+# Native projects written by `expo prebuild`, never by hand.
+android/
+ios/
+# ...except the app's own local Expo module, whose Kotlin is source (apps/mobile/modules/in-app-updates) -- but not
+# what Gradle writes under it.
+!apps/mobile/modules/*/android/
+apps/mobile/modules/*/android/build/
+.expo
+apps/mobile/credentials
+/credentials
+infra/play/node_modules
+apps/api/.dev-files/
+apps/mobile/google-services.json
+apps/api/email-previews/
+# Face-verification models, fetched by apps/api/scripts/fetch-face-models.mjs (npm run build / test)
+apps/api/models/
+
+# Local-only working folders and scratch files (never public)
+audit-2026-10-03/
+growth/
+HANDOVER-*.md
+infra/play/_*_tmp.mjs
+LAUNCH-CHECKLIST.md
+
+# Test outputs (reports, screenshots) written by the automated suites (TESTING.md)
+apps/web/tests/out/
+apps/mobile/e2e-web/out/
+reports/
+__pycache__/

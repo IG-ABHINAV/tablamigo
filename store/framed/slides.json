@@ -1,0 +1,98 @@
+{
+  "out": "out",
+  "defaults": {
+    "width": 1080,
+    "height": 1920,
+    "brandIcon": "../icon-512.png",
+    "copy": {"left": 70, "top": 118, "width": 940, "headlineSize": 112, "headlineMin": 88, "subSize": 40, "subMin": 32, "subGap": 26, "brandSize": 40},
+    "phone": {"width": 740, "bezel": 14, "radius": 92, "top": 510},
+    "featureCopy": {"left": 60, "top": 104, "width": 500, "align": "left", "headlineSize": 74, "headlineMin": 56, "subSize": 26, "subMin": 22, "subGap": 18, "brandSize": 28},
+    "featurePhone": {"width": 300, "bezel": 8, "radius": 40, "top": 92, "cx": 830, "rotate": 7},
+    "cutBorder": 8,
+    "cutRadius": 40
+  },
+  "slides": [
+    {
+      "name": "01-never-eat-alone",
+      "raw": "../screenshots/1-explore.png",
+      "headline": "never eat\n*alone* again",
+      "sub": "plans from solo travelers, right on the map",
+      "cutouts": [
+        {"rect": [42, 158, 636, 120], "scale": 1.35, "radius": 54, "dx": -30, "rotate": -3},
+        {"rect": [45, 1473, 990, 450], "scale": 1.18, "radius": 44, "rotate": 2.5}
+      ]
+    },
+    {
+      "name": "02-join-plans",
+      "raw": "../screenshots/2-plan.png",
+      "headline": "join plans with\ntravelers *nearby*",
+      "sub": "pick a plan, tap join and you're in",
+      "cutouts": [
+        {"rect": [54, 1257, 974, 201], "scale": 1.25, "radius": 46, "rotate": -2.5},
+        {"rect": [40, 1510, 540, 485], "scale": 1.15, "radius": 44, "dx": 10, "dy": 30, "rotate": 3}
+      ]
+    },
+    {
+      "name": "03-chat-vote-meet",
+      "raw": "../screenshots/3-chat.png",
+      "headline": "chat, vote\nand *meet up*",
+      "sub": "polls and live location in every plan chat",
+      "cutouts": [
+        {"rect": [138, 423, 555, 207], "scale": 1.3, "radius": 44, "rotate": -3},
+        {"rect": [315, 1533, 726, 590], "scale": 1.12, "radius": 46, "dx": -60, "dy": -90, "rotate": 2.5}
+      ]
+    },
+    {
+      "name": "04-see-whos-around",
+      "raw": "../screenshots/4-travelers.png",
+      "headline": "see who's\n*around*",
+      "sub": "filter by age, see who's in town",
+      "cutouts": [
+        {"rect": [42, 432, 858, 105], "scale": 1.3, "radius": 52, "rotate": -3},
+        {"rect": [42, 1317, 996, 218], "scale": 1.2, "radius": 46, "rotate": 2}
+      ]
+    },
+    {
+      "name": "05-before-you-land",
+      "raw": "../screenshots/5-trips.png",
+      "headline": "meet people\n*before you land*",
+      "sub": "add your next trip, see who's going",
+      "cutouts": [
+        {"rect": [505, 525, 419, 417], "scale": 1.08, "radius": 50, "rotate": 4},
+        {"rect": [54, 1132, 974, 323], "scale": 1.15, "radius": 50, "dy": 22, "rotate": -2}
+      ]
+    },
+    {
+      "name": "06-overlapping-dates",
+      "raw": "../screenshots/6-trip.png",
+      "headline": "see who overlaps\n*your dates*",
+      "sub": "same city, same days, new friends",
+      "cutouts": [
+        {"rect": [240, 925, 600, 275], "scale": 1.2, "radius": 44, "rotate": -3},
+        {"rect": [54, 1500, 974, 186], "scale": 1.2, "radius": 44, "rotate": 2.5}
+      ]
+    },
+    {
+      "name": "07-women-only-verified",
+      "raw": "../screenshots/7-women.png",
+      "headline": "*women-only* plans\n& verified profiles",
+      "sub": "women can host plans only women can see",
+      "cutouts": [
+        {"rect": [438, 582, 243, 70], "scale": 2.0, "radius": 46, "dx": 85, "rotate": -5},
+        {"src": "../screenshots/4-travelers.png", "rect": [42, 1071, 996, 219], "scale": 1.2, "radius": 46, "at": [540, 1420], "rotate": -2.5}
+      ]
+    }
+  ],
+  "feature": {
+    "name": "feature-graphic",
+    "width": 1024,
+    "height": 500,
+    "raw": "../screenshots/1-explore.png",
+    "brand": true,
+    "headline": "traveling solo?\nnever eat *alone*.",
+    "sub": "join plans with travelers nearby",
+    "cutouts": [
+      {"rect": [45, 1473, 990, 450], "scale": 1.3, "radius": 26, "at": [756, 392], "rotate": -4, "border": 5}
+    ]
+  }
+}

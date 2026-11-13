@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability
+    url: https://github.com/hookstep/tablamigo/blob/main/SECURITY.md
+    about: Do not open a public issue for a vulnerability. Email support@hookstep.in instead.
+  - name: Help with the Tablamigo app itself
+    url: https://tablamigo.hookstep.in
+    about: For account or app problems (not code), email support@hookstep.in.

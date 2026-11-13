@@ -1,0 +1,901 @@
+[
+  {
+    "slug": "bangkok", "city": "Bangkok", "country": "Thailand", "cc": "TH", "emoji": "🛺",
+    "intro": "Bangkok is one of the easiest cities in the world to meet other solo travelers: hostels, rooftop bars and street-food lanes are full of people exploring on their own. The hard part is finding company for tonight, not in theory.",
+    "areas": [
+      ["Sukhumvit (Asok, Nana, Thonglor)", "Rooftop bars, food courts and coworking cafés along the BTS line. Easy to meet after work hours."],
+      ["Banglamphu & Khao San Road", "The classic backpacker base. Loud, social, and close to the Grand Palace and river piers."],
+      ["Silom & Sathorn", "Night markets, rooftop views and the Chao Phraya riverside."],
+      ["Ari", "Leafy, local and full of cafés. Popular with digital nomads who stay a few weeks."]
+    ],
+    "plans": ["Street-food crawl through Chinatown (Yaowarat) after dark", "Sunset drinks at a Sukhumvit rooftop bar", "Weekend wander around Chatuchak market", "Beginner Muay Thai class, then dinner", "Chao Phraya boat ride at golden hour", "Temple morning at Wat Arun and Wat Pho"],
+    "safety": ["Ignore anyone near the Grand Palace who says it's closed today; it's the start of the gem scam.", "Book rides in Grab or Bolt instead of haggling with tuk-tuks at night.", "Meet new people in busy places and keep an eye on your drink."],
+    "best": "November to February is the cool, dry season and the busiest for travelers.",
+    "hostels": [
+      {"name": "Mad Monkey Bangkok", "area": "Rambuttri Village, Khao San area", "why": "A free Meet Up every evening at 7 pm, a weekly Friday music quiz, and female-only dorms.", "source": "https://madmonkeyhostels.com/destination/bangkok", "checked": "2026-10-06"},
+      {"name": "Lub d Bangkok Siam", "area": "Rama I Road, with a skywalk to BTS National Stadium", "why": "Lub d calls it a social hotel. Dorms, common areas and group events.", "source": "https://lubd.com/destination/bangkok-siam/", "checked": "2026-10-06"},
+      {"name": "Lub d Bangkok Chinatown", "area": "About 50 m from Sam Yod MRT", "why": "Runs a tuk-tuk city tour every Wednesday at 5:30 pm. Yaowarat's night food street is about 1 km away.", "source": "https://lubd.com/destination/bangkok-chinatown/", "checked": "2026-10-06"}
+    ],
+    "meet_spots": [
+      {"name": "Khao San Road", "why": "A 410 m street about 1 km north of the Grand Palace that has been Bangkok's backpacker hub for decades. Bars and street food fill it after dark.", "source": "https://en.wikipedia.org/wiki/Khaosan_Road", "checked": "2026-10-06"},
+      {"name": "Yaowarat Road (Chinatown) at night", "why": "At night it turns into a large food street that draws tourists and locals.", "source": "https://en.wikipedia.org/wiki/Yaowarat_Road", "checked": "2026-10-06"},
+      {"name": "Free walking tours on GuruWalk", "why": "GuruWalk lists free walking tours with local guides around the Grand Palace, Wat Pho and Chinatown.", "source": "https://www.guruwalk.com/bangkok", "checked": "2026-10-06"}
+    ]
+  },
+  {
+    "slug": "chiang-mai", "city": "Chiang Mai", "country": "Thailand", "cc": "TH", "emoji": "🏯",
+    "intro": "Chiang Mai is a digital-nomad favorite: cheap, walkable and slow-paced, with a huge community of people staying for weeks or months. Plans happen daily, from sunrise hikes to night markets.",
+    "areas": [
+      ["Nimmanhaemin (Nimman)", "Cafés, coworking and bars. Where most nomads live and meet."],
+      ["Old City", "Temples, guesthouses and the weekend walking streets inside the moat."],
+      ["Santitham", "Quieter and local, a short ride from Nimman."],
+      ["Riverside & Night Bazaar", "Evening markets and river bars."]
+    ],
+    "plans": ["Sunday Walking Street market in the Old City", "Hike the Monk's Trail up to Wat Pha Lat and Doi Suthep", "Thai cooking class with a market visit", "Coworking morning in a Nimman café", "Swim day at the Grand Canyon water park in Hang Dong", "Khao soi lunch crawl"],
+    "safety": ["February to April is burning season: air quality can be very poor, so check AQI before outdoor plans.", "Scooter crashes are the most common injury; wear a helmet and carry a license.", "Temples expect covered shoulders and knees."],
+    "best": "November to early February: dry, cool and festival season (Yi Peng lanterns in November).",
+    "hostels": [
+      {"name": "Mad Monkey Chiang Mai", "area": "Chang Moi", "why": "Pool, female-only and mixed dorms, and a free Meet Up at 7 pm every night.", "source": "https://madmonkeyhostels.com/destination/chiang-mai", "checked": "2026-10-06"},
+      {"name": "Stamps Backpackers", "area": "Chaiyapoom Road, Chang Moi", "why": "Pod-style dorms and nightly social events, including BBQ nights and pub crawls.", "source": "https://stamps-backpackers.com/", "checked": "2026-10-06"},
+      {"name": "The Yard Hostel Chiang Mai", "area": "Old Town, in a quiet alley", "why": "Garden hostel with mixed and female-only dorms and private rooms.", "source": "https://www.theyardhostels.com/cnx", "checked": "2026-10-06"}
+    ],
+    "meet_spots": [
+      {"name": "Sunday Walking Street", "why": "Every Sunday from late afternoon (about 4 pm) until about 10 pm in central Chiang Mai, with food stalls inside two temples, Wat Phan On and Wat Sum Pow.", "source": "https://www.thailandee.com/en/visit-thailand/sunday-walking-street-chiang-mai-262", "hours_source": "https://www.feel-chiang-mai.com/street-food-markets/sunday-tha-phae-walking-street-guide/", "checked": "2026-10-06"},
+      {"name": "Free walking tours on GuruWalk", "why": "GuruWalk lists free walking tours with local guides, including temple walks and an evening food tour.", "source": "https://www.guruwalk.com/chiang-mai", "checked": "2026-10-06"},
+      {"name": "Nimmanhaemin (Nimman)", "why": "The cafe and coworking district. A local expat guide says it has the city's strongest meetup scene, with weekly language exchanges, coworking meetups and hiking groups.", "source": "https://chiangmaiambassador.com/lifestyle/neighborhoods/nimman", "checked": "2026-10-06"}
+    ]
+  },
+  {
+    "slug": "bali", "city": "Bali", "country": "Indonesia", "cc": "ID", "emoji": "🌴",
+    "intro": "Bali attracts solo travelers for surf, yoga and remote work, and most areas have a strong community of people traveling alone. Distances are longer than they look, so meeting people nearby matters.",
+    "areas": [
+      ["Canggu", "Surf breaks, cafés, coworking and sunset beach bars. The nomad hub."],
+      ["Ubud", "Rice terraces, yoga, healthy food and a calmer pace."],
+      ["Uluwatu", "Cliffs, surf and beach clubs in the south."],
+      ["Seminyak", "Shopping, restaurants and nightlife."]
+    ],
+    "plans": ["Sunset at Batu Bolong or Echo Beach", "Beginner surf lesson in Canggu", "Mount Batur sunrise hike", "Tegallalang rice terraces and a waterfall day", "Morning yoga class in Ubud", "Beach club afternoon in Uluwatu"],
+    "safety": ["Scooter accidents are common; ride only if you're experienced and insured.", "Keep bags and sunglasses away from the monkeys at temples and the Monkey Forest.", "Drink bottled or filtered water to avoid 'Bali belly'."],
+    "best": "April to October is the dry season; July and August are busiest.",
+    "hostels": [
+      {"name": "Mad Monkey Uluwatu", "area": "Pecatu, Uluwatu", "why": "Pool, bar and restaurant, and a free Meet Up at the bar at 7 pm every night.", "source": "https://madmonkeyhostels.com/destination/uluwatu", "checked": "2026-10-06"},
+      {"name": "The Farm Hostel", "area": "Pantai Batu Bolong Street, Canggu", "why": "Female-only and mixed dorms with privacy curtains, a cafe and hostel events.", "source": "https://thefarmhostel.com/", "checked": "2026-10-06"}
+    ],
+    "meet_spots": [
+      {"name": "The Yoga Barn, Ubud", "why": "Yoga centre with daily classes, ecstatic dance and a garden cafe.", "source": "https://theyogabarn.com/", "checked": "2026-10-06"},
+      {"name": "Batu Bolong beach, Canggu", "why": "The beach next to the Batu Bolong temple, with bars and restaurants at the end of the road.", "source": "https://en.wikipedia.org/wiki/Canggu", "checked": "2026-10-06"},
+      {"name": "Single Fin, Uluwatu", "why": "Bar and restaurant at Pantai Suluban with a surf check, open until 2 am on Wednesdays and Sundays.", "source": "https://singlefinbali.com/", "checked": "2026-10-06"}
+    ]
+  },
+  {
+    "slug": "lisbon", "city": "Lisbon", "country": "Portugal", "cc": "PT", "emoji": "🚋",
+    "intro": "Lisbon is Europe's solo-travel and remote-work capital: sunny, affordable for Western Europe and packed with viewpoints that are made for sharing a drink at sunset.",
+    "areas": [
+      ["Bairro Alto", "Tiny bars and street drinking every night. The easiest place to meet people."],
+      ["Alfama", "Old Lisbon, fado houses and viewpoints."],
+      ["Cais do Sodré", "Riverside nightlife and the Time Out Market."],
+      ["Príncipe Real", "Gardens, cafés and quieter bars."]
+    ],
+    "plans": ["Sunset at Miradouro da Senhora do Monte", "Pastel de nata tasting in Belém and Chiado", "Fado night in Alfama", "Day trip to Sintra's palaces", "Surf day at Costa da Caparica", "LX Factory brunch and browsing"],
+    "safety": ["Pickpockets work Tram 28 and busy viewpoints; keep phones zipped away.", "Men offering drugs in Baixa and Bairro Alto are selling fakes; just walk on.", "The hills and cobbles are slippery; wear shoes with grip."],
+    "best": "April to June and September to October: warm without the August crowds."
+  },
+  {
+    "slug": "mexico-city", "city": "Mexico City", "country": "Mexico", "cc": "MX", "emoji": "🌮",
+    "intro": "Mexico City has one of the fastest-growing communities of solo travelers and remote workers, with world-class food, museums and nightlife in walkable neighborhoods.",
+    "areas": [
+      ["Roma Norte", "Cafés, taquerías and bars. The social center for travelers."],
+      ["Condesa", "Tree-lined streets, parks and dog-friendly cafés."],
+      ["Centro Histórico", "The Zócalo, museums and cantinas."],
+      ["Coyoacán", "Colorful, calmer and home to the Frida Kahlo Museum."]
+    ],
+    "plans": ["Tacos al pastor crawl in Roma and Condesa", "Sunrise at the Teotihuacán pyramids", "Lucha libre night at Arena México", "Frida Kahlo Museum and Coyoacán market", "Mezcal bar evening", "Sunday bike ride on Paseo de la Reforma"],
+    "safety": ["Use Uber or DiDi rather than hailing taxis on the street.", "The city is at 2,240 m altitude: go easy on alcohol your first days.", "Keep your phone out of sight in crowded Centro streets and the metro."],
+    "best": "October to April is the dry season; Día de Muertos (early November) is special."
+  },
+  {
+    "slug": "medellin", "city": "Medellín", "country": "Colombia", "cc": "CO", "emoji": "🚠",
+    "intro": "Medellín's spring-like weather, low costs and friendly locals make it a magnet for long-stay travelers. Evenings out are easy to find; going with a group is the smarter way to do it.",
+    "areas": [
+      ["El Poblado", "Hostels, Parque Lleras and the Provenza nightlife strip."],
+      ["Laureles", "More local, with good restaurants and cafés."],
+      ["Envigado", "Quieter, residential and just south of Poblado."],
+      ["Centro", "Plaza Botero and museums; visit by day."]
+    ],
+    "plans": ["Comuna 13 graffiti tour", "Day trip to Guatapé and El Peñol rock", "Salsa class, then dancing", "Metrocable up to Parque Arví", "Coffee farm tour outside the city", "Provenza bar night"],
+    "safety": ["Don't flash phones or jewelry in the street; 'no dar papaya' is the local rule.", "Never accept drinks from strangers; drugging (scopolamine) cases are real.", "Order taxis through an app, especially at night."],
+    "best": "Any time of year; December to March is driest."
+  },
+  {
+    "slug": "barcelona", "city": "Barcelona", "country": "Spain", "cc": "ES", "emoji": "🏖️",
+    "intro": "Barcelona mixes beach, architecture and late nights, and its dinner-at-ten culture makes it easy to join something spontaneous in the evening.",
+    "areas": [
+      ["Gràcia", "Village feel, plazas full of people every evening."],
+      ["El Born", "Tapas bars, cocktail bars and the Picasso Museum."],
+      ["Gothic Quarter", "Medieval lanes, busy and central."],
+      ["Barceloneta & Poblenou", "Beach life, volleyball and chiringuitos."]
+    ],
+    "plans": ["Tapas and vermut hop in El Born", "Sunset at the Bunkers del Carmel", "Beach volleyball at Barceloneta", "Montjuïc walk and the Magic Fountain", "Sagrada Família visit", "Sunday flea market and brunch in Poblenou"],
+    "safety": ["Barcelona has Europe's most active pickpockets: Las Ramblas, the metro and beaches especially.", "Keep bags in front of you on terraces.", "Dinner starts late; plan evenings around 9–10 pm."],
+    "best": "May, June and September: beach weather without the peak crowds.",
+     "hostels": [
+       {"name": "Generator Barcelona", "area": "Gràcia", "why": "Its Fiesta Gràcia bar runs karaoke, DJs, live music and social events through the week, with chill-out areas and a lounge to meet people in.", "source": "https://staygenerator.com/hostels/barcelona", "checked": "2026-10-21"},
+       {"name": "Yeah Hostel Barcelona", "area": "Carrer Girona 176, Eixample", "why": "A shared living room, a rooftop for sangria with other guests, and group dinners around 9 pm, including a Paella Night.", "source": "https://yeahostels.com/barcelona/", "checked": "2026-10-21"},
+       {"name": "St Christopher's Inn Barcelona", "area": "Carrer de Bergara 3, Eixample, three minutes from Plaça de Catalunya", "why": "Belushi's bar downstairs with 25% off food for guests, so there is always someone around in the evening.", "source": "https://st-christophers.co.uk/barcelona", "checked": "2026-10-21"}
+     ],
+     "meet_spots": [
+       {"name": "BCN Languages and Friends language exchanges", "why": "Weekly language-exchange nights in bars: Wednesday 7 pm at Soda Bus (Aribau 150), Thursday 7 pm at Space Cowboy (Carders 31), Friday 8 pm at Estació de França and Saturday 8 pm pizza night at Trafalgar Pizza Club (Trafalgar 19).", "source": "https://www.meetup.com/bcn-languagesandfriends/", "checked": "2026-10-21"},
+       {"name": "Mercat dels Encants", "why": "Open-air flea market at Castillejos 158, open Monday, Wednesday, Friday and Saturday 9 am to 8 pm, with public auctions Monday, Wednesday and Friday 8 to 9 am.", "source": "https://encants.cat/", "checked": "2026-10-21"},
+       {"name": "Barcelona Casual Runners", "why": "Group runs on Mondays at 7:30 pm from the Magic Fountain at Plaça de Carles Buïgas (Montjuïc) and Tuesdays at 7:30 pm from La Querida bar, Passeig de Pujades 33, by Ciutadella Park.", "source": "https://www.meetup.com/barcelona-casual-runners/", "checked": "2026-10-21"}
+     ],
+     "women": [
+       {"name": "Generator Barcelona", "why": "Lists female-only dorms.", "source": "https://staygenerator.com/hostels/barcelona", "checked": "2026-10-21"},
+       {"name": "St Christopher's Inn Barcelona", "why": "Has a female-only floor of dorms.", "source": "https://st-christophers.co.uk/barcelona", "checked": "2026-10-21"}
+     ]
+  },
+  {
+    "slug": "tokyo", "city": "Tokyo", "country": "Japan", "cc": "JP", "emoji": "🗼",
+    "intro": "Tokyo is extremely safe for solo travelers, but it can feel lonely: locals are polite and reserved. Meeting other travelers for an izakaya night or a day hike makes the city far more fun.",
+    "areas": [
+      ["Shibuya", "The famous crossing, bars and shopping."],
+      ["Shinjuku", "Golden Gai's tiny bars and Omoide Yokocho yakitori alleys."],
+      ["Shimokitazawa", "Vintage shops, live music and cafés."],
+      ["Asakusa", "Sensō-ji temple, old Tokyo and budget hostels."]
+    ],
+    "plans": ["Izakaya hop in Golden Gai or Omoide Yokocho", "teamLab digital art museum", "Breakfast at Tsukiji Outer Market", "Karaoke night", "Day hike up Mount Takao", "Onsen or sento evening"],
+    "safety": ["Tokyo is very safe; the main risk is missing the last train (around midnight).", "Carry some cash: many small bars and restaurants don't take cards.", "Tattoos may be refused in some onsen; check before you go."],
+    "best": "Late March to early April (cherry blossoms) and October to November."
+  },
+  {
+    "slug": "buenos-aires", "city": "Buenos Aires", "country": "Argentina", "cc": "AR", "emoji": "💃",
+    "intro": "Buenos Aires runs late: dinner at 10, bars at midnight, dancing until morning. It's a city that is much better with company, and full of travelers staying for weeks.",
+    "areas": [
+      ["Palermo (Soho & Hollywood)", "Bars, parrillas, cafés and most traveler accommodation."],
+      ["San Telmo", "Cobblestones, tango and the Sunday market."],
+      ["Recoleta", "Grand architecture, museums and the famous cemetery."],
+      ["Villa Crespo", "Up-and-coming, with craft beer and outlet shops."]
+    ],
+    "plans": ["Asado dinner at a parrilla", "Tango milonga (beginner class first)", "San Telmo Sunday market", "Fútbol match at La Bombonera or El Monumental", "Recoleta Cemetery walk", "Rooftop drinks in Palermo"],
+    "safety": ["Phone snatching is common; don't hold your phone near the curb.", "Use official exchange options or cards; ask locals about current rates.", "Go to football matches with a tour or a local, not alone."],
+    "best": "March to May and September to November: mild and lively."
+  },
+  {
+    "slug": "da-nang", "city": "Da Nang", "country": "Vietnam", "cc": "VN", "emoji": "🏄",
+    "intro": "Da Nang has a long beach, mountains next to the city and Hội An 40 minutes away, and it has quickly become one of Southeast Asia's favorite nomad bases.",
+    "areas": [
+      ["My Khe Beach & An Thuong", "Beachfront cafés and the expat and traveler hub."],
+      ["Son Tra Peninsula", "Jungle roads, viewpoints and quiet beaches."],
+      ["Han River", "The Dragon Bridge, night markets and rooftop bars."],
+      ["Hội An (day trips)", "Lantern-lit old town and tailors."]
+    ],
+    "plans": ["Sunrise swim and coffee at My Khe", "Marble Mountains caves and pagodas", "Hải Vân Pass motorbike ride", "Lantern night in Hội An old town", "Dragon Bridge fire show (weekend nights)", "Seafood dinner on the beach"],
+    "safety": ["Traffic is the main danger; cross slowly and steadily.", "October to December brings heavy rain and typhoons.", "Agree prices before rides or use Grab."],
+    "best": "February to May: dry, warm and not yet scorching."
+  },
+  {
+    "slug": "berlin", "city": "Berlin", "country": "Germany", "cc": "DE", "emoji": "🎧",
+    "intro": "Berlin is big, creative and international, with a huge population of newcomers. Summer evenings by the canal and weekend nights out are easier with a group.",
+    "areas": [
+      ["Kreuzberg", "Canal-side bars, street food and nightlife."],
+      ["Neukölln", "Young, cheap and full of bars and cafés."],
+      ["Friedrichshain", "Clubs, the East Side Gallery and Boxhagener Platz market."],
+      ["Mitte", "Museums, history and the main sights."]
+    ],
+    "plans": ["Picnic and cycling on Tempelhofer Feld", "Döner and currywurst crawl", "East Side Gallery walk", "Mauerpark flea market and Sunday karaoke", "Lake day at Schlachtensee or Müggelsee", "Techno night (check the dress-down door policy)"],
+    "safety": ["Watch the bike lanes; cyclists move fast and have right of way.", "Many bars and clubs are cash only.", "Club door policies are strict and unpredictable; go in small groups."],
+    "best": "May to September, when the city lives outdoors."
+  },
+  {
+    "slug": "cape-town", "city": "Cape Town", "country": "South Africa", "cc": "ZA", "emoji": "⛰️",
+    "intro": "Cape Town is one of the most beautiful cities on earth, and many of its best experiences, like hikes, road trips and wine tasting, are better (and safer) done with other people.",
+    "areas": [
+      ["Sea Point", "Promenade walks, pools and restaurants."],
+      ["City Bowl & Gardens", "Bree Street bars and cafés below Table Mountain."],
+      ["Woodstock", "Street art, breweries and the Saturday market."],
+      ["Camps Bay", "Beach, sunsets and cocktails."]
+    ],
+    "plans": ["Lion's Head sunset hike", "Table Mountain via Platteklip Gorge or the cable car", "Cape Point and the Boulders Beach penguins", "Stellenbosch wine tasting day", "Surf lesson in Muizenberg", "V&A Waterfront evening"],
+    "safety": ["Never hike alone; go in a group and start early.", "Use Uber at night rather than walking.", "Keep valuables out of sight in parked cars."],
+    "best": "November to March: summer, long days and beach season."
+  },
+  {
+    "slug": "hanoi", "city": "Hanoi", "country": "Vietnam", "cc": "VN", "emoji": "🍜",
+    "intro": "Hanoi is loud, old and full of street food, and its Old Quarter is packed with travelers on their way to Ha Long Bay, Ninh Bình or Sa Pa. Most people stay a few days, so plans come together fast.",
+    "areas": [
+      ["Old Quarter", "Narrow streets, street food, bia hơi corners and most of the hostels. The easiest place to meet people."],
+      ["Hoàn Kiếm Lake", "The heart of the city. The streets around the lake close to traffic on weekend evenings and fill with people."],
+      ["Tây Hồ (West Lake)", "Where long-stay travelers and expats live, with lakeside cafés, bars and coworking."],
+      ["Ba Đình", "The Ho Chi Minh Mausoleum, the One Pillar Pagoda and quieter, leafy streets."]
+    ],
+    "plans": ["Street-food walk through the Old Quarter after dark", "Bia hơi on plastic stools on Tạ Hiện street", "Egg coffee (cà phê trứng) tasting", "Water puppet show near Hoàn Kiếm Lake", "Day trip to Ninh Bình for Tràng An or Tam Cốc", "Group booking for a Ha Long Bay overnight cruise"],
+    "safety": ["Traffic is the main danger: cross slowly and steadily and let motorbikes flow around you.", "Book rides in Grab or Xanh SM, and agree the price before cyclo or motorbike-taxi trips.", "Air quality can be poor, especially in winter; check the AQI before long outdoor plans."],
+    "best": "October to November and March to April are the most pleasant. Summer is hot, humid and rainy, and winter can be cool and gray."
+  },
+  {
+    "slug": "seoul", "city": "Seoul", "country": "South Korea", "cc": "KR", "emoji": "🌃",
+    "intro": "Seoul is safe, fast and open late, with a subway that goes almost everywhere and a food culture built around sharing. Korean barbecue and fried chicken are made for groups, so it pays to have company.",
+    "areas": [
+      ["Hongdae", "University area with live music, street performers, bars and lots of hostels."],
+      ["Itaewon", "International restaurants and bars, and plenty of English speakers."],
+      ["Seongsu-dong", "Converted warehouses, cafés, pop-up shops and design studios."],
+      ["Jongno (Bukchon & Insadong)", "Hanok houses, tea houses and Gyeongbokgung Palace next door."]
+    ],
+    "plans": ["Korean barbecue and soju dinner", "Chimaek (fried chicken and beer) by the Han River", "Gyeongbokgung Palace visit (entry is free if you wear hanbok)", "Food crawl at Gwangjang Market", "Hike Bukhansan for views over the city", "Noraebang (karaoke) night in Hongdae"],
+    "safety": ["The subway stops running around midnight, so plan your way home; taxis are the usual option after that.", "Google Maps has limited directions in Korea; Naver Map or KakaoMap work much better.", "Rounds of soju add up quickly at group dinners; pace yourself."],
+    "best": "April to May for spring blossoms and September to November for fall colors. Summer is hot with a rainy season in July; winter is cold and dry."
+  },
+  {
+    "slug": "singapore", "city": "Singapore", "country": "Singapore", "cc": "SG", "emoji": "🦁",
+    "intro": "Singapore is compact, clean and very safe, and an easy first stop for solo travelers in Southeast Asia. It's also expensive, so sharing hawker tables, rides and tickets with other travelers makes a real difference.",
+    "areas": [
+      ["Chinatown", "Hawker centers, temples and cocktail bars around Club Street and Ann Siang Hill."],
+      ["Kampong Glam", "Sultan Mosque, Haji Lane's shops and bars, and Middle Eastern food."],
+      ["Robertson Quay & Clarke Quay", "Riverside bars and restaurants; Robertson Quay is the calmer end."],
+      ["Tiong Bahru", "Art deco blocks, bakeries and cafés in one of the oldest housing estates."]
+    ],
+    "plans": ["Hawker dinner at Maxwell Food Centre or Lau Pa Sat", "Evening light show at the Supertree Grove, Gardens by the Bay", "Southern Ridges walk across Henderson Waves", "Little India and Kampong Glam food walk", "Beach afternoon on Sentosa", "Sunset walk around Marina Bay"],
+    "safety": ["It's very safe, but rules are strictly enforced: no eating or drinking on the MRT, and cross at marked crossings.", "Drug laws are among the harshest in the world; never carry anything for anyone.", "It's hot and humid all year with sudden afternoon storms; carry water and a small umbrella."],
+    "best": "Any time: it's warm all year. February to April is usually drier; November to January is the wettest stretch."
+  },
+  {
+    "slug": "kuala-lumpur", "city": "Kuala Lumpur", "country": "Malaysia", "cc": "MY", "emoji": "🏙️",
+    "intro": "Kuala Lumpur is affordable, English-friendly and a popular base for digital nomads, with fast internet, plenty of coworking and some of the best food in Asia. The city is spread out, so most social life happens in a few neighborhoods.",
+    "areas": [
+      ["Bukit Bintang", "Malls, the Jalan Alor food street and most of the nightlife."],
+      ["KLCC", "The Petronas Towers, KLCC Park and the high-rise apartments many nomads rent."],
+      ["Chinatown (Petaling Street)", "Markets, budget hostels and the Kwai Chai Hong lanes."],
+      ["Bangsar", "Cafés, restaurants and bars popular with expats."]
+    ],
+    "plans": ["Street-food dinner on Jalan Alor", "Early trip to Batu Caves, before the heat and crowds", "Petronas Towers and the KLCC Park fountain show at night", "Rooftop drinks with a view of the towers", "Coworking day in Bangsar or KLCC", "Morning walk in Perdana Botanical Gardens"],
+    "safety": ["Bag snatching from motorbikes happens; carry your bag on the side away from the road.", "Use Grab for rides rather than unmetered taxis.", "Dress modestly for mosques and temples; the National Mosque lends robes at the door."],
+    "best": "Any time: it's warm all year. Expect heavy afternoon showers, especially around April and from October to November."
+  },
+  {
+    "slug": "istanbul", "city": "Istanbul", "country": "Türkiye", "cc": "TR", "emoji": "🕌",
+    "intro": "Istanbul spans two continents and could fill weeks: mosques and bazaars, ferries across the Bosphorus and long dinners over meze. It's big and busy, and far more fun with someone to share a table.",
+    "areas": [
+      ["Sultanahmet", "Hagia Sophia, the Blue Mosque and many budget hotels. Busy by day, quiet at night."],
+      ["Beyoğlu (Taksim, İstiklal & Galata)", "Rooftop bars, meyhanes and the streets around Galata Tower. The social center."],
+      ["Karaköy", "Cafés, galleries and the waterfront by the Galata Bridge."],
+      ["Kadıköy", "The Asian side: markets, bars and a local crowd, a short ferry ride from Europe."]
+    ],
+    "plans": ["Ferry across the Bosphorus to Kadıköy for dinner", "Meze and rakı night at a meyhane", "Hamam visit", "Grand Bazaar and Spice Bazaar wander", "Sunset over the Golden Horn from Galata", "Big Turkish breakfast (serpme kahvaltı) on the weekend"],
+    "safety": ["Be wary of friendly strangers near Taksim who suggest a bar they know; it's a known scam that ends with a huge bill.", "Taxis sometimes take long routes; use an app like BiTaksi and know roughly what the ride should cost.", "Dress modestly for mosques; women need to cover their hair, and visits pause at prayer times."],
+    "best": "April to May and September to October: mild weather and fewer crowds than in summer."
+  },
+  {
+    "slug": "amsterdam", "city": "Amsterdam", "country": "Netherlands", "cc": "NL", "emoji": "🚲",
+    "intro": "Amsterdam is compact, walkable and very international, with canals, hostels and café terraces that make it easy to meet people. It's also pricey and busy, so a shared plan beats wandering the center alone.",
+    "areas": [
+      ["Jordaan", "Canals, traditional brown cafés and weekend markets."],
+      ["De Pijp", "The Albert Cuyp Market, cheap eats and busy bars."],
+      ["Oost", "Oosterpark, the Dappermarkt and a younger local crowd."],
+      ["Amsterdam-Noord", "A free ferry ride from Centraal Station to the NDSM wharf, creative spaces and waterside bars."]
+    ],
+    "plans": ["Bike ride through Vondelpark", "Canal boat trip at golden hour", "Rijksmuseum or Van Gogh Museum visit (book tickets ahead)", "Borrel (after-work drinks) at a brown café", "Free ferry to NDSM and dinner in Noord", "Day trip to Haarlem or Zaanse Schans"],
+    "safety": ["Stay out of the red bike lanes and look both ways; bikes come fast and quietly.", "Pickpockets work Centraal Station, trams and busy squares.", "Ignore street dealers; what they sell is often fake or dangerous."],
+    "best": "April to May for tulips and King's Day (late April), and June to September for long evenings outside.",
+     "hostels": [
+       {"name": "Generator Amsterdam", "area": "Mauritskade 57, overlooking Oosterpark, between Centrum and Oost", "why": "A former university lecture hall is now the Auditorium bar, open daily until midnight, with DJs, karaoke, live music and pop-up events, plus a terrace and the Oosterbar cocktail basement Thursday to Saturday.", "source": "https://staygenerator.com/hostels/amsterdam", "checked": "2026-10-22"},
+       {"name": "ClinkNOORD", "area": "Badhuiskade 3, Amsterdam-Noord, a free ferry from Centraal", "why": "Bar open daily 4 pm to midnight and a 24/7 café, with a weekly cinema night, comedy club and DJ night plus beer tastings.", "source": "https://www.clinkhostels.com/amsterdam/clinknoord/", "checked": "2026-10-22"},
+       {"name": "St Christopher's at The Winston", "area": "Warmoesstraat 129, one minute from Dam Square", "why": "Belushi's bar downstairs has live music, DJs and a garden terrace, an easy place to start a conversation and make plans.", "source": "https://st-christophers.co.uk/amsterdam", "checked": "2026-10-22"}
+     ],
+     "meet_spots": [
+       {"name": "Language Exchange Bar Nights at Pacific", "why": "A language-exchange evening usually on the first Thursday of the month, 7:30 to 10:30 pm, at Pacific in Westerpark (Polonceaukade 23); the next one is Thursday 5 November.", "source": "https://www.meetup.com/language-exchange-bar-nights/", "checked": "2026-10-22"},
+       {"name": "Noordermarkt", "why": "Market on the square in front of the Noorderkerk in the Jordaan, Saturday 9 am to 4 pm and Monday 9 am to 2 pm.", "source": "https://www.noordermarkt-amsterdam.nl/", "checked": "2026-10-22"},
+       {"name": "Sandemans free tour of Amsterdam", "why": "A tips-based walking tour of about two hours that starts in front of the National Monument on Dam Square, a simple way to spend a morning with other travelers.", "source": "https://neweuropetours.eu/sandemans-tours/amsterdam/free-tour-of-amsterdam", "checked": "2026-10-22"}
+     ],
+     "women": [
+       {"name": "Generator Amsterdam", "why": "Lists female-only dorms, including a 6-bed women-only room.", "source": "https://staygenerator.com/hostels/amsterdam", "checked": "2026-10-22"},
+       {"name": "ClinkNOORD", "why": "Has en-suite female-only dorms sleeping 4 to 10.", "source": "https://www.clinkhostels.com/amsterdam/clinknoord/", "checked": "2026-10-22"}
+     ]
+  },
+  {
+    "slug": "prague", "city": "Prague", "country": "Czechia", "cc": "CZ", "emoji": "🏰",
+    "intro": "Prague has a beautiful old center, beer that's cheap by Western European standards and a big hostel scene, so it's easy to meet other travelers. A few tram stops out, it feels far more local.",
+    "areas": [
+      ["Old Town & Malá Strana", "Charles Bridge, Old Town Square and the castle hill. Stunning, and very crowded."],
+      ["Vinohrady", "Wine bars, cafés and the Riegrovy sady beer garden with sunset views."],
+      ["Žižkov", "Lots of pubs, the TV Tower and a relaxed, local feel."],
+      ["Holešovice", "Galleries, the DOX art center and the Letná beer garden nearby."]
+    ],
+    "plans": ["Sunset beers at the Letná beer garden", "Early-morning walk over Charles Bridge before the crowds", "Prague Castle and a walk down through Petřín hill", "Czech pub dinner: goulash, dumplings and a pilsner", "Saturday farmers' market on the Náplavka riverbank", "Day trip to Kutná Hora or Český Krumlov"],
+    "safety": ["Skip exchange booths advertising 'no commission'; use bank ATMs and decline the machine's currency conversion.", "Use Bolt, Uber or a booked taxi rather than cabs waiting at tourist spots.", "Pickpockets work Old Town Square, the Astronomical Clock crowd and busy trams."],
+    "best": "May to June and September: warm and green. December brings the Christmas markets."
+  },
+  {
+    "slug": "cusco", "city": "Cusco", "country": "Peru", "cc": "PE", "emoji": "🦙",
+    "intro": "Cusco is the gateway to Machu Picchu and the Sacred Valley, and almost everyone in town is getting ready for a trek. That makes it one of the easiest places in South America to find travel companions.",
+    "areas": [
+      ["San Blas", "Steep lanes, artisan workshops, cafés and small bars."],
+      ["Plaza de Armas & Centro", "The cathedral, restaurants and most of the tour agencies."],
+      ["San Pedro Market", "Cheap lunches, fresh juice and everyday local life."],
+      ["Sacred Valley (Pisac, Urubamba, Ollantaytambo)", "Lower, quieter towns about an hour or two away."]
+    ],
+    "plans": ["Machu Picchu trip (entry tickets sell out, so book ahead)", "Rainbow Mountain (Vinicunca) day hike", "Sacred Valley day: Pisac, Moray and Ollantaytambo", "Lunch and juice at San Pedro Market", "Find a group for the Salkantay or Inca Trail trek", "Walk up to the Sacsayhuamán ruins"],
+    "safety": ["Cusco sits at about 3,400 m: take it slow for the first day or two, drink water and go easy on alcohol.", "The Inca Trail can only be hiked with a licensed operator; for any trek, choose well-reviewed agencies.", "At night, use official taxis or a ride app rather than unmarked cars."],
+    "best": "May to September is the dry season and the best time to trek. The Inca Trail closes every February for maintenance."
+  },
+  {
+    "slug": "paris", "city": "Paris", "country": "France", "cc": "FR", "emoji": "🥐",
+    "intro": "Paris rewards wandering on your own, but long dinners and wine by the Seine are better shared. Plenty of travelers pass through alone, and its cafés make lingering normal.",
+    "areas": [
+      ["Le Marais", "Galleries, falafel on Rue des Rosiers and busy bars."],
+      ["Canal Saint-Martin", "Picnics and drinks along the canal on warm evenings."],
+      ["Montmartre", "Sacré-Cœur, views and village streets; very busy with visitors."],
+      ["Latin Quarter", "Students, bookshops and cheap eats near the Sorbonne."]
+    ],
+    "plans": ["Picnic and wine on the banks of the Seine at sunset", "Louvre or Musée d'Orsay morning, then lunch", "Sunset on the steps of Sacré-Cœur", "Bar hop in Le Marais", "Day trip to Versailles", "Market morning at the Marché des Enfants Rouges"],
+    "safety": ["Pickpockets work the metro and the crowds around the Eiffel Tower and Sacré-Cœur.", "Walk past anyone asking you to sign a petition or tying a 'friendship bracelet' on your wrist; both are scams.", "Keep your phone off café tables next to the street."],
+    "best": "April to June and September to October, when it's mild and less crowded than summer."
+  },
+  {
+    "slug": "london", "city": "London", "country": "United Kingdom", "cc": "GB", "emoji": "🚇",
+    "intro": "London is huge and can feel anonymous, but it's full of newcomers, pubs and free museums. Company is easy to find once you make a plan.",
+    "areas": [
+      ["Shoreditch", "Street art, bars and curry and bagels on Brick Lane."],
+      ["Camden", "Markets, live music and canal walks."],
+      ["South Bank", "The riverside walk, Borough Market and theaters."],
+      ["Soho", "Pubs, restaurants and West End shows."]
+    ],
+    "plans": ["Pub quiz night", "Borough Market lunch and a South Bank walk", "Free museum afternoon at the British Museum or Tate Modern", "Sunday roast in a pub", "Camden Market and a Regent's Canal walk", "Cheap day-of tickets for a West End show"],
+    "safety": ["Phone snatching by thieves on bikes and mopeds happens; keep your phone away from the curb.", "Take licensed black cabs or app rides, never an unbooked minicab.", "Watch your bag on crowded Tube lines and at markets."],
+    "best": "May to September for long evenings; museums and pubs work all year."
+  },
+  {
+    "slug": "new-york-city", "city": "New York City", "country": "United States", "cc": "US", "emoji": "🗽",
+    "intro": "New York moves fast and nobody minds you being on your own, at a counter seat or a bar stool. It's also expensive, so splitting plans with other travelers helps.",
+    "areas": [
+      ["Lower East Side & East Village", "Bars, cheap eats and late nights."],
+      ["Williamsburg, Brooklyn", "Rooftops, breweries and weekend markets."],
+      ["Greenwich Village", "Jazz clubs, comedy cellars and Washington Square Park."],
+      ["Midtown", "The big sights, Broadway and the south end of Central Park."]
+    ],
+    "plans": ["Walk the Brooklyn Bridge at sunset", "Comedy show in Greenwich Village", "Pizza slice crawl", "Free Staten Island Ferry ride past the Statue of Liberty", "Picnic in Central Park", "Weekend food market in Brooklyn"],
+    "safety": ["Costumed characters in Times Square expect money after a photo; agree or walk on.", "Late at night, ride in a subway car with other passengers in it.", "Tipping 18 to 20% is expected at restaurants and bars, so budget for it when you split a bill."],
+    "best": "April to June and September to November; summers are hot and winters cold."
+  },
+  {
+    "slug": "madrid", "city": "Madrid", "country": "Spain", "cc": "ES", "emoji": "🍷",
+    "intro": "Madrid eats late and goes out later. Tapas crawls and terraces are made for groups, and the city is used to newcomers joining in.",
+    "areas": [
+      ["La Latina", "Tapas bars on Cava Baja and Sunday crowds after El Rastro market."],
+      ["Malasaña", "Indie bars, vintage shops and cheap drinks."],
+      ["Lavapiés", "Multicultural, with cheap eats and rooftop terraces."],
+      ["Retiro & Paseo del Prado", "The big park and the city's major art museums."]
+    ],
+    "plans": ["Tapas crawl on Cava Baja", "El Rastro flea market on Sunday morning", "Rowing boats on the Retiro lake", "The Prado in its free-entry evening hours", "Sunset at the Templo de Debod", "Day trip to Toledo or Segovia"],
+    "safety": ["Pickpockets work Puerta del Sol, the metro and El Rastro.", "Keep bags on your lap on terraces; snatching from chair backs happens.", "Dinner starts around 9pm or later, so plan meetups late."],
+    "best": "April to June and September to October; July and August are very hot."
+  },
+  {
+    "slug": "rome", "city": "Rome", "country": "Italy", "cc": "IT", "emoji": "🏛️",
+    "intro": "Rome is a city for long walks and longer dinners. Aperitivo hour and the evening stroll make it easy to fall in with other people.",
+    "areas": [
+      ["Trastevere", "Cobbled lanes, trattorias and the busiest nightlife."],
+      ["Monti", "Wine bars and small shops near the Colosseum."],
+      ["Centro Storico", "The Pantheon, Piazza Navona and gelato stops."],
+      ["Testaccio", "A local food market and traditional Roman cooking."]
+    ],
+    "plans": ["Aperitivo in Trastevere", "Colosseum and Roman Forum morning", "Gelato walk from the Pantheon to the Trevi Fountain", "Lunch at Testaccio market", "Early entry at the Vatican Museums", "Beach afternoon at Ostia"],
+    "safety": ["Pickpockets target crowded buses to the Vatican and the crowds at Trevi and the Colosseum.", "Say no to 'free' roses or bracelets; a demand for money follows.", "Check menus for a coperto (cover charge) before you sit down."],
+    "best": "April to June and September to October."
+  },
+  {
+    "slug": "rio-de-janeiro", "city": "Rio de Janeiro", "country": "Brazil", "cc": "BR", "emoji": "🌊",
+    "intro": "Rio mixes beach days, samba and mountain views. It's social and friendly, and it's also a city where going out in a group is the sensible choice.",
+    "areas": [
+      ["Ipanema", "Beach life, sunset at Arpoador and good restaurants."],
+      ["Copacabana", "The famous beach, big hotels and beach kiosks."],
+      ["Botafogo", "Bars, craft beer and views of Sugarloaf."],
+      ["Lapa & Santa Teresa", "Samba nights under the arches, and a hilltop arts neighborhood."]
+    ],
+    "plans": ["Sunset at Arpoador, where people applaud the sun going down", "Samba night in Lapa", "Hike to the Dois Irmãos viewpoint", "Sugarloaf cable car at sunset", "Beach volleyball or footvolley at Ipanema", "Early visit to Christ the Redeemer before the crowds"],
+    "safety": ["Take only what you need to the beach: cash for the day, no valuables.", "Use app rides at night instead of walking.", "Only visit favelas with a reputable local guide."],
+    "best": "May to October is drier and less hot; Carnival in February or March is the biggest party of the year."
+  },
+  {
+    "slug": "dubai", "city": "Dubai", "country": "United Arab Emirates", "cc": "AE", "emoji": "🏜️",
+    "intro": "Dubai is spread out and built around cars and malls. Brunches, desert trips and beach days are all more fun with a group.",
+    "areas": [
+      ["Dubai Marina & JBR", "A beach walk, restaurants and waterfront bars."],
+      ["Downtown", "The Burj Khalifa, Dubai Mall and the fountain shows."],
+      ["Al Fahidi & Deira", "Old Dubai, the souks and abra boat rides across the creek."],
+      ["Jumeirah", "Public beaches, cafés and La Mer."]
+    ],
+    "plans": ["Desert safari with dune driving and dinner", "Abra ride and a souk walk in Deira", "Weekend brunch", "Sunset at Kite Beach", "Burj Khalifa observation deck at sunset", "Evening walk around the Dubai Fountain"],
+    "safety": ["Public drunkenness is illegal; drink only in licensed venues.", "Dress modestly in the old town, souks and malls.", "Some medicines that are legal at home are controlled in the UAE; check before you fly."],
+    "best": "November to March; summer temperatures regularly pass 40°C."
+  },
+  {
+    "slug": "valencia", "city": "Valencia", "country": "Spain", "cc": "ES", "emoji": "🥘",
+    "intro": "Valencia has beaches, paella and a long park in an old riverbed, and it's become a favorite base for digital nomads. It's relaxed, flat and easy to cycle.",
+    "areas": [
+      ["Ruzafa", "Cafés, coworking spaces and the liveliest bars."],
+      ["El Carmen", "The old town's lanes, street art and late nights."],
+      ["El Cabanyal", "The old fishermen's quarter by the beach."],
+      ["Benimaclet", "A student area with cheap bars and a local feel."]
+    ],
+    "plans": ["Paella lunch near Malvarrosa beach", "Cycle the Turia Gardens to the City of Arts and Sciences", "Morning at the Central Market", "Sunset at La Albufera lagoon", "Coworking day in Ruzafa", "Horchata and fartons in the afternoon"],
+    "safety": ["Watch your bag on the beach and in the old town.", "Use the bike lanes; the Valenbisi bike share makes cycling easy.", "Book early for Las Fallas in March, when prices jump."],
+    "best": "March to June and September to November; Las Fallas fills the city in mid-March."
+  },
+  {
+    "slug": "koh-phangan", "city": "Koh Phangan", "country": "Thailand", "cc": "TH", "emoji": "🌕",
+    "intro": "Koh Phangan is known for the Full Moon Party, but it also has a big community of yoga people and digital nomads who stay for weeks. Social life happens at cafés, beaches and sunset spots.",
+    "areas": [
+      ["Haad Rin", "The Full Moon Party beach; loud and busy."],
+      ["Srithanu", "Yoga schools, vegan cafés and long-stay nomads."],
+      ["Thong Sala", "The main town and pier, with a weekend walking street market."],
+      ["Haad Yao & Haad Salad", "Quieter west coast beaches with sunsets."]
+    ],
+    "plans": ["Sunset at Zen Beach in Srithanu", "Night market in Thong Sala", "Boat trip to Ang Thong Marine Park", "Yoga class in Srithanu", "Waterfall hike in the jungle interior", "Full Moon Party with a group"],
+    "safety": ["Scooter crashes are the most common injury here; wear a helmet and don't learn to ride on these roads.", "At the Full Moon Party, leave valuables behind and watch your drink.", "Thai drug laws are strict."],
+    "best": "January to April is the sunniest; the island's wettest months are usually October to December."
+  },
+  {
+    "slug": "budapest", "city": "Budapest", "country": "Hungary", "cc": "HU", "emoji": "♨️",
+    "intro": "Budapest is compact, affordable and known for ruin bars and thermal baths. Hostels here are social, and nights out are easy to join.",
+    "areas": [
+      ["District VII (Jewish Quarter)", "Ruin bars like Szimpla Kert and most of the nightlife."],
+      ["District V (Belváros)", "The Danube promenade, Parliament and the main sights."],
+      ["Castle District", "Buda Castle, Fisherman's Bastion and the views."],
+      ["District VIII", "Up-and-coming, with cheaper bars and cafés."]
+    ],
+    "plans": ["Ruin bar night in District VII", "Afternoon at the Széchenyi thermal baths", "Sunset at Fisherman's Bastion", "Evening cruise on the Danube", "Lunch at the Great Market Hall", "Walk up Gellért Hill"],
+    "safety": ["Use Bolt or an official taxi company, not a cab that finds you.", "Don't follow friendly strangers to a bar they pick; huge bills are a known scam.", "Hungary uses the forint, and street exchange rates vary a lot."],
+    "best": "April to June and September to October; December has Christmas markets."
+  },
+  {
+    "slug": "ho-chi-minh-city", "city": "Ho Chi Minh City", "country": "Vietnam", "cc": "VN", "emoji": "🛵",
+    "intro": "Ho Chi Minh City, still called Saigon by most people, runs on motorbikes, street food and coffee. It's easy to meet people over a plastic-stool dinner.",
+    "areas": [
+      ["District 1", "Bui Vien walking street, the main sights and nightlife."],
+      ["District 3", "Local cafés, street food and quieter streets."],
+      ["Thao Dien", "Expats and nomads, cafés and coworking spaces."],
+      ["District 4", "Seafood and street food near the river."]
+    ],
+    "plans": ["Street food tour on the back of a motorbike", "Day trip to the Cu Chi tunnels", "Mekong Delta day trip", "Rooftop drinks in District 1", "Coffee crawl: try egg coffee and coconut coffee", "Lunch at Ben Thanh market"],
+    "safety": ["Phone and bag snatching from motorbikes happens; keep your phone away from the road.", "Book rides in Grab or another ride-hailing app.", "Cross the road slowly and steadily; traffic flows around you."],
+    "best": "December to April is the dry season."
+  },
+  {
+    "slug": "goa", "city": "Goa", "country": "India", "cc": "IN", "emoji": "🥥",
+    "intro": "Goa is India's beach state, with a slow pace, Portuguese heritage and a big backpacker and nomad scene in the north. Beach shacks and sunset spots make meeting people easy.",
+    "areas": [
+      ["Anjuna & Vagator", "Cliffs, beach shacks, the Wednesday flea market and nightlife."],
+      ["Arambol", "Bohemian, with sunset drum circles and long-stay travelers."],
+      ["Panjim (Panaji)", "The capital, with the old Latin Quarter of Fontainhas."],
+      ["Palolem", "A calmer crescent beach in South Goa, good for kayaking."]
+    ],
+    "plans": ["Sunset at Arambol beach", "Wednesday flea market in Anjuna", "Scooter day along the northern beaches", "Walk through the Fontainhas Latin Quarter", "Spice plantation and Dudhsagar Falls day trip", "Goan fish thali lunch at a beach shack"],
+    "safety": ["Scooter crashes are common; wear a helmet and don't ride after drinking.", "Sea currents get strong, especially in the monsoon; swim where lifeguards are posted.", "Walk in a group on quiet beaches after dark."],
+    "tips": ["Most solo travelers stay in North Goa (Anjuna, Vagator, Arambol); South Goa is quieter and better for rest days.", "Distances between beaches are long, so a rented scooter (with a helmet) or GoaMiles, the state-backed taxi app, beats waiting for a ride.", "Beach shacks mostly close for the monsoon, so plans are thinner from June to September."],
+    "best": "November to February; the monsoon runs roughly June to September.",
+    "hostels": [
+      {"name": "Zostel Goa (Morjim)", "area": "Morjim, North Goa", "why": "Zostel calls it a social hostel with a party scene, an in-house bar, a pool and common areas, and points you to a quieter property if you want rest.", "source": "https://www.zostel.com/destination/goa/stay/zostel-goa-morjim-goah407", "checked": "2026-10-06"},
+      {"name": "The Hosteller Goa (Anjuna)", "area": "Cudchar, Arpora, near Anjuna", "why": "Villa-style hostel with a pool, a bar and a mix of dorms and private rooms.", "source": "https://www.thehosteller.com/hostels/the-hosteller-goa-arpora/", "checked": "2026-10-06"},
+      {"name": "goSTOPS Goa, Vagator", "area": "Zhor Waddo, Vagator", "why": "Near Vagator Beach and Chapora Fort, with a pool, a cafe, a garden and an amphitheatre. goSTOPS marks it as popular with female travellers.", "source": "https://gostops.com/stay/Goa/plusgoavagator-hostel", "checked": "2026-10-06"}
+    ],
+    "meet_spots": [
+      {"name": "Arambol beach at sunset", "why": "A drum circle forms on the main beach most evenings in season, and anyone can join in or watch. The sweetwater lake is about 15 minutes' walk around the headland.", "source": "https://www.indianrepublic.in/2026/08/arambol-goa-sweetwater-lake-backpacking-guide.html", "checked": "2026-10-06"},
+      {"name": "Anjuna Wednesday flea market", "why": "A day market every Wednesday from the morning until about 7:30 pm. Anjuna's tourist season runs October to April.", "source": "https://en.wikipedia.org/wiki/Anjuna", "checked": "2026-10-06"},
+      {"name": "NomadGao, Anjuna", "why": "A coworking and coliving space for remote workers in Anjuna, with long-stay discounts and a calendar of community events. NomadGao also runs a space in Dharamkot, above McLeod Ganj.", "source": "https://nomadgao.com/destinations/coliving-coworking-remote-work-anjuna/", "checked": "2026-10-11"}
+    ],
+    "women": [
+      {"name": "The Hosteller Goa (Anjuna)", "why": "Has a dedicated 4-bed female-only dorm, per its FAQ.", "source": "https://www.thehosteller.com/hostels/the-hosteller-goa-arpora/", "checked": "2026-10-11"},
+      {"name": "goSTOPS Goa, Vagator", "why": "Lists an 8-bed female-only dorm, and goSTOPS marks the hostel as popular among female travellers.", "source": "https://gostops.com/stay/Goa/plusgoavagator-hostel", "checked": "2026-10-11"}
+    ],
+    "getting_there": [
+      {"name": "From Mumbai", "why": "The daily Konkan Kanya Express runs from Mumbai CSMT to Madgaon in about 10 hours 40 minutes and stops at Thivim, the station for North Goa.", "source": "https://en.wikipedia.org/wiki/Konkan_Kanya_Express", "checked": "2026-10-11"}
+    ]
+  },
+  {
+    "slug": "rishikesh", "city": "Rishikesh", "country": "India", "cc": "IN", "emoji": "🧘",
+    "intro": "Rishikesh sits on the Ganges at the foot of the Himalayas and draws people for yoga, rafting and treks. Cafés and yoga courses mean you keep running into the same travelers.",
+    "areas": [
+      ["Tapovan", "Cafés, yoga schools and guesthouses popular with travelers."],
+      ["Laxman Jhula", "Cafés and river views around the old bridge."],
+      ["Ram Jhula", "Ashrams, ghats and busy markets."],
+      ["Triveni Ghat", "The evening Ganga aarti ceremony by the river."]
+    ],
+    "plans": ["Evening Ganga aarti at the ghats", "White-water rafting on the Ganges", "Drop-in yoga class", "Short hike to a waterfall outside town", "Café hopping in Tapovan", "Visit the Beatles Ashram"],
+    "safety": ["The town is vegetarian and alcohol isn't sold in the center, so don't expect bars.", "Rafting stops during the monsoon; book with a licensed operator.", "The UK government's travel advice asks travelers to respect the local dress code at religious sites."],
+    "tips": ["Stay in Tapovan or near Laxman Jhula if you want to be around other travelers.", "Drop-in yoga classes and café tables are the easiest places to start a conversation.", "Shared autos run between Rishikesh town, Ram Jhula and Laxman Jhula; agree the fare first."],
+    "best": "September to November and February to April; rafting pauses in the monsoon.",
+    "hostels": [
+      {"name": "Zostel Rishikesh (Tapovan)", "area": "Balaknath Road, Tapovan", "why": "A lawn for morning yoga, a common area with a pool table and a workstation, a rooftop cafe and an evening bonfire.", "source": "https://www.zostel.com/destination/rishikesh/stay/zostel-rishikesh-tapovan-rshh141", "checked": "2026-10-06"},
+      {"name": "The Hosteller Rishikesh (Upper Tapovan)", "area": "Balaknath Road, Upper Tapovan", "why": "Large common rooms with indoor and board games, and a veg cafe.", "source": "https://www.thehosteller.com/hostels/the-hosteller-rishikesh-upper-tapovan/", "checked": "2026-10-06"},
+      {"name": "goSTOPS Rishikesh (Lakshman Jhula)", "area": "Lakshman Jhula, beside Chatsang Cafe", "why": "Rooftop with Ganges views, common areas and a yoga space, a short walk from Lakshman Jhula. Expect a 500 m slope up to the door.", "source": "https://gostops.com/stay/Rishikesh/rishikesh-hotel", "checked": "2026-10-06"}
+    ],
+    "meet_spots": [
+      {"name": "Ganga Aarti at Parmarth Niketan", "why": "Every evening at sunset on Parmarth's ghat. Times shift with the season, so ask at reception. Parmarth also runs daily yoga classes.", "source": "https://parmarth.org/", "checked": "2026-10-06"},
+      {"name": "Triveni Ghat at dusk", "why": "The Ganga Aarti is performed here every evening at dusk, with music and offerings to the river.", "source": "https://en.wikipedia.org/wiki/Rishikesh", "checked": "2026-10-06"}
+    ],
+    "women": [
+      {"name": "The Hosteller Rishikesh (Upper Tapovan)", "why": "Has dedicated female-only dorms, per its FAQ.", "source": "https://www.thehosteller.com/hostels/the-hosteller-rishikesh-upper-tapovan/", "checked": "2026-10-11"},
+      {"name": "goSTOPS Rishikesh (Lakshman Jhula)", "why": "Lists a 4-bed female-only dorm, and goSTOPS marks the hostel as popular among female travellers.", "source": "https://gostops.com/stay/Rishikesh/rishikesh-hotel", "checked": "2026-10-11"}
+    ],
+    "getting_there": [
+      {"name": "From Delhi", "why": "Trains run to Rishikesh and Yog Nagari Rishikesh stations, and private and shared taxis connect Rishikesh with Delhi. Dehradun Airport is about 15 km away; Delhi's airport is about 240 km.", "source": "https://en.wikipedia.org/wiki/Rishikesh", "checked": "2026-10-11"}
+    ]
+  },
+  {
+    "slug": "manali", "city": "Manali", "country": "India", "cc": "IN", "emoji": "🏔️",
+    "intro": "Manali is the Himalayan base for Himachal Pradesh: cafés and guesthouses in Old Manali, hot springs in Vashisht and treks, snow and paragliding up the valley. Most travelers arrive on an overnight bus from Delhi, so there's always someone new in town looking for company.",
+    "areas": [
+      ["Old Manali", "Guesthouses, cafés and live music up the hill from town. Where most backpackers and long-stay travelers base themselves."],
+      ["Vashisht", "A village across the river with natural hot springs, cafés and the trail to Jogini Falls."],
+      ["Mall Road", "The main market in town: shops, food and the bus stand. Busy with domestic tourists."],
+      ["Hadimba Temple and Dhungri", "The wooden Hadimba Devi temple in a cedar forest, a short walk from Old Manali."]
+    ],
+    "plans": ["Morning walk to Hadimba Devi temple through the cedar forest", "Hike from Vashisht to Jogini Falls", "Soak in the Vashisht hot springs", "Day trip to Solang Valley for paragliding or snow, depending on the season", "Café evening with live music in Old Manali", "Shared taxi through the Atal Tunnel to Sissu in Lahaul"],
+    "safety": ["Mountain roads close after heavy snow and landslides are common in the July and August monsoon; check conditions before any day trip.", "Rohtang Pass needs a permit and often closes; don't plan a trip around it without checking.", "Don't trek alone; tell someone your route and when you expect to be back."],
+    "tips": ["Overnight buses from Delhi take roughly 12 to 14 hours and usually arrive in the early morning.", "Nights are cold even in summer, so pack layers.", "Cannabis is illegal in India, whatever you're offered in the hills."],
+    "best": "March to June for mild weather, and October to November for clear skies; December to February brings snow, and the July to August monsoon brings landslides.",
+    "hostels": [
+      {"name": "Zostel Old Manali (Goshal Road)", "area": "Old Manali", "why": "Common room with board games, a workspace, and a bonfire with guitar sessions in the evening.", "source": "https://www.zostel.com/destination/manali/stay/zostel-old-manali-goshal-road-mnlh048", "checked": "2026-10-06"},
+      {"name": "The Hosteller Manali (Old Manali)", "area": "Old Manali, near the log hut area", "why": "Common area, garden, veg cafe and a bonfire.", "source": "https://www.thehosteller.com/hostels/the-hosteller-old-manali/", "checked": "2026-10-06"},
+      {"name": "Zostel Manali (Vashisht)", "area": "Vashisht, near the Vashisht temple", "why": "Common spaces, a front yard, attic dorms and a cafe with workstations, in the hot-spring village across the Beas.", "source": "https://www.zostel.com/destination/manali/stay/zostel-manali-vashisht-vshh380", "checked": "2026-10-06"}
+    ],
+    "meet_spots": [
+      {"name": "Old Manali", "why": "The old village in Manali, home to the ancient Manu Temple. Zostel and The Hosteller both have hostels here.", "source": "https://en.wikipedia.org/wiki/Manali,_Himachal_Pradesh", "checked": "2026-10-06"},
+      {"name": "Vashisht hot springs", "why": "Sulphur hot springs with separate baths for men and women, in a village 3 km from Manali across the Beas. Jogini Falls is just above the village.", "source": "https://en.wikipedia.org/wiki/Vashisht,_Himachal_Pradesh", "checked": "2026-10-06"}
+    ],
+    "women": [
+      {"name": "The Hosteller Manali (Old Manali)", "why": "Has dedicated female-only dorms, per its FAQ.", "source": "https://www.thehosteller.com/hostels/the-hosteller-old-manali/", "checked": "2026-10-11"},
+      {"name": "JustWravel All Girls trip (Manali, Kasol, Jibhi)", "why": "A 7-day women-only group trip from Delhi and back; batches were listed from 17 October 2026.", "source": "https://www.justwravel.com/backpacking-trips/india/himachal-pradesh/all-girls-himachal-backpacking-trip-manali-kasol-tosh", "checked": "2026-10-11", "trip": true}
+    ]
+  },
+  {
+    "slug": "kasol", "city": "Kasol", "country": "India", "cc": "IN", "emoji": "🌲",
+    "intro": "Kasol is a small village on the Parvati river and the gateway to the Parvati Valley's treks and hamlets. It's one of the most popular stops for backpackers in Himachal Pradesh, and café tables and trailheads make it easy to fall in with a group.",
+    "areas": [
+      ["Kasol village", "Cafés, guesthouses and the market along the main road by the river."],
+      ["Chalal", "A short riverside walk from Kasol, quieter, with guesthouses and cafés in the pines."],
+      ["Manikaran", "About 4 km away, with a Sikh gurdwara, a free langar meal and hot springs."],
+      ["Tosh", "A village higher up the valley, reached by road to Barshaini and a short climb."]
+    ],
+    "plans": ["Riverside walk from Kasol to Chalal", "Langar meal and the hot springs at Manikaran Sahib", "The Kheerganga trek from Barshaini, with a hot spring near the top", "Day trip up to Tosh village", "Café crawl in Kasol after a trek", "Sunrise walk along the Parvati river"],
+    "safety": ["Foreign tourists have gone missing in and around the Parvati Valley since the early 1990s, according to Wikipedia. The UK government's travel advice says trekkers should travel in groups, use reputable local guides, stay on established routes and leave their plans with their accommodation.", "The Parvati river is fast and freezing; don't swim in it.", "Charas and ganja (cannabis resin and flowers) are illegal in India, including in the Parvati Valley, which is known for locally grown cannabis. The UK government's travel advice says possession of a small amount for personal use could mean at least 6 months in prison."],
+    "tips": ["Overnight buses from Delhi go to Bhuntar; from there it's about an hour by local bus or taxi.", "Mobile signal and ATMs are patchy further up the valley, so carry some cash.", "Kasol is a good base to find people for the Kheerganga trek or a Tosh day trip."],
+    "best": "March to June and September to November; winters are cold and the July to August monsoon brings landslides.",
+    "hostels": [
+      {"name": "Zostel Kasol", "area": "Sosan village, Kanawar Road", "why": "Dorms where people plan the next day and swap cafe tips, with valley views. Zostel pitches it as a base for Parvati Valley treks.", "source": "https://www.zostel.com/destination/kasol/stay/zostel-kasol-kslh734", "checked": "2026-10-06"},
+      {"name": "The Hosteller Kasol (Parvati Valley)", "area": "Manikaran Road, near the Narayan temple", "why": "Common area, indoor games, veg cafe and a bonfire, with treks to Kheerganga, Tosh and Malana from the valley.", "source": "https://www.thehosteller.com/hostels/the-hosteller-kasol-parvati-valley/", "checked": "2026-10-06"},
+      {"name": "goSTOPS Kasol", "area": "Sosan, above the Old Bridge", "why": "On the Parvati River, with a forest-facing common space.", "source": "https://gostops.com/stay/Kasol/kasol-hostel", "checked": "2026-10-06"}
+    ],
+    "meet_spots": [
+      {"name": "Kasol market and the Parvati riverbank", "why": "Kasol sits on the Parvati River and is the usual backpacker base for the Malana and Kheerganga treks.", "source": "https://en.wikipedia.org/wiki/Kasol", "checked": "2026-10-06"},
+      {"name": "The walk from Kasol to Chalal", "why": "About 1.5 to 2 km, 30 to 45 minutes each way: from near the market, over the suspension bridge and along the river to Chalal, a village of small cafes.", "source": "https://travelcoffee.in/blog/chalal-village-trek-from-kasol", "checked": "2026-10-06"},
+      {"name": "Manikaran Sahib", "why": "Gurdwara with hot springs about 4 km from Kasol, where visitors are served langar, the free community meal.", "source": "https://en.wikipedia.org/wiki/Manikaran", "checked": "2026-10-06"}
+    ],
+    "women": [
+      {"name": "The Hosteller Kasol (Parvati Valley)", "why": "Has dedicated female-only dorms, per its FAQ.", "source": "https://www.thehosteller.com/hostels/the-hosteller-kasol-parvati-valley/", "checked": "2026-10-11"},
+      {"name": "JustWravel All Girls trip (Manali, Kasol, Jibhi)", "why": "A 7-day women-only group trip from Delhi and back that includes Kasol; batches were listed from 17 October 2026.", "source": "https://www.justwravel.com/backpacking-trips/india/himachal-pradesh/all-girls-himachal-backpacking-trip-manali-kasol-tosh", "checked": "2026-10-11", "trip": true}
+    ],
+    "getting_there": [
+      {"name": "From Delhi", "why": "There's no direct bus to Kasol. HRTC and private Volvo buses leave ISBT Kashmere Gate for Bhuntar, 31 km before Kasol; an evening bus gets there around 7 to 9 am, and a local bus or shared taxi covers the last stretch.", "source": "https://discoverwithdheeraj.com/weekend-trip-to-kasol-itinerary/", "checked": "2026-10-11"}
+    ]
+  },
+  {
+    "slug": "mcleod-ganj", "city": "McLeod Ganj", "country": "India", "cc": "IN", "emoji": "☸️",
+    "intro": "McLeod Ganj, above Dharamshala, is home to the Dalai Lama's temple and a large Tibetan community. Travelers come for Tibetan food, meditation courses and the Triund trek, and the small, walkable town means you see the same faces every day.",
+    "areas": [
+      ["McLeod Ganj main square", "Tibetan restaurants, cafés, bookshops and the road down to the Tsuglagkhang temple complex."],
+      ["Dharamkot", "A village above town with cafés, yoga and meditation courses, and the start of the Triund trail."],
+      ["Bhagsu", "Guesthouses, cafés and a waterfall a short walk from the square."],
+      ["Naddi", "A quiet village with wide views of the Dhauladhar range, good at sunset."]
+    ],
+    "plans": ["Triund trek, starting early from Dharamkot or Galu temple", "Walk the kora around the Tsuglagkhang complex", "Momos and thukpa crawl in town", "Tibetan cooking class", "Morning at Bhagsu waterfall, then a café", "Sunset over the Dhauladhars from Naddi"],
+    "safety": ["Dharamshala is one of the wettest places in India in the monsoon; trails get slippery and fog rolls in fast.", "Start the Triund trek early so you're down before dark, and don't go alone.", "Keep food out of sight on trails; monkeys grab bags."],
+    "tips": ["Walk clockwise around temples, stupas and prayer wheels.", "Overnight buses from Delhi arrive in McLeod Ganj early in the morning.", "Meditation and Tibetan cooking courses are an easy way to meet people who are staying a while."],
+    "best": "March to June and September to November; July and August bring very heavy monsoon rain.",
+    "hostels": [
+      {"name": "Zostel McLeodganj", "area": "Club House Road, Magic Forest area", "why": "The rooftop is the hub: sunrise chai, foosball and board games, and sunset over the Dhauladhar.", "source": "https://www.zostel.com/destination/mcleodganj/stay/zostel-mcleodganj-mclh045", "checked": "2026-10-06"},
+      {"name": "The Hosteller McLeodganj", "area": "McLeod Ganj, about 500 m from the market", "why": "Hill views, a garden, indoor games, a cafe and a bonfire.", "source": "https://www.thehosteller.com/hostels/the-hosteller-mcleodganj/", "checked": "2026-10-06"},
+      {"name": "goSTOPS McLeodganj (Mall Road)", "area": "Dalai Lama Temple Road, near Nagni Mata Mandir", "why": "A short walk from the Dalai Lama Temple, aimed at backpackers and remote workers.", "source": "https://gostops.com/stay/mcleodganj/mcleodganjmallroad-hostel", "checked": "2026-10-06"}
+    ],
+    "meet_spots": [
+      {"name": "Tushita Meditation Centre", "why": "In the forest above McLeod Ganj. Drop-in guided meditation Monday to Saturday, 9 to 10 am, by donation with no registration. Ten-day Introduction to Buddhism courses run through October and November.", "source": "https://www.tushita.info/", "checked": "2026-10-06"},
+      {"name": "Tsuglag Khang", "why": "The Dalai Lama's temple, one of several Tibetan Buddhist sites in McLeod Ganj along with Namgyal Monastery.", "source": "https://en.wikipedia.org/wiki/McLeod_Ganj", "checked": "2026-10-06"},
+      {"name": "The Triund trail from Galu temple", "why": "Walk or drive from McLeod Ganj to the Galu temple above Dharamkot, where a well-marked trail climbs through oak and rhododendron forest to Triund.", "source": "https://en.wikipedia.org/wiki/Triund", "checked": "2026-10-06"}
+    ],
+    "women": [
+      {"name": "The Hosteller McLeodganj", "why": "Has dedicated female-only dorms, per its FAQ.", "source": "https://www.thehosteller.com/hostels/the-hosteller-mcleodganj/", "checked": "2026-10-11"},
+      {"name": "goSTOPS McLeodganj (Mall Road)", "why": "Lists a 6-bed female-only dorm.", "source": "https://gostops.com/stay/mcleodganj/mcleodganjmallroad-hostel", "checked": "2026-10-11"}
+    ],
+    "getting_there": [
+      {"name": "From Delhi", "why": "Overnight Volvo and semi-sleeper buses run to Dharamshala, with pick-ups at ISBT Kashmere Gate, Majnu ka Tilla and Ramakrishna Ashram Marg. Kangra (Gaggal) Airport is 13 km from Dharamshala, and the nearest major railway station, Pathankot, is 85 km away.", "source": "https://discoverwithdheeraj.com/dharamshala-mcleod-ganj-travel-guide/", "checked": "2026-10-11"}
+    ]
+  },
+  {
+    "slug": "leh", "city": "Leh", "country": "India", "cc": "IN", "emoji": "🏍️",
+    "display": "Leh-Ladakh",
+    "intro": "Leh is the capital of Ladakh, at about 3,500 m, and the starting point for Pangong Tso, Nubra Valley and the high passes. Sharing taxis and bikes to far-away lakes is part of traveling here, so finding other travelers for a trip is genuinely useful.",
+    "areas": [
+      ["Main Bazaar", "The market, cafés, bakeries and travel agents in the center of town."],
+      ["Changspa", "Guesthouses, cafés and the road up to the Shanti Stupa."],
+      ["Fort Road", "Restaurants, gear shops and taxi and bike rental."],
+      ["Old Town", "Mud-brick lanes below Leh Palace."]
+    ],
+    "plans": ["Sunset at Shanti Stupa", "Leh Palace and the Old Town lanes", "Morning prayers at Thiksey Monastery", "Share a taxi to Pangong Tso", "Drive over the Khardung La to Nubra Valley", "Café morning in Changspa while you acclimatise"],
+    "safety": ["Altitude sickness is the main risk: rest for at least two days after you arrive, especially if you fly in, drink water and skip alcohol at first.", "Pangong, Nubra and Tso Moriri are protected areas: foreign visitors need a Protected Area Permit, and Indian visitors should check the current rules and fees before setting off. Agents in Leh can arrange permits.", "Medical help is limited outside Leh, so don't drive or ride the high passes alone."],
+    "tips": ["Shared taxis are cheaper when the seats are full, which is exactly the kind of plan to post.", "Check your mobile network before you go; not every connection from other states works in Ladakh.", "Nights are cold even in July, and the sun is strong at this altitude."],
+    "best": "May to September, when the roads over the passes are usually open; winters are extremely cold and many guesthouses close.",
+    "hostels": [
+      {"name": "Zostel Leh (Main Market)", "area": "Sankar Road, opposite Ladakh Haat", "why": "In the middle of Leh Market, with an in-house cafe, dorms and views of Stok Kangri and Leh Palace.", "source": "https://www.zostel.com/destination/leh/stay/zostel-leh-main-market-lehh532", "checked": "2026-10-06"},
+      {"name": "The Hosteller Leh (Hotel Bayshu)", "area": "Sankar Road, near Lamdon School", "why": "Minutes from the main market, with a common area, indoor games, a veg cafe and a bonfire.", "source": "https://www.thehosteller.com/hostels/the-hosteller-leh/", "checked": "2026-10-06"},
+      {"name": "Woosah Hostel", "area": "GH Road, Skara", "why": "In-house cafe, table tennis, foosball and an amphitheatre. Its Hostelworld listing shows hostel-run 'Leh Explorers' events for sharing rides and trips.", "source": "https://www.hostelworld.com/hostels/p/308060/woosah-hostel/", "checked": "2026-10-06"}
+    ],
+    "meet_spots": [
+      {"name": "Shanti Stupa", "why": "Hilltop stupa facing Leh Palace, reached by road or 555 steep steps. Sunrise and sunset give the best views.", "source": "https://en.wikipedia.org/wiki/Shanti_Stupa,_Ladakh", "checked": "2026-10-06"},
+      {"name": "Leh Main Bazaar and the Old Town", "why": "Leh's main bazaar, with the old mosque at its upper end and the Old Town lanes climbing towards Leh Palace.", "source": "https://en.wikipedia.org/wiki/Leh", "checked": "2026-10-06"}
+    ],
+    "women": [
+      {"name": "The Hosteller Leh (Hotel Bayshu)", "why": "Has dedicated female-only dorms, per its FAQ.", "source": "https://www.thehosteller.com/hostels/the-hosteller-leh/", "checked": "2026-10-11"}
+    ],
+    "extra": [
+      {"title": "Finding people to share a taxi", "intro": "Ladakh's taxi fares are per vehicle, so solo travelers save a lot by filling a shared taxi for the trips out of Leh. What we could check on 11 October 2026:", "items": [{"name": "Only Ladakh taxis do sightseeing", "why": "The Ladakh Taxi Union publishes the fares each season, and taxis from outside Ladakh can't be used for sightseeing inside it. A Ladakh travel guide updated in October 2026 gives ₹10,470 for a one-day Pangong Tso trip in an Innova on the current rate card, which is why filling the seats matters.", "source": "https://discoverwithdheeraj.com/leh-ladakh-taxi-rates/", "checked": "2026-10-11"}, {"name": "Where seats are found", "why": "The main Leh taxi stand, cafés on Fort Road and Changspa Road, and notice boards at restaurants and guesthouses, where solo travelers pin up flyers looking for people to share a taxi. Travel agents also sell single seats on shared taxi trips, for about ₹200 to ₹300 more a person, according to the same guide.", "source": "https://discoverwithdheeraj.com/leh-ladakh-taxi-rates/", "checked": "2026-10-11"}, {"name": "An online shared-taxi board", "why": "On lehladakhtaxis.com, one group posts a tour and a date and another group asks to join. Neither card is charged until both groups confirm, within 3 days. It showed no open ads on 11 October, after the main season.", "source": "https://www.lehladakhtaxis.com/shared-taxi", "checked": "2026-10-11"}, {"name": "The busiest months", "why": "The same guide puts Ladakh's taxi season at June to September, with July and August the peak, and says the passes to Nubra and Pangong usually open by mid-June. More travelers in town means seats fill faster.", "source": "https://discoverwithdheeraj.com/leh-ladakh-taxi-rates/", "checked": "2026-10-11"}]}
+    ],
+    "faq": [
+      ["How do I find people to share a taxi in Ladakh?", "In Leh, ask at the main taxi stand, read the flyers in cafés on Fort Road and Changspa Road and at guesthouses, ask your hostel, or post on an online shared-taxi board. Travel agents also sell single seats for a little more. On Tablamigo you can post a plan such as \"Taxi to Pangong on Friday, 2 seats left\" for travelers nearby to join."]
+    ]
+  },
+  {
+    "slug": "varanasi", "city": "Varanasi", "country": "India", "cc": "IN", "emoji": "🪔",
+    "intro": "Varanasi is one of the oldest living cities in the world, with ghats stepping down to the Ganges, evening ceremonies and a maze of old-city lanes. It's intense, and exploring it with someone else makes it easier and more fun.",
+    "areas": [
+      ["Assi Ghat", "Cafés, guesthouses and the morning Subah-e-Banaras ceremony at the southern end of the ghats."],
+      ["Dashashwamedh Ghat", "The main ghat, with the nightly Ganga aarti."],
+      ["Godowlia and the old city", "Narrow lanes, temples, sweet shops and markets behind the ghats."],
+      ["Sarnath", "About 10 km north: the Buddhist site where the Buddha gave his first sermon."]
+    ],
+    "plans": ["Sunrise boat ride along the ghats", "Evening Ganga aarti at Dashashwamedh Ghat", "Walk the ghats from Assi to Manikarnika", "Kachori and jalebi breakfast in the old city", "Half-day trip to Sarnath", "Morning ceremony at Assi Ghat"],
+    "safety": ["At Manikarnika, the cremation ghat, don't take photos, and ignore anyone asking for money for wood.", "Agree the boat price before you get in.", "The lanes are confusing after dark; save your guesthouse on an offline map."],
+    "tips": ["Stay near the ghats, around Assi or Dashashwamedh, to be close to other travelers.", "The UK government's travel advice asks travelers to respect the local dress code at religious sites.", "Dev Deepawali, on the Kartik full moon (usually November), lights up every ghat and is very crowded."],
+    "best": "October to March; April to June is very hot, and the river rises in the monsoon.",
+    "hostels": [
+      {"name": "Zostel Varanasi", "area": "Bangali Tola, about 5 minutes from Dashashwamedh Ghat", "why": "A rooftop for morning chai and sunsets, and a common room where people plan aarti trips over board games.", "source": "https://www.zostel.com/destination/varanasi/stay/zostel-varanasi-vrnh142", "checked": "2026-10-06"},
+      {"name": "Moustache Varanasi", "area": "Dumraon Colony, Assi-Lanka Road", "why": "Rooftop cafe, common room, terrace and walking tours, with mixed and female-only dorms, in a residential lane near Assi Ghat.", "source": "https://moustachescapes.com/hostel/backpacking-hostel/moustache-hostel-varanasi", "checked": "2026-10-06"},
+      {"name": "goSTOPS Varanasi Lite", "area": "Bhelupur", "why": "goSTOPS marks it as popular with solo travellers. Common area with a home theatre and indoor games.", "source": "https://gostops.com/stay/Varanasi/varanasi-hostel", "checked": "2026-10-06"}
+    ],
+    "meet_spots": [
+      {"name": "Subah-e-Banaras at Assi Ghat", "why": "Free, every day before sunrise: Vedic chants, aarti, classical morning ragas and then yoga. The organisers say 500 to 700 people join the yoga.", "source": "https://subahebanaras.net/", "checked": "2026-10-06"},
+      {"name": "Ganga Aarti at Dashashwamedh Ghat", "why": "Starts soon after sunset, around 6 pm in winter and 7 pm in summer, and lasts about 45 minutes. Hundreds of people watch every evening.", "source": "https://en.wikipedia.org/wiki/Dashashwamedh_Ghat", "checked": "2026-10-06"},
+      {"name": "Free walking tours on GuruWalk", "why": "GuruWalk lists free walking tours with local guides, including walks through the ghats and old streets.", "source": "https://www.guruwalk.com/varanasi", "checked": "2026-10-06"}
+    ],
+    "women": [
+      {"name": "Moustache Varanasi", "why": "Its own page lists mixed and female-only dorms with shared washrooms.", "source": "https://moustachescapes.com/hostel/backpacking-hostel/moustache-hostel-varanasi", "checked": "2026-10-11"}
+    ]
+  },
+  {
+    "slug": "jaipur", "city": "Jaipur", "country": "India", "cc": "IN", "emoji": "🏰",
+    "intro": "Jaipur, Rajasthan's Pink City, packs forts, palaces and bazaars into a city that's easy to reach from Delhi. Sightseeing days are long and hot, so they're more fun shared, and splitting a car to Amer or Nahargarh saves money too.",
+    "areas": [
+      ["Pink City (old city)", "Hawa Mahal, City Palace, Jantar Mantar and the bazaars inside the old walls."],
+      ["C-Scheme and MI Road", "Cafés, restaurants and bars in the newer city."],
+      ["Bani Park", "Guesthouses and hostels a short ride from the station and the old city."],
+      ["Amer", "About 11 km north, around Amer Fort and the old town below it."]
+    ],
+    "plans": ["Morning at Amer Fort before the crowds", "Sunset at Nahargarh Fort", "Hawa Mahal, City Palace and Jantar Mantar in one loop", "Bargain in Bapu Bazaar and Johari Bazaar", "Block-printing workshop in Sanganer or Bagru", "Rooftop dinner facing the old city"],
+    "safety": ["Never buy gems to 'resell at home'; the gem scam is Jaipur's best-known trap.", "Drivers who offer a cheap day tour often earn commission from shops; say what you want to see up front.", "Summer days pass 40°C; sightsee early and late."],
+    "tips": ["A composite ticket covers several monuments and saves money if you see more than two.", "Ride-hailing apps work across the city and save haggling.", "Jaipur is roughly four to five hours from Delhi by train or road, so it's easy to fit into a first trip."],
+    "best": "October to March; April to June is very hot.",
+    "hostels": [
+      {"name": "Zostel Jaipur (Hawa Mahal)", "area": "Chandi ki Taksal, in the old city", "why": "A brisk walk from Hawa Mahal and Bapu Bazar. Zostel runs heritage and food walks from the hostel.", "source": "https://www.zostel.com/destination/jaipur/stay/jaipur-jprh038", "checked": "2026-10-06"},
+      {"name": "Moustache Hostel & Bar Jaipur", "area": "Park House, MI Road, near Sindhi Camp", "why": "Terrace, happy hour and walking tours, with mixed and female-only dorms.", "source": "https://moustachescapes.com/hostel/backpacking-hostel/moustache-hostel-jaipur", "checked": "2026-10-06"},
+      {"name": "The Hosteller Jaipur (MI Road)", "area": "MI Road, Jalupura", "why": "Common area, indoor games and a veg cafe, on MI Road between the old city and the newer cafe and shopping streets.", "source": "https://www.thehosteller.com/hostels/the-hosteller-mi-road-jaipur/", "checked": "2026-10-06"}
+    ],
+    "meet_spots": [
+      {"name": "Free walking tours on GuruWalk", "why": "GuruWalk lists free walking tours with local guides, including a Jaipur old city walk and a Pink City street food walk.", "source": "https://www.guruwalk.com/jaipur", "checked": "2026-10-06"},
+      {"name": "Nahargarh Fort", "why": "Fort on the edge of the Aravalli Hills overlooking Jaipur. It opens at 10 am. Closing times are listed differently for the fort itself and the viewpoints, so check before going for sunset.", "source": "https://en.wikipedia.org/wiki/Nahargarh_Fort", "checked": "2026-10-06"}
+    ],
+    "women": [
+      {"name": "The Hosteller Jaipur (MI Road)", "why": "Has dedicated female-only dorms, per its FAQ.", "source": "https://www.thehosteller.com/hostels/the-hosteller-mi-road-jaipur/", "checked": "2026-10-11"}
+    ]
+  },
+  {
+    "slug": "udaipur", "city": "Udaipur", "country": "India", "cc": "IN", "emoji": "🛶",
+    "intro": "Udaipur is Rajasthan's city of lakes, with palaces on the water and rooftop restaurants facing Lake Pichola. It's relaxed and compact, and the rooftops near the ghats are where travelers end up meeting each other at sunset.",
+    "areas": [
+      ["Lal Ghat and Gangaur Ghat", "Guesthouses, rooftop restaurants and lanes near the City Palace, on the east side of Lake Pichola."],
+      ["Hanuman Ghat", "Across the lake, quieter, with sunset views of the City Palace."],
+      ["Fateh Sagar Lake", "A lakeside promenade where locals walk in the evening."],
+      ["Old city bazaars", "Around the Jagdish Temple and the clock tower."]
+    ],
+    "plans": ["Sunset from a rooftop over Lake Pichola", "City Palace visit", "Boat ride on Lake Pichola", "Evening folk dance show at Bagore ki Haveli", "Sunset at Sajjangarh, the Monsoon Palace", "Rajasthani cooking class"],
+    "safety": ["Rooftop terraces don't always have high railings; take care after dark.", "Old-city lanes are narrow and shared with scooters and cars.", "Summer heat is extreme; plan outdoor sights for morning and evening."],
+    "tips": ["Stay near Lal Ghat or Gangaur Ghat to be close to other travelers.", "The lakes are fullest after the monsoon, from September.", "Some rooftop restaurants still screen Octopussy, the Bond film shot here, in the evenings."],
+    "best": "September to March; April to June is very hot.",
+    "hostels": [
+      {"name": "Zostel Udaipur", "area": "Chandpole, overlooking Swaroop Sagar", "why": "Lake views from the rooftop and snooker in the common room, a walk from Jagdish Chowk.", "source": "https://www.zostel.com/destination/udaipur/stay/udaipur-udph705", "checked": "2026-10-06"},
+      {"name": "Moustache Udaipur", "area": "Old City, near Jagdish Chowk", "why": "Rooftop restaurant facing Lake Pichola, walking tours, and mixed and female-only dorms.", "source": "https://moustachescapes.com/hostel/backpacking-hostel/moustache-hostel-udaipur", "checked": "2026-10-06"},
+      {"name": "The Hosteller Udaipur", "area": "Gadiya, City Palace Road", "why": "In the Old City lanes near Lake Pichola and City Palace, with a three-tier terrace cafe.", "source": "https://www.thehosteller.com/hostels/the-hosteller-udaipur/", "checked": "2026-10-06"}
+    ],
+    "meet_spots": [
+      {"name": "Dharohar folk dance show at Bagore Ki Haveli", "why": "Rajasthani folk dance from 7 to 8 pm in an old haveli on Lake Pichola. Tickets go on sale from 6:15 pm.", "source": "https://udaipurtourism.co.in/bagore-ki-haveli-udaipur", "checked": "2026-10-06"},
+      {"name": "Rooftop restaurants around Lake Pichola", "why": "Most of Udaipur's rooftop restaurants sit around Lake Pichola, Gangaur Ghat and the Old City, facing City Palace and the lake.", "source": "https://www.iloveudaipur.in/top-rooftop-restaurants-cafes-in-udaipur/", "checked": "2026-10-06"},
+      {"name": "Free walking tours on GuruWalk", "why": "GuruWalk lists a few free walking tours of Udaipur with local guides.", "source": "https://www.guruwalk.com/udaipur", "checked": "2026-10-06"}
+    ],
+    "women": [
+      {"name": "The Hosteller Udaipur", "why": "Has dedicated female-only dorms, per its FAQ.", "source": "https://www.thehosteller.com/hostels/the-hosteller-udaipur/", "checked": "2026-10-11"}
+    ]
+  },
+  {
+    "slug": "hampi", "city": "Hampi", "country": "India", "cc": "IN", "emoji": "🪨",
+    "intro": "Hampi is a UNESCO World Heritage Site in Karnataka: the ruins of the Vijayanagara capital spread across a landscape of giant boulders and banana fields. Travelers explore by bicycle or scooter and meet up again at sunset on the hills.",
+    "areas": [
+      ["Hampi Bazaar", "The area around the Virupaksha Temple, with guesthouses and cafés close to the ruins."],
+      ["Virupapur Gaddi and Sanapura", "Across the Tungabhadra river. Many of the old backpacker guesthouses at Virupapur Gaddi have closed or moved; Sanapura, about 3 km west, has huts and shacks in the same spirit."],
+      ["Kamalapura", "A village at the southern end of the site, near the Royal Enclosure."],
+      ["Anegundi", "An older village across the river with a slower pace."]
+    ],
+    "plans": ["Sunrise on Matanga Hill", "Sunset on Hemakuta Hill", "Vittala Temple and the stone chariot", "Coracle ride on the Tungabhadra", "Bouldering session across the river", "Cycle between the ruins for a day"],
+    "safety": ["The river ferry stops when the water is high in the monsoon; check before you cross late in the day.", "Climb Matanga Hill for sunrise with other people, not alone in the dark.", "Carry water and sun protection; there's little shade between the ruins."],
+    "tips": ["The nearest railway station is Hosapete (Hospet), about 13 km away.", "Rent a bicycle or scooter; the site is too spread out to walk in a day.", "Many guesthouses across the river close in the summer and monsoon months."],
+    "best": "October to February; March to May is very hot.",
+    "hostels": [
+      {"name": "Zostel Hampi (Gangavathi)", "area": "Rajapur village, Gangavathi", "why": "Huts with stone floors and grass roofs, dorms and an on-site restaurant. It is about 23 km from Hampi, so plan your transport.", "source": "https://www.zostel.com/destination/hampi/stay/zostel-hampi-gangavathi-hmph144", "checked": "2026-10-06"},
+      {"name": "Zostel Homes Hampi", "area": "Hosa Malapangudi, near the ruins", "why": "A Zostel homestay with private cottages only, no dorms, but a common room with snooker, foosball and carrom, and a restaurant with a garden view.", "source": "https://www.zostel.com/destination/hampi/stay/zostel-homes-hampi-hmpb375", "checked": "2026-10-11"}
+    ],
+    "meet_spots": [
+      {"name": "Hemakuta Hill", "why": "Free, with temples and views over the ruins, and an easier climb than Matanga Hill for sunrise or sunset.", "source": "https://hampi.in/hemakuta-hill", "checked": "2026-10-06"},
+      {"name": "Matanga Hill", "why": "About 30 minutes up, free, open 6 am to 6 pm, with views over Hampi Bazaar.", "source": "https://hampitourism.co.in/matanga-hill-hampi", "checked": "2026-10-06"},
+      {"name": "Hampi Bazaar by the Virupaksha Temple", "why": "A 750 m ruined stone market street by the Virupaksha Temple, with a Nandi shrine at its east end.", "source": "https://en.wikipedia.org/wiki/Hampi", "checked": "2026-10-06"}
+    ],
+    "women": [
+      {"name": "Zostel Hampi (Gangavathi)", "why": "Lists a 6-bed female-only dorm.", "source": "https://www.zostel.com/destination/hampi/stay/zostel-hampi-gangavathi-hmph144", "checked": "2026-10-11"}
+    ],
+    "extra": [
+      {"title": "Other places backpackers stay in Hampi", "intro": "Hampi has few hostels, and most solo travelers stay in guesthouses. What hampi.in, a Hampi travel guide, said on 11 October 2026:", "items": [{"name": "Hampi Bazaar and Kadirampura", "why": "Hampi's traditional family-run guesthouses are around the Virupaksha Temple in Hampi Bazaar, some basic and backpacker-style. Most of the newer homestays are in Kadirampura, also called New Hampi.", "source": "https://hampi.in/hotels-lodges-and-guesthouses-in-hampi", "checked": "2026-10-11"}, {"name": "Sanapura", "why": "Most of the old hippie-style places at Virupapur Gaddi have closed or moved. For that kind of stay, the guide points to the huts and shacks around Sanapura, about 3 km west of Virupapur Gaddi.", "source": "https://hampi.in/hotels-lodges-and-guesthouses-in-hampi", "checked": "2026-10-11"}, {"name": "Anegundi", "why": "A few homestays in an older village across the river, reached by coracle from the Vittala Temple ferry point, or by road over the Bukkasagara bridge.", "source": "https://hampi.in/hotels-lodges-and-guesthouses-in-hampi", "checked": "2026-10-11"}]}
+    ],
+    "getting_there": [
+      {"name": "From Bengaluru", "why": "The daily Hampi Express (16591/16592) runs overnight between Mysuru and Hubballi, stopping at Bengaluru and at Hosapete, the nearest station to Hampi.", "source": "https://en.wikipedia.org/wiki/Hampi_Express", "checked": "2026-10-11"}
+    ]
+  },
+  {
+    "slug": "delhi", "city": "Delhi", "country": "India", "cc": "IN", "emoji": "🕌",
+    "intro": "Delhi is where many trips around India begin: Mughal monuments, Old Delhi's food lanes and a metro that makes the city easy to cross. It's big and busy, so a few days with other travelers is a gentle start before heading to the mountains or Rajasthan.",
+    "areas": [
+      ["Paharganj", "Budget hotels and hostels next to New Delhi railway station."],
+      ["Hauz Khas Village", "Bars, cafés and a lake beside medieval ruins in south Delhi."],
+      ["Majnu ka Tilla", "The Tibetan colony in north Delhi, with cafés and momos, and buses to the mountains."],
+      ["Old Delhi (Chandni Chowk)", "Jama Masjid, the Red Fort and the city's most famous street food."]
+    ],
+    "plans": ["Old Delhi street-food walk around Chandni Chowk", "Humayun's Tomb in the late afternoon", "Morning walk in Lodhi Garden", "Street art in the Lodhi Art District", "Sunset and dinner in Hauz Khas Village", "Qutub Minar visit"],
+    "safety": ["At New Delhi railway station, ignore anyone who says your ticket or hotel is invalid and offers to take you to a 'tourist office'.", "Use the metro or ride-hailing apps; the first coach of every metro train is for women only.", "Air quality is often very poor from late October to January; check the AQI before outdoor plans."],
+    "tips": ["Buy a metro smart card or use a QR ticket; the Airport Express line reaches the city from the airport.", "Stay near a metro station to save hours in traffic.", "Majnu ka Tilla is where many overnight buses to Manali, Kasol and McLeod Ganj leave from, which makes it a good place to find travel companions heading north."],
+    "best": "October to March; April to June is very hot, and smog peaks from November to January.",
+    "hostels": [
+      {"name": "Zostel Delhi", "area": "Ara Kashan Road, opposite New Delhi railway station", "why": "Quick metro access to Old Delhi's bazaars and monuments. Zostel sells it on its social atmosphere.", "source": "https://www.zostel.com/destination/delhi/stay/delhi-dlhh524", "checked": "2026-10-06"},
+      {"name": "goSTOPS Delhi", "area": "Daryaganj, opposite Delhi Gate metro", "why": "Between Old and New Delhi with the metro outside the door. goSTOPS marks it as popular with solo travellers.", "source": "https://gostops.com/stay/New-Delhi/delhi-hostel", "checked": "2026-10-06"},
+      {"name": "The Hosteller Delhi", "area": "New Friends Colony, near Ashram Chowk", "why": "Runs daily activities such as Old Delhi food walks, heritage photo walks and pub crawls.", "source": "https://www.thehosteller.com/hostels/the-hosteller-delhi/", "checked": "2026-10-06"}
+    ],
+    "meet_spots": [
+      {"name": "Salaam Baalak Trust City Walk", "why": "A 1.5 hour walk led by former street children, starting at 10 am from the Rail Reservation Centre on Chelmsford Road. Book 24 hours ahead; the trust advises against Sundays and holidays.", "source": "https://www.salaambaalaktrust.com/book-a-city-walk-tour.php", "checked": "2026-10-06"},
+      {"name": "Hauz Khas Village", "why": "Around 50 restaurants, bars, pubs and cafes beside the medieval Hauz Khas tank.", "source": "https://en.wikipedia.org/wiki/Hauz_Khas_Village", "checked": "2026-10-06"},
+      {"name": "Free walking tours on GuruWalk", "why": "GuruWalk lists free walking tours with local guides, including Old Delhi walks.", "source": "https://www.guruwalk.com/delhi", "checked": "2026-10-06"}
+    ],
+    "women": [
+      {"name": "goSTOPS Delhi", "why": "Lists a 4-bed female-only dorm.", "source": "https://gostops.com/stay/New-Delhi/delhi-hostel", "checked": "2026-10-11"},
+      {"name": "The Hosteller Delhi", "why": "Has dedicated female-only dorms, per its FAQ.", "source": "https://www.thehosteller.com/hostels/the-hosteller-delhi/", "checked": "2026-10-11"}
+    ]
+  },
+  {
+    "slug": "spiti-valley", "city": "Spiti Valley", "country": "India", "cc": "IN", "emoji": "⛰️",
+    "description": "Traveling solo in Spiti Valley? Where travelers meet in Kaza, plans to share a cab, safety and altitude tips and the best time to go.",
+    "intro": "Spiti is a high, cold desert valley in Himachal Pradesh, and Kaza, at about 3,650 m, is its main town and the base for most trips. Unlike Leh, Spiti has few tourist shared taxis, so finding other travelers to split a cab to the villages is the main practical reason to meet people here.",
+    "areas": [
+      ["Kaza", "The bus stand, cafés, guesthouses and taxi drivers. Nearly every trip in Spiti starts or ends here."],
+      ["Key and Kibber", "Villages above Kaza: Key Monastery on its hilltop, and Kibber, 19 km from Kaza, by the Kibber Wildlife Sanctuary."],
+      ["Langza, Hikkim and Komic", "High villages on a loop above Kaza, with Langza's fossils, Hikkim's post office and Komic's monastery."],
+      ["Pin Valley", "A side valley with its own villages, reached by the daily bus from Kaza to Mudh."]
+    ],
+    "plans": ["Share a taxi from Kaza to Key Monastery, Kibber and Chicham", "The Langza, Hikkim and Komic loop: fossils, the post office and a monastery", "A day trip into Pin Valley", "Dhankar and Tabo on the way out towards Shimla", "Chandratal on the way to or from Manali, while the road is open", "Chai in Kaza market after a day out"],
+    "safety": ["Altitude is the main risk: Kaza is at about 3,650 m and the villages above it are higher still. Coming up through Shimla and Kinnaur lets your body adjust; rest when you arrive and don't rush to the high points.", "Carry enough cash: Kaza's SBI ATM is often out of service, especially in winter. Fuel is sold at Reckong Peo, Tabo and Kaza.", "Mobile signal is patchy. BSNL postpaid has the widest coverage, and Jio and Airtel have little or none in most of Spiti.", "Travel the mountain roads in daylight, check the road status before crossing the Kunzum Pass, and don't drive or ride alone."],
+    "tips": ["Village buses from Kaza leave in the late afternoon and come back the next morning, so a day trip by bus means staying the night. That's why travelers share taxis for day trips.", "Foreign nationals need a Protected Area Permit for upper Kinnaur, around Nako and Pooh, on the Shimla road; Indian citizens don't."],
+    "best": "June to mid-October, when both roads are usually open, with September often the clearest month. Winters are severe.",
+    "meet_spots": [
+      {"name": "Kaza market", "why": "Spiti's largest town and the place almost every traveler passes through, split into the old Kaza Khas and the newer Kaza Soma.", "source": "https://en.wikipedia.org/wiki/Kaza,_Himachal_Pradesh", "checked": "2026-10-11"},
+      {"name": "Key Monastery", "why": "The largest monastery in Spiti, a Gelugpa monastery on a hilltop at about 4,166 m close to the Spiti River.", "source": "https://en.wikipedia.org/wiki/Key_Monastery", "checked": "2026-10-11"},
+      {"name": "Hikkim post office", "why": "One of the highest post offices in the world, at about 4,400 m, with the same postmaster since it opened in 1983. Travelers come to send postcards; it shuts in winter.", "source": "https://en.wikipedia.org/wiki/Hikkim", "checked": "2026-10-11"},
+      {"name": "Langza", "why": "A village of about 136 people below Chau Chau Kang Nilda, known as Spiti's fossil village.", "source": "https://en.wikipedia.org/wiki/Langza", "checked": "2026-10-11"},
+      {"name": "Chandratal", "why": "A crescent-shaped lake at about 4,300 m on the Manali side, reached by road from Batal or on foot from the Kunzum Pass between late May and early October. The last 1 km from the car park is on foot.", "source": "https://en.wikipedia.org/wiki/Chandra_Taal", "checked": "2026-10-11"}
+    ],
+    "women": [
+      {"name": "Jugni, a women-only travel group", "why": "Names Spiti among its regular domestic trips, alongside Ladakh, Meghalaya and Kerala, in its FAQ.", "source": "https://jugni.co.in/faq/", "checked": "2026-10-11", "trip": true}
+    ],
+    "extra": [
+      {"title": "Sharing taxis and buses out of Kaza", "intro": "This is the main reason to find other travelers in Spiti. What we could check on 11 October 2026:", "items": [{"name": "Tourist shared taxis are scarce", "why": "Unlike in Leh, you don't easily find tourist shared taxis in Spiti, says a Spiti public-transport guide updated in August 2026. Local shared taxis run from one village to the next without sightseeing stops, so a day out usually means filling a taxi yourself.", "source": "https://discoverwithdheeraj.com/budget-trip-to-spiti-valley-public-transport/", "checked": "2026-10-11"}, {"name": "Village buses run overnight", "why": "The same guide lists daily HRTC buses from Kaza to Mudh in Pin Valley (4 pm), Losar (4:30 pm), Komic (5 pm) and Chicham (5:15 pm), each coming back the next morning.", "source": "https://discoverwithdheeraj.com/budget-trip-to-spiti-valley-public-transport/", "checked": "2026-10-11"}, {"name": "Permits for foreign visitors", "why": "Kinnaur district says no foreigner can enter or stay in the state's protected area, which includes Nako and Pooh on the Shimla road, without a permit, and that foreign tourists in groups of two or more sponsored by a recognised travel agency can be allowed in for 30 days.", "source": "https://hpkinnaur.nic.in/tourism-guide/", "checked": "2026-10-11"}]},
+      {"title": "Where to stay in Spiti", "intro": "We found few hostels in Spiti; most travelers stay in guesthouses and homestays. What Hostelworld and Zostel listed on 11 October 2026:", "items": [{"name": "Hostelworld's Kaza listing", "why": "Showed one property: Piti Khangpa, a guesthouse with dorms in Rangrik, about 6 km from Kaza.", "source": "https://www.hostelworld.com/hostels/asia/india/kaza/", "checked": "2026-10-11"}, {"name": "Zostel Homes Tabo", "why": "A Zostel homestay near the Tabo Monastery with a common area and private rooms. Zostel's Spiti page also lists Zostel Sissu, which is in Lahaul on the Manali road, not in Spiti.", "source": "https://www.zostel.com/destination/spiti", "checked": "2026-10-11"}]}
+    ],
+    "getting_there": [
+      {"name": "From Delhi via Shimla", "why": "The Shimla and Kinnaur road is open all year, though winter driving is hard. There's no direct bus from Shimla to Kaza: take a bus to Reckong Peo, then the daily 7 am bus to Kaza.", "source": "https://discoverwithdheeraj.com/budget-trip-to-spiti-valley-public-transport/", "checked": "2026-10-11"},
+      {"name": "From Manali", "why": "The road through the Atal Tunnel and over the Kunzum Pass (4,551 m) usually opens between late May and mid-June and closes in late October or early November, depending on snow.", "source": "https://discoverwithdheeraj.com/spiti-valley-season-to-travel/", "checked": "2026-10-11"},
+      {"name": "Group trips from Delhi", "why": "Zostel's Zo Trips listed a Spiti winter trip from Delhi with departures from 16 October 2026.", "source": "https://www.zostel.com/zo-trips", "checked": "2026-10-11"}
+    ],
+    "faq": [
+      ["Can I share a taxi in Spiti?", "Yes, but you usually have to find the other passengers yourself. Tourist shared taxis are hard to find in Spiti, unlike in Leh, and local shared taxis don't stop for sightseeing. Ask at your guesthouse and in Kaza market, or post a plan on Tablamigo, such as \"Taxi to Key, Kibber and Chicham tomorrow at 9, 3 seats\"."],
+      ["Do I need a permit for Spiti?", "Indian citizens don't. Foreign nationals need a Protected Area Permit for upper Kinnaur, around Nako and Pooh on the Shimla road; Kinnaur district allows foreign tourists in groups of two or more sponsored by a recognised travel agency."]
+    ]
+  },
+  {
+    "slug": "gokarna", "city": "Gokarna", "country": "India", "cc": "IN", "emoji": "🏖️",
+    "description": "Traveling solo in Gokarna? Where travelers meet, social hostels by the beach, plans to join, safety tips and the best time to go.",
+    "intro": "Gokarna is a temple town on the Karnataka coast, about 125 km south of Madgaon in Goa. The Mahabaleshwar Temple is in town, and a run of beaches stretches south of it: Main Beach, Kudle, Om, Half Moon and Paradise. Walking from one beach to the next is the obvious thing to do with company.",
+    "areas": [
+      ["Main Beach and the town", "The temple town, with the Mahabaleshwar Temple, the market and the beach beside it."],
+      ["Kudle Beach", "A west-facing beach a short walk south of town, with hostels and cafés on the road above it."],
+      ["Om Beach", "A south-facing beach, the next one along the coastal path after Kudle."],
+      ["Half Moon and Paradise", "Smaller south-facing beaches further along the path."]
+    ],
+    "plans": ["The beach walk from Kudle to Om, Half Moon and Paradise", "Sunset at Kudle Beach", "Share an auto or taxi from Gokarna Road station", "Morning at the Mahabaleshwar Temple and the old town", "Day trip to Yana caves", "Kayaking or a surf lesson"],
+    "safety": ["Strong waves catch swimmers even outside the monsoon. Swim only where lifeguards are on duty, and not after drinking.", "Walk the coastal path between beaches in daylight, and with others if you can.", "The Mahabaleshwar Temple is an active place of worship, and the UK government's travel advice asks travelers to respect the local dress code at religious sites.", "Wear shoes on forest paths after dark; the nearest hospital with snake antivenom is in Kumta, about 25 km away."],
+    "tips": ["Gokarna Road station, on the Konkan Railway, is about 10 km from town, so share an auto or taxi with others off the same train.", "Zostel Gokarna is above Main Beach and The Hosteller is about five minutes from Kudle, so either puts you on the coastal path.", "Zostel Gokarna lets outsiders into its cafe, so you can meet its guests without staying there."],
+    "best": "October to March is the dry season; the June to September monsoon brings rough seas.",
+    "hostels": [
+      {"name": "Zostel Gokarna", "area": "On the cliff above Main Beach, Kudle Beach Road", "why": "A sea-view cafe, lively common areas, dorms including a female-only one, and daily activities planned two weeks ahead. Guests must be 18 or over; outsiders can use the cafe.", "source": "https://www.zostel.com/destination/gokarna/stay/gokarna-gkrh533", "checked": "2026-10-11"},
+      {"name": "The Hosteller Gokarna", "area": "About five minutes' walk from Kudle Beach", "why": "A common area and a vegetarian cafe, with female-only dorms.", "source": "https://www.thehosteller.com/hostels/the-hosteller-gokarna/", "checked": "2026-10-11"}
+    ],
+    "meet_spots": [
+      {"name": "The beach walk south of town", "why": "Gokarna is popular with beach trekkers. The beaches run in a line from the town: Main Beach, west-facing Kudle, then the south-facing Om, Half Moon and Paradise beaches.", "source": "https://en.wikipedia.org/wiki/Gokarna,_Karnataka", "checked": "2026-10-11"},
+      {"name": "Kudle Beach at sunset", "why": "Kudle faces west, so the sun sets over the sea.", "source": "https://en.wikipedia.org/wiki/Gokarna,_Karnataka", "checked": "2026-10-11"},
+      {"name": "Mahabaleshwar Temple and Main Beach", "why": "The town's 4th-century Shiva temple. Main Beach is in the town too, a short walk away.", "source": "https://en.wikipedia.org/wiki/Gokarna,_Karnataka", "checked": "2026-10-11"}
+    ],
+    "women": [
+      {"name": "Zostel Gokarna", "why": "Lists a 4-bed female-only dorm with a private locker for each bed.", "source": "https://www.zostel.com/destination/gokarna/stay/gokarna-gkrh533", "checked": "2026-10-11"},
+      {"name": "The Hosteller Gokarna", "why": "Has dedicated female-only dorms, per its FAQ.", "source": "https://www.thehosteller.com/hostels/the-hosteller-gokarna/", "checked": "2026-10-11"}
+    ],
+    "extra": [
+      {"title": "Swimming safely in Gokarna", "intro": "What we could check on 11 October 2026:", "items": [{"name": "Drownings happen in season too", "why": "In January 2026 a medical student was swept away by strong waves while swimming at Gokarna beach. Lifeguards on the spot rescued the student with her but couldn't find her.", "source": "https://medicaldialogues.in/amp/state-news/karnataka/medical-student-from-kerala-drowns-at-gokarna-beach-163428", "checked": "2026-10-11"}, {"name": "Lifeguards and cameras", "why": "Lifeguards have rescued swimmers on Gokarna beach, locals have asked for more rescue measures, and police have installed CCTV cameras on the beaches, according to Wikipedia's article on the town.", "source": "https://en.wikipedia.org/wiki/Gokarna,_Karnataka", "checked": "2026-10-11"}]}
+    ],
+    "getting_there": [
+      {"name": "By train from Mumbai or Bengaluru", "why": "Gokarna Road station, about 10 km from town, is on the Konkan Railway between Mumbai and Mangaluru. Trains that stop there include the Matsyagandha Express, the KSR Bengaluru–Karwar Express and the Poorna Express.", "source": "https://en.wikipedia.org/wiki/Gokarna,_Karnataka", "checked": "2026-10-11"},
+      {"name": "By bus", "why": "KSRTC and private buses link Gokarna with Bengaluru, about 475 km away, Madgaon (about 125 km) and Mangaluru (about 225 km).", "source": "https://www.thehosteller.com/hostels/the-hosteller-gokarna/", "checked": "2026-10-11"}
+    ],
+    "faq": [
+      ["Which beach in Gokarna should I stay near to meet people?", "Main Beach and Kudle. Zostel Gokarna is on the cliff above Main Beach and The Hosteller Gokarna is about five minutes' walk from Kudle, so either puts you close to the beaches and the coastal path."]
+    ]
+  },
+  {
+    "slug": "bir-billing", "city": "Bir Billing", "country": "India", "cc": "IN", "emoji": "🪂",
+    "description": "Traveling solo in Bir Billing? Where travelers meet, social hostels, plans to join, the paragliding season and safety tips, plus how to find company.",
+    "intro": "Bir is a village in Himachal's Kangra district known as India's paragliding capital. Pilots take off from the meadow at Billing, 14 km up the hill, and land at Chowgan on Bir's southern edge, where most of the hostels and cafés are. A Tibetan colony with several monasteries gives you plenty to do on days you don't fly.",
+    "areas": [
+      ["Chowgan and the landing site", "Bir's southern edge, where paragliders land and where most guesthouses, hostels and cafés are."],
+      ["Bir Tibetan Colony", "At the west end of Chowgan, with several monasteries, a Tibetan handicraft centre and the Deer Park Institute."],
+      ["Upper Bir", "The old village centre, about 20 minutes' walk above the colony."],
+      ["Billing", "The take-off meadow at about 2,400 m, 14 km north of Bir."]
+    ],
+    "plans": ["Share a taxi up to Billing for the take-off or the view", "Sunset at the landing site", "A slow cafe morning in Chowgan", "Walk to Chokling Monastery and its stupa in the Tibetan Colony", "Walk to Sherab Ling Monastery, about an hour from Chowgan", "Tour the Bir Tea Factory"],
+    "safety": ["Fly only with a licensed tandem pilot, booked through a registered operator, and ask to see the licence before you pay.", "Paragliding stops for the monsoon, from mid-July to mid-September.", "Mountain roads are narrow; avoid driving or riding after dark.", "Tell someone your route before hiking alone towards Billing or the waterfalls."],
+    "tips": ["Ahju, a narrow-gauge station on the Pathankot line, is 3 km from Bir; the nearest broad-gauge station is Pathankot, about 112 km from Bir.", "McLeod Ganj and Dharamshala are about 50 km away, two to three hours by road, so the two fit one trip.", "We'd expect fewer travelers outside the flying season, so in the quiet months a hostel that runs events, or a posted plan, is the easiest way to find company."],
+    "best": "September and October for flying, with some flying in November. Paragliding stops for the monsoon, from mid-July to mid-September.",
+    "hostels": [
+      {"name": "The Hosteller Bir", "area": "Bir Road, Chowgan", "why": "A common area, a cafe run by a partner, female-only dorms, and local tours you can book at the hostel, such as evening walks, camping nights and cycling trips.", "source": "https://www.thehosteller.com/hostels/the-hosteller-bir/", "checked": "2026-10-11"},
+      {"name": "goSTOPS Bir, Landing Site", "area": "Facing the landing site, a short walk from the bus stand", "why": "Surrounded by cafes and shops, with an outdoor garden with a bonfire and barbecue place, which goSTOPS describes as a space to meet new travelers.", "source": "https://gostops.com/stay/Bir/bir2-hostel", "checked": "2026-10-11"},
+      {"name": "Zostel Plus Bir", "area": "Away from the town centre", "why": "Mixed dorms and private rooms, a cafe and a sunset deck; 18 and over only, and no alcohol. Zostel says guests go bouldering, hike to waterfalls and explore the cafes and monasteries together.", "source": "https://www.zostel.com/destination/bir/stay/bir-20-birh138", "checked": "2026-10-11"}
+    ],
+    "meet_spots": [
+      {"name": "The landing site at Chowgan", "why": "Where the paragliders land, with most of the accommodation around it. An average of 200 pilots take off from Billing daily, The Tribune reported in September 2025.", "source": "https://www.tribuneindia.com/news/himachal/after-2-month-ban-paragliding-to-resume-at-bir-billing-from-september-16", "checked": "2026-10-11"},
+      {"name": "Billing take-off meadow", "why": "The launch site, a meadow at about 2,400 m, 14 km north of Bir.", "source": "https://en.wikipedia.org/wiki/Bir,_Himachal_Pradesh", "checked": "2026-10-11"},
+      {"name": "Chokling Monastery", "why": "In the Tibetan Colony. Its large stupa is the main draw for casual visitors, it has a guest house and restaurant, and it sometimes holds Buddhist ceremonies open to the public.", "source": "https://en.wikipedia.org/wiki/Bir,_Himachal_Pradesh", "checked": "2026-10-11"},
+      {"name": "Deer Park Institute", "why": "A centre for the study of classical Indian wisdom traditions in the Tibetan Colony, which hosts frequent guest lectures and workshops.", "source": "https://en.wikipedia.org/wiki/Bir,_Himachal_Pradesh", "checked": "2026-10-11"}
+    ],
+    "women": [
+      {"name": "The Hosteller Bir", "why": "Has dedicated female-only dorms, per its FAQ.", "source": "https://www.thehosteller.com/hostels/the-hosteller-bir/", "checked": "2026-10-11"}
+    ],
+    "extra": [
+      {"title": "Paragliding safely in Bir", "intro": "What we could check on 11 October 2026:", "items": [{"name": "The monsoon ban", "why": "In 2025 the Kangra administration banned all paragliding at Bir Billing, tandem and solo, from 15 July to 15 September, and described the break as a regular annual practice.", "source": "https://www.newsarenaindia.com/states/no-paragliding-in-bir-billing-from-july-15-to-sept-15/48217", "checked": "2026-10-11"}, {"name": "Licensed tandem pilots", "why": "Tandem pilots in Himachal need a licence under the state's Aero Sports Rules, 2022. A 2025 amendment adds a simulation safety course before a tandem licence, and pilots already registered with the Department of Tourism and Civil Aviation had until 31 August 2026 to complete it.", "source": "https://www.tribuneindia.com/news/himachal/aero-sports-rules-amended-safety-norms-made-stringent", "checked": "2026-10-11"}]}
+    ],
+    "getting_there": [
+      {"name": "By road, rail and air", "why": "Bir is off NH 154 between Baijnath and Jogindernagar, about 50 km south-east of Dharamshala. The nearest stations are Ahju (narrow gauge, 3 km) and Pathankot (broad gauge, about 112 km), and Kangra Airport is about 67 km away.", "source": "https://en.wikipedia.org/wiki/Bir,_Himachal_Pradesh", "checked": "2026-10-11"},
+      {"name": "Group trips from Delhi", "why": "Delhi operators run short group trips here, such as Unite Strangers' 4-day Bir and Palachak trip, listed from 20 November 2026.", "source": "https://www.unitestrangers.com/", "checked": "2026-10-11"}
+    ],
+    "faq": [
+      ["Is Bir quiet in the off-season?", "We'd expect fewer people outside the flying season, which runs in September and October with some flying in November; paragliding stops for the monsoon, from mid-July to mid-September. In the quieter months, stay at a hostel that runs events, or post a plan on Tablamigo so anyone nearby can join."],
+      ["Can I paraglide in Bir in the monsoon?", "No. Flying stops every monsoon: in 2025 the Kangra administration banned all paragliding at Bir Billing from 15 July to 15 September."]
+    ]
+  }
+]

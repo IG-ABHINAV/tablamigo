@@ -1,0 +1,44 @@
+# Native onboarding: keyboard does not hide the buttons (KeyboardAvoidingView), 18+ birthday, the image picker can be skipped,
+# and expo-location's permission dialog is answered (Android "While using the app").
+appId: com.tablamigo.app
+---
+- runFlow: ../subflows/sign-in.yaml
+- assertVisible: "What should travelers call you\\?"
+- tapOn: "First name"
+- inputText: "Maestro"
+- tapOn: "Continue"
+- assertVisible: "When's your birthday\\?"
+- tapOn: "DD"
+- inputText: "05"
+- tapOn: "MM"
+- inputText: "06"
+- tapOn: "YYYY"
+- inputText: "1994"
+- tapOn: "Continue"
+- assertVisible: "How do you identify\\?"
+- tapOn: "Woman"
+- tapOn: "Continue"
+- assertVisible: "Where are you from\\?"
+- tapOn: "Search countries"
+- inputText: "India"
+- tapOn: "India"
+- tapOn: "Continue"
+- assertVisible: "Add a photo"
+- tapOn: "Skip for now"
+- assertVisible: "What are you into\\?"
+- tapOn: "food"
+- tapOn: "coffee"
+- tapOn: "hiking"
+- tapOn: "Continue"
+- assertVisible: "How did you hear about us\\?"
+- tapOn: "Instagram"
+- tapOn: "Enable location"
+- runFlow:
+    when:
+      visible: "While using the app"
+    commands:
+      - tapOn: "While using the app"
+- extendedWaitUntil:
+    visible:
+      text: "See plans around you|Plans nearby|Post a plan here"
+    timeout: 20000

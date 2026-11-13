@@ -1,0 +1,864 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`partnership emails > the confirmation carries none of the visitor's words 1`] = `
+"Thanks for getting in touch
+
+We have your enquiry about partnering with Tablamigo and will reply to this address.
+
+If you didn't send it, you can ignore this email.
+
+Tablamigo Partnerships
+
+--
+
+You got this because this address was entered on the Tablamigo partnerships form.
+
+Tablamigo by Hookstep · Ghatkopar, Mumbai, India
+"
+`;
+
+exports[`partnership emails > the team alert uses the branded layout and escapes every visitor value 1`] = `
+"PARTNERSHIPS
+
+New partner lead
+
+Business: Chai <b>Point</b>
+Contact: Asha [x](https://evil.example)
+Email: a@b.co
+Type: Cafe
+Location: Goa
+Budget: Not specified
+Received: 25 Oct 2026, 14:05 IST
+
+MESSAGE
+
+Line one
+
+Line **two**
+
+--
+
+Sent to ADMIN_EMAILS from the Tablamigo partnerships form. Reply to answer the sender.
+
+Lead id: lead-1
+
+Tablamigo by Hookstep · Ghatkopar, Mumbai, India
+"
+`;
+
+exports[`renderOwnerNotice (the one owner template, also used by the Play acknowledgement alert) > live: no badge; empty rows left out; parentheses kept in the headline 1`] = `
+"OWNER ALERT · GOOGLE PLAY
+
+Acknowledged now: Plus subscription (tablamigo_plus)
+
+Nothing to do.
+
+Customer: Bo (bo@x.co)
+
+--
+
+Owner only.
+
+Tablamigo by Hookstep · Ghatkopar, Mumbai, India
+"
+`;
+
+exports[`the alert email > renders cancel_requested (snapshot of the plain-text part and the HTML headline) 1`] = `
+"OWNER ALERT · RAZORPAY
+
+Cancellation requested: Plus monthly, ₹499
+
+Priya S asked to cancel Plus monthly.
+
+Open customer in admin: https://tablamigo.hookstep.in/admin#users?q=3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+
+Event: Cancellation requested
+Product: Plus monthly
+Amount: ₹499 INR
+When: 25 Oct 2026, 14:05 IST
+Mode: Live
+Charge number: 2
+
+CUSTOMER
+
+Name: Priya S
+Email: priya@x.com
+User id: 3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+Signed up: 12 Oct 2026 · source Google Search / organic · country IN · device Android
+Profile: home IN · Mumbai
+
+RAZORPAY
+
+Razorpay payment id: pay_Q1w2E3r4T5y6U7
+Razorpay subscription id: sub_Q1w2E3r4T5y6U7
+Dashboard: https://dashboard.razorpay.com/app/payments/pay_Q1w2E3r4T5y6U7
+
+--
+
+Sent only to the owner (OWNER_SALES_ALERT_EMAIL). The customer gets their own receipt separately.
+
+Alert key: rzp:pay:snap_cancel_requested
+
+Tablamigo by Hookstep · Ghatkopar, Mumbai, India
+"
+`;
+
+exports[`the alert email > renders cancelled (snapshot of the plain-text part and the HTML headline) 1`] = `
+"OWNER ALERT · RAZORPAY
+
+Cancelled: Plus monthly, ₹499
+
+Priya S's Plus monthly subscription is cancelled.
+
+Open customer in admin: https://tablamigo.hookstep.in/admin#users?q=3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+
+Event: Cancelled
+Product: Plus monthly
+Amount: ₹499 INR
+When: 25 Oct 2026, 14:05 IST
+Mode: Live
+Charge number: 2
+
+CUSTOMER
+
+Name: Priya S
+Email: priya@x.com
+User id: 3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+Signed up: 12 Oct 2026 · source Google Search / organic · country IN · device Android
+Profile: home IN · Mumbai
+
+RAZORPAY
+
+Razorpay payment id: pay_Q1w2E3r4T5y6U7
+Razorpay subscription id: sub_Q1w2E3r4T5y6U7
+Dashboard: https://dashboard.razorpay.com/app/payments/pay_Q1w2E3r4T5y6U7
+
+--
+
+Sent only to the owner (OWNER_SALES_ALERT_EMAIL). The customer gets their own receipt separately.
+
+Alert key: rzp:pay:snap_cancelled
+
+Tablamigo by Hookstep · Ghatkopar, Mumbai, India
+"
+`;
+
+exports[`the alert email > renders charge_stopped (snapshot of the plain-text part and the HTML headline) 1`] = `
+"OWNER ALERT · RAZORPAY
+
+Charge stopped: Plus monthly, ₹499
+
+Priya S's Plus monthly could still have charged after its plan ended here, so it was cancelled at the payment provider.
+
+Open customer in admin: https://tablamigo.hookstep.in/admin#users?q=3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+
+Event: Charge stopped
+Product: Plus monthly
+Amount: ₹499 INR
+When: 25 Oct 2026, 14:05 IST
+Mode: Live
+Charge number: 2
+
+CUSTOMER
+
+Name: Priya S
+Email: priya@x.com
+User id: 3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+Signed up: 12 Oct 2026 · source Google Search / organic · country IN · device Android
+Profile: home IN · Mumbai
+
+RAZORPAY
+
+Razorpay payment id: pay_Q1w2E3r4T5y6U7
+Razorpay subscription id: sub_Q1w2E3r4T5y6U7
+Dashboard: https://dashboard.razorpay.com/app/payments/pay_Q1w2E3r4T5y6U7
+
+--
+
+Sent only to the owner (OWNER_SALES_ALERT_EMAIL). The customer gets their own receipt separately.
+
+Alert key: rzp:pay:snap_charge_stopped
+
+Tablamigo by Hookstep · Ghatkopar, Mumbai, India
+"
+`;
+
+exports[`the alert email > renders dispute (snapshot of the plain-text part and the HTML headline) 1`] = `
+"OWNER ALERT · RAZORPAY
+
+Chargeback: Plus monthly, ₹499
+
+Priya S raised a chargeback of ₹499 on Plus monthly. Their Plus from web purchases has ended and web checkout is locked.
+
+Open customer in admin: https://tablamigo.hookstep.in/admin#users?q=3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+
+Event: Chargeback
+Product: Plus monthly
+Amount: ₹499 INR
+When: 25 Oct 2026, 14:05 IST
+Mode: Live
+Charge number: 2
+
+CUSTOMER
+
+Name: Priya S
+Email: priya@x.com
+User id: 3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+Signed up: 12 Oct 2026 · source Google Search / organic · country IN · device Android
+Profile: home IN · Mumbai
+
+RAZORPAY
+
+Razorpay payment id: pay_Q1w2E3r4T5y6U7
+Razorpay subscription id: sub_Q1w2E3r4T5y6U7
+Dashboard: https://dashboard.razorpay.com/app/payments/pay_Q1w2E3r4T5y6U7
+
+--
+
+Sent only to the owner (OWNER_SALES_ALERT_EMAIL). The customer gets their own receipt separately.
+
+Alert key: rzp:pay:snap_dispute
+
+Tablamigo by Hookstep · Ghatkopar, Mumbai, India
+"
+`;
+
+exports[`the alert email > renders ended (snapshot of the plain-text part and the HTML headline) 1`] = `
+"OWNER ALERT · RAZORPAY
+
+Subscription ended: Plus monthly, ₹499
+
+Priya S's Plus monthly subscription has ended.
+
+Open customer in admin: https://tablamigo.hookstep.in/admin#users?q=3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+
+Event: Subscription ended
+Product: Plus monthly
+Amount: ₹499 INR
+When: 25 Oct 2026, 14:05 IST
+Mode: Live
+Charge number: 2
+
+CUSTOMER
+
+Name: Priya S
+Email: priya@x.com
+User id: 3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+Signed up: 12 Oct 2026 · source Google Search / organic · country IN · device Android
+Profile: home IN · Mumbai
+
+RAZORPAY
+
+Razorpay payment id: pay_Q1w2E3r4T5y6U7
+Razorpay subscription id: sub_Q1w2E3r4T5y6U7
+Dashboard: https://dashboard.razorpay.com/app/payments/pay_Q1w2E3r4T5y6U7
+
+--
+
+Sent only to the owner (OWNER_SALES_ALERT_EMAIL). The customer gets their own receipt separately.
+
+Alert key: rzp:pay:snap_ended
+
+Tablamigo by Hookstep · Ghatkopar, Mumbai, India
+"
+`;
+
+exports[`the alert email > renders first_charge (snapshot of the plain-text part and the HTML headline) 1`] = `
+"OWNER ALERT · RAZORPAY
+
+First charge: Plus monthly, ₹499
+
+Priya S made the first payment of ₹499 on Plus monthly.
+
+Open customer in admin: https://tablamigo.hookstep.in/admin#users?q=3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+
+Event: First charge
+Product: Plus monthly
+Amount: ₹499 INR
+When: 25 Oct 2026, 14:05 IST
+Mode: Live
+Charge number: 2
+
+CUSTOMER
+
+Name: Priya S
+Email: priya@x.com
+User id: 3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+Signed up: 12 Oct 2026 · source Google Search / organic · country IN · device Android
+Profile: home IN · Mumbai
+
+RAZORPAY
+
+Razorpay payment id: pay_Q1w2E3r4T5y6U7
+Razorpay subscription id: sub_Q1w2E3r4T5y6U7
+Dashboard: https://dashboard.razorpay.com/app/payments/pay_Q1w2E3r4T5y6U7
+
+--
+
+Sent only to the owner (OWNER_SALES_ALERT_EMAIL). The customer gets their own receipt separately.
+
+Alert key: rzp:pay:snap_first_charge
+
+Tablamigo by Hookstep · Ghatkopar, Mumbai, India
+"
+`;
+
+exports[`the alert email > renders grace (snapshot of the plain-text part and the HTML headline) 1`] = `
+"OWNER ALERT · RAZORPAY
+
+Grace period: Plus monthly, ₹499
+
+Priya S's Plus monthly payment failed and Google Play's grace period has started.
+
+Open customer in admin: https://tablamigo.hookstep.in/admin#users?q=3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+
+Event: Grace period
+Product: Plus monthly
+Amount: ₹499 INR
+When: 25 Oct 2026, 14:05 IST
+Mode: Live
+Charge number: 2
+
+CUSTOMER
+
+Name: Priya S
+Email: priya@x.com
+User id: 3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+Signed up: 12 Oct 2026 · source Google Search / organic · country IN · device Android
+Profile: home IN · Mumbai
+
+RAZORPAY
+
+Razorpay payment id: pay_Q1w2E3r4T5y6U7
+Razorpay subscription id: sub_Q1w2E3r4T5y6U7
+Dashboard: https://dashboard.razorpay.com/app/payments/pay_Q1w2E3r4T5y6U7
+
+--
+
+Sent only to the owner (OWNER_SALES_ALERT_EMAIL). The customer gets their own receipt separately.
+
+Alert key: rzp:pay:snap_grace
+
+Tablamigo by Hookstep · Ghatkopar, Mumbai, India
+"
+`;
+
+exports[`the alert email > renders halted (snapshot of the plain-text part and the HTML headline) 1`] = `
+"OWNER ALERT · RAZORPAY
+
+Renewal halted: Plus monthly, ₹499
+
+Renewals of Priya S's Plus monthly failed and the payment provider stopped retrying. Tablamigo cancels a halted web subscription at once; Plus ends with the paid period.
+
+Open customer in admin: https://tablamigo.hookstep.in/admin#users?q=3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+
+Event: Renewal halted
+Product: Plus monthly
+Amount: ₹499 INR
+When: 25 Oct 2026, 14:05 IST
+Mode: Live
+Charge number: 2
+
+CUSTOMER
+
+Name: Priya S
+Email: priya@x.com
+User id: 3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+Signed up: 12 Oct 2026 · source Google Search / organic · country IN · device Android
+Profile: home IN · Mumbai
+
+RAZORPAY
+
+Razorpay payment id: pay_Q1w2E3r4T5y6U7
+Razorpay subscription id: sub_Q1w2E3r4T5y6U7
+Dashboard: https://dashboard.razorpay.com/app/payments/pay_Q1w2E3r4T5y6U7
+
+--
+
+Sent only to the owner (OWNER_SALES_ALERT_EMAIL). The customer gets their own receipt separately.
+
+Alert key: rzp:pay:snap_halted
+
+Tablamigo by Hookstep · Ghatkopar, Mumbai, India
+"
+`;
+
+exports[`the alert email > renders on_hold (snapshot of the plain-text part and the HTML headline) 1`] = `
+"OWNER ALERT · RAZORPAY
+
+On hold: Plus monthly, ₹499
+
+Priya S's Plus monthly is on hold in Google Play after a failed payment.
+
+Open customer in admin: https://tablamigo.hookstep.in/admin#users?q=3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+
+Event: On hold
+Product: Plus monthly
+Amount: ₹499 INR
+When: 25 Oct 2026, 14:05 IST
+Mode: Live
+Charge number: 2
+
+CUSTOMER
+
+Name: Priya S
+Email: priya@x.com
+User id: 3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+Signed up: 12 Oct 2026 · source Google Search / organic · country IN · device Android
+Profile: home IN · Mumbai
+
+RAZORPAY
+
+Razorpay payment id: pay_Q1w2E3r4T5y6U7
+Razorpay subscription id: sub_Q1w2E3r4T5y6U7
+Dashboard: https://dashboard.razorpay.com/app/payments/pay_Q1w2E3r4T5y6U7
+
+--
+
+Sent only to the owner (OWNER_SALES_ALERT_EMAIL). The customer gets their own receipt separately.
+
+Alert key: rzp:pay:snap_on_hold
+
+Tablamigo by Hookstep · Ghatkopar, Mumbai, India
+"
+`;
+
+exports[`the alert email > renders pass_purchase (snapshot of the plain-text part and the HTML headline) 1`] = `
+"OWNER ALERT · RAZORPAY
+
+Trip Pass purchase: Plus monthly, ₹499
+
+Priya S bought a Plus monthly for ₹499.
+
+Open customer in admin: https://tablamigo.hookstep.in/admin#users?q=3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+
+Event: Trip Pass purchase
+Product: Plus monthly
+Amount: ₹499 INR
+When: 25 Oct 2026, 14:05 IST
+Mode: Live
+Charge number: 2
+
+CUSTOMER
+
+Name: Priya S
+Email: priya@x.com
+User id: 3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+Signed up: 12 Oct 2026 · source Google Search / organic · country IN · device Android
+Profile: home IN · Mumbai
+
+RAZORPAY
+
+Razorpay payment id: pay_Q1w2E3r4T5y6U7
+Razorpay subscription id: sub_Q1w2E3r4T5y6U7
+Dashboard: https://dashboard.razorpay.com/app/payments/pay_Q1w2E3r4T5y6U7
+
+--
+
+Sent only to the owner (OWNER_SALES_ALERT_EMAIL). The customer gets their own receipt separately.
+
+Alert key: rzp:pay:snap_pass_purchase
+
+Tablamigo by Hookstep · Ghatkopar, Mumbai, India
+"
+`;
+
+exports[`the alert email > renders paused (snapshot of the plain-text part and the HTML headline) 1`] = `
+"OWNER ALERT · RAZORPAY
+
+Paused: Plus monthly, ₹499
+
+Priya S paused Plus monthly in Google Play.
+
+Open customer in admin: https://tablamigo.hookstep.in/admin#users?q=3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+
+Event: Paused
+Product: Plus monthly
+Amount: ₹499 INR
+When: 25 Oct 2026, 14:05 IST
+Mode: Live
+Charge number: 2
+
+CUSTOMER
+
+Name: Priya S
+Email: priya@x.com
+User id: 3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+Signed up: 12 Oct 2026 · source Google Search / organic · country IN · device Android
+Profile: home IN · Mumbai
+
+RAZORPAY
+
+Razorpay payment id: pay_Q1w2E3r4T5y6U7
+Razorpay subscription id: sub_Q1w2E3r4T5y6U7
+Dashboard: https://dashboard.razorpay.com/app/payments/pay_Q1w2E3r4T5y6U7
+
+--
+
+Sent only to the owner (OWNER_SALES_ALERT_EMAIL). The customer gets their own receipt separately.
+
+Alert key: rzp:pay:snap_paused
+
+Tablamigo by Hookstep · Ghatkopar, Mumbai, India
+"
+`;
+
+exports[`the alert email > renders plan_change (snapshot of the plain-text part and the HTML headline) 1`] = `
+"OWNER ALERT · RAZORPAY
+
+Plan change: Plus monthly, ₹499
+
+Priya S switched plan. The new plan is Plus monthly.
+
+Open customer in admin: https://tablamigo.hookstep.in/admin#users?q=3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+
+Event: Plan change
+Product: Plus monthly
+Amount: ₹499 INR
+When: 25 Oct 2026, 14:05 IST
+Mode: Live
+Charge number: 2
+
+CUSTOMER
+
+Name: Priya S
+Email: priya@x.com
+User id: 3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+Signed up: 12 Oct 2026 · source Google Search / organic · country IN · device Android
+Profile: home IN · Mumbai
+
+RAZORPAY
+
+Razorpay payment id: pay_Q1w2E3r4T5y6U7
+Razorpay subscription id: sub_Q1w2E3r4T5y6U7
+Dashboard: https://dashboard.razorpay.com/app/payments/pay_Q1w2E3r4T5y6U7
+
+--
+
+Sent only to the owner (OWNER_SALES_ALERT_EMAIL). The customer gets their own receipt separately.
+
+Alert key: rzp:pay:snap_plan_change
+
+Tablamigo by Hookstep · Ghatkopar, Mumbai, India
+"
+`;
+
+exports[`the alert email > renders refund (snapshot of the plain-text part and the HTML headline) 1`] = `
+"OWNER ALERT · RAZORPAY
+
+Refund: Plus monthly, ₹499
+
+₹499 was refunded to Priya S for Plus monthly.
+
+Open customer in admin: https://tablamigo.hookstep.in/admin#users?q=3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+
+Event: Refund
+Product: Plus monthly
+Amount: ₹499 INR
+When: 25 Oct 2026, 14:05 IST
+Mode: Live
+Charge number: 2
+
+CUSTOMER
+
+Name: Priya S
+Email: priya@x.com
+User id: 3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+Signed up: 12 Oct 2026 · source Google Search / organic · country IN · device Android
+Profile: home IN · Mumbai
+
+RAZORPAY
+
+Razorpay payment id: pay_Q1w2E3r4T5y6U7
+Razorpay subscription id: sub_Q1w2E3r4T5y6U7
+Dashboard: https://dashboard.razorpay.com/app/payments/pay_Q1w2E3r4T5y6U7
+
+--
+
+Sent only to the owner (OWNER_SALES_ALERT_EMAIL). The customer gets their own receipt separately.
+
+Alert key: rzp:pay:snap_refund
+
+Tablamigo by Hookstep · Ghatkopar, Mumbai, India
+"
+`;
+
+exports[`the alert email > renders renewal (snapshot of the plain-text part and the HTML headline) 1`] = `
+"OWNER ALERT · RAZORPAY
+
+Renewal: Plus monthly, ₹499
+
+Priya S's Plus monthly renewed for ₹499.
+
+Open customer in admin: https://tablamigo.hookstep.in/admin#users?q=3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+
+Event: Renewal
+Product: Plus monthly
+Amount: ₹499 INR
+When: 25 Oct 2026, 14:05 IST
+Mode: Live
+Charge number: 2
+
+CUSTOMER
+
+Name: Priya S
+Email: priya@x.com
+User id: 3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+Signed up: 12 Oct 2026 · source Google Search / organic · country IN · device Android
+Profile: home IN · Mumbai
+
+RAZORPAY
+
+Razorpay payment id: pay_Q1w2E3r4T5y6U7
+Razorpay subscription id: sub_Q1w2E3r4T5y6U7
+Dashboard: https://dashboard.razorpay.com/app/payments/pay_Q1w2E3r4T5y6U7
+
+--
+
+Sent only to the owner (OWNER_SALES_ALERT_EMAIL). The customer gets their own receipt separately.
+
+Alert key: rzp:pay:snap_renewal
+
+Tablamigo by Hookstep · Ghatkopar, Mumbai, India
+"
+`;
+
+exports[`the alert email > renders renewal_failed (snapshot of the plain-text part and the HTML headline) 1`] = `
+"OWNER ALERT · RAZORPAY
+
+Renewal failed: Plus monthly, ₹499
+
+A Plus monthly renewal payment from Priya S didn't go through.
+
+Open customer in admin: https://tablamigo.hookstep.in/admin#users?q=3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+
+Event: Renewal failed
+Product: Plus monthly
+Amount: ₹499 INR
+When: 25 Oct 2026, 14:05 IST
+Mode: Live
+Charge number: 2
+
+CUSTOMER
+
+Name: Priya S
+Email: priya@x.com
+User id: 3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+Signed up: 12 Oct 2026 · source Google Search / organic · country IN · device Android
+Profile: home IN · Mumbai
+
+RAZORPAY
+
+Razorpay payment id: pay_Q1w2E3r4T5y6U7
+Razorpay subscription id: sub_Q1w2E3r4T5y6U7
+Dashboard: https://dashboard.razorpay.com/app/payments/pay_Q1w2E3r4T5y6U7
+
+--
+
+Sent only to the owner (OWNER_SALES_ALERT_EMAIL). The customer gets their own receipt separately.
+
+Alert key: rzp:pay:snap_renewal_failed
+
+Tablamigo by Hookstep · Ghatkopar, Mumbai, India
+"
+`;
+
+exports[`the alert email > renders renewal_recovered (snapshot of the plain-text part and the HTML headline) 1`] = `
+"OWNER ALERT · RAZORPAY
+
+Renewal recovered: Plus monthly, ₹499
+
+Priya S's Plus monthly renewal went through after an earlier failed attempt.
+
+Open customer in admin: https://tablamigo.hookstep.in/admin#users?q=3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+
+Event: Renewal recovered
+Product: Plus monthly
+Amount: ₹499 INR
+When: 25 Oct 2026, 14:05 IST
+Mode: Live
+Charge number: 2
+
+CUSTOMER
+
+Name: Priya S
+Email: priya@x.com
+User id: 3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+Signed up: 12 Oct 2026 · source Google Search / organic · country IN · device Android
+Profile: home IN · Mumbai
+
+RAZORPAY
+
+Razorpay payment id: pay_Q1w2E3r4T5y6U7
+Razorpay subscription id: sub_Q1w2E3r4T5y6U7
+Dashboard: https://dashboard.razorpay.com/app/payments/pay_Q1w2E3r4T5y6U7
+
+--
+
+Sent only to the owner (OWNER_SALES_ALERT_EMAIL). The customer gets their own receipt separately.
+
+Alert key: rzp:pay:snap_renewal_recovered
+
+Tablamigo by Hookstep · Ghatkopar, Mumbai, India
+"
+`;
+
+exports[`the alert email > renders resubscribed (snapshot of the plain-text part and the HTML headline) 1`] = `
+"OWNER ALERT · RAZORPAY
+
+Resubscribed: Plus monthly, ₹499
+
+Priya S subscribed to Plus monthly again.
+
+Open customer in admin: https://tablamigo.hookstep.in/admin#users?q=3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+
+Event: Resubscribed
+Product: Plus monthly
+Amount: ₹499 INR
+When: 25 Oct 2026, 14:05 IST
+Mode: Live
+Charge number: 2
+
+CUSTOMER
+
+Name: Priya S
+Email: priya@x.com
+User id: 3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+Signed up: 12 Oct 2026 · source Google Search / organic · country IN · device Android
+Profile: home IN · Mumbai
+
+RAZORPAY
+
+Razorpay payment id: pay_Q1w2E3r4T5y6U7
+Razorpay subscription id: sub_Q1w2E3r4T5y6U7
+Dashboard: https://dashboard.razorpay.com/app/payments/pay_Q1w2E3r4T5y6U7
+
+--
+
+Sent only to the owner (OWNER_SALES_ALERT_EMAIL). The customer gets their own receipt separately.
+
+Alert key: rzp:pay:snap_resubscribed
+
+Tablamigo by Hookstep · Ghatkopar, Mumbai, India
+"
+`;
+
+exports[`the alert email > renders revoked (snapshot of the plain-text part and the HTML headline) 1`] = `
+"OWNER ALERT · RAZORPAY
+
+Revoked: Plus monthly, ₹499
+
+Priya S's Plus monthly was revoked by the payment provider.
+
+Open customer in admin: https://tablamigo.hookstep.in/admin#users?q=3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+
+Event: Revoked
+Product: Plus monthly
+Amount: ₹499 INR
+When: 25 Oct 2026, 14:05 IST
+Mode: Live
+Charge number: 2
+
+CUSTOMER
+
+Name: Priya S
+Email: priya@x.com
+User id: 3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+Signed up: 12 Oct 2026 · source Google Search / organic · country IN · device Android
+Profile: home IN · Mumbai
+
+RAZORPAY
+
+Razorpay payment id: pay_Q1w2E3r4T5y6U7
+Razorpay subscription id: sub_Q1w2E3r4T5y6U7
+Dashboard: https://dashboard.razorpay.com/app/payments/pay_Q1w2E3r4T5y6U7
+
+--
+
+Sent only to the owner (OWNER_SALES_ALERT_EMAIL). The customer gets their own receipt separately.
+
+Alert key: rzp:pay:snap_revoked
+
+Tablamigo by Hookstep · Ghatkopar, Mumbai, India
+"
+`;
+
+exports[`the alert email > renders subscription_started (snapshot of the plain-text part and the HTML headline) 1`] = `
+"OWNER ALERT · RAZORPAY
+
+New subscription: Plus monthly, ₹499
+
+Priya S started a Plus monthly subscription.
+
+Open customer in admin: https://tablamigo.hookstep.in/admin#users?q=3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+
+Event: New subscription
+Product: Plus monthly
+Amount: ₹499 INR
+When: 25 Oct 2026, 14:05 IST
+Mode: Live
+Charge number: 2
+
+CUSTOMER
+
+Name: Priya S
+Email: priya@x.com
+User id: 3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+Signed up: 12 Oct 2026 · source Google Search / organic · country IN · device Android
+Profile: home IN · Mumbai
+
+RAZORPAY
+
+Razorpay payment id: pay_Q1w2E3r4T5y6U7
+Razorpay subscription id: sub_Q1w2E3r4T5y6U7
+Dashboard: https://dashboard.razorpay.com/app/payments/pay_Q1w2E3r4T5y6U7
+
+--
+
+Sent only to the owner (OWNER_SALES_ALERT_EMAIL). The customer gets their own receipt separately.
+
+Alert key: rzp:pay:snap_subscription_started
+
+Tablamigo by Hookstep · Ghatkopar, Mumbai, India
+"
+`;
+
+exports[`the alert email > renders ticket_purchase (snapshot of the plain-text part and the HTML headline) 1`] = `
+"OWNER ALERT · RAZORPAY
+
+Ticket purchase: Plus monthly, ₹499
+
+Priya S bought an event ticket for ₹499.
+
+Open customer in admin: https://tablamigo.hookstep.in/admin#users?q=3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+
+Event: Ticket purchase
+Product: Plus monthly
+Amount: ₹499 INR
+When: 25 Oct 2026, 14:05 IST
+Mode: Live
+Charge number: 2
+
+CUSTOMER
+
+Name: Priya S
+Email: priya@x.com
+User id: 3f2a8c1e-0b7d-4e55-9a10-2c4d6e8f0a1b
+Signed up: 12 Oct 2026 · source Google Search / organic · country IN · device Android
+Profile: home IN · Mumbai
+
+RAZORPAY
+
+Razorpay payment id: pay_Q1w2E3r4T5y6U7
+Razorpay subscription id: sub_Q1w2E3r4T5y6U7
+Dashboard: https://dashboard.razorpay.com/app/payments/pay_Q1w2E3r4T5y6U7
+
+--
+
+Sent only to the owner (OWNER_SALES_ALERT_EMAIL). The customer gets their own receipt separately.
+
+Alert key: rzp:pay:snap_ticket_purchase
+
+Tablamigo by Hookstep · Ghatkopar, Mumbai, India
+"
+`;

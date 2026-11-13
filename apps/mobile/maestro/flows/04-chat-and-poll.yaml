@@ -1,0 +1,18 @@
+# Group chat on the phone: send a message (keyboard stays clear of the input), start a poll from the attach sheet.
+appId: com.tablamigo.app
+---
+- runFlow: ../subflows/sign-in.yaml
+- tapOn: "Chats"
+- tapOn:
+    text: ".*Maestro street food walk.*"
+    index: 0
+- tapOn: "Message"
+- inputText: "Hello from Maestro"
+- tapOn: "Send message"
+- assertVisible: "Hello from Maestro"
+- tapOn: "Attach"
+- tapOn: "Poll"
+- tapOn: "Question"
+- inputText: "Meet at 7 or 8?"
+- tapOn: "Post poll"
+- assertVisible: ".*Meet at 7 or 8\\?.*"

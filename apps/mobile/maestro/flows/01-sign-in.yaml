@@ -1,0 +1,8 @@
+# Email-code sign-in on the native app: lands on onboarding (new account) or the map (returning account).
+appId: com.tablamigo.app
+---
+- runFlow: ../subflows/sign-in.yaml
+- extendedWaitUntil:
+    visible:
+      text: "What should travelers call you\\?|See plans around you|Plans nearby"
+    timeout: 15000

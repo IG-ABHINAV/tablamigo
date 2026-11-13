@@ -1,0 +1,24 @@
+plugins {
+  id 'com.android.library'
+  id 'expo-module-gradle-plugin'
+}
+
+group = 'com.tablamigo.inappupdates'
+version = '1.0.0'
+
+android {
+  namespace "com.tablamigo.inappupdates"
+  defaultConfig {
+    versionCode 1
+    versionName "1.0.0"
+  }
+  lint {
+    abortOnError false
+  }
+}
+
+dependencies {
+  // Google Play's In-App Updates library. Its consumer ProGuard rules come with the artifact, so the minified release
+  // build (app.json enableMinifyInReleaseBuilds) keeps what Play Core needs.
+  implementation 'com.google.android.play:app-update:2.1.0'
+}

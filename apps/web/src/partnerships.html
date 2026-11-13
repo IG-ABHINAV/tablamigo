@@ -1,0 +1,167 @@
+<!-- title: Partner with Tablamigo | Hostels, tours and venues -->
+<!-- description: Run a hostel, tour, bar or cafe in a city solo travelers visit? Tablamigo is new. Tell us what you do and we will say honestly what is possible. -->
+<!-- crumb: Partnerships -->
+<!-- type: article -->
+
+<main>
+<div class="partner-hero">
+  <span class="eyebrow">🤝 For hostels, venues, tour guides &amp; brands</span>
+  <h1 style="font-size:clamp(36px,6vw,56px);margin-top:16px;line-height:1.05">Partner with <em>Tablamigo</em></h1>
+  <p class="lead" style="margin:16px auto 0;max-width:540px">Tablamigo is new and we are still working out how local businesses and solo travelers can meet. Tell us what you do and we'll say honestly what is possible.</p>
+</div>
+
+<div class="wrap">
+  <p class="partner-honest">Tablamigo launched on 29 September 2026 and is still small. We don't publish audience numbers, and there are {{partner_ads}}. Nothing on this page is for sale yet.</p>
+
+  <div class="ads-portal-card">
+    <span style="display:inline-block;background:rgba(255,255,255,0.2);padding:4px 14px;border-radius:999px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:12px">Early conversations</span>
+    <h2>Let's talk about your city</h2>
+    <p>Write to us with your business, your city and what you have in mind. A person reads every message and replies by email.</p>
+
+    <div class="ads-pillars">
+      <div class="ads-pillar">
+        <div style="font-size:26px">💬</div>
+        <h3>Hosting a plan</h3>
+        <p>A hostel, tour operator or cafe can host a plan, such as a tasting or a sunset walk. Travelers join with one tap and get a group chat. Under our <a href="/terms" style="color:#fff">terms</a>, promoting a business needs our written permission, so we agree it with you first.</p>
+      </div>
+      <div class="ads-pillar">
+        <div style="font-size:26px">🎁</div>
+        <h3>Offers for travelers</h3>
+        <p>If you'd like to offer something to solo travelers, such as a discount or an event, tell us. We'll say whether and how we can help.</p>
+      </div>
+      <div class="ads-pillar">
+        <div style="font-size:26px">🤝</div>
+        <h3>Something else</h3>
+        <p>A collaboration, a guide, a community. Tell us what you do and we'll tell you honestly if it fits Tablamigo.</p>
+      </div>
+    </div>
+
+    <a href="#partner-form" class="btn" style="background:#fff;color:var(--cta)!important;font-weight:800;padding:0 32px;box-shadow:0 8px 24px rgba(0,0,0,0.15)">
+      Get in touch
+    </a>
+  </div>
+</div>
+
+<section class="soft">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:28px">
+      <h2>What we can and can't say yet</h2>
+      <p class="sub" style="margin:0 auto">So you know what you are writing to.</p>
+    </div>
+    <ul class="partner-facts">
+      <li><strong>No prices yet.</strong> We haven't set any, and nothing is booked or charged through this page. If we agree something, we'll agree it in writing first.</li>
+      <li><strong>No audience numbers.</strong> Tablamigo is new. We'll tell you what to expect in your city when you write, including when the honest answer is "very few people yet".</li>
+      {{partner_ads_item}}
+    </ul>
+  </div>
+</section>
+
+<section id="partner-form">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:28px">
+      <h2>Tell us what you would like to do</h2>
+      <p class="sub" style="margin:0 auto">We read every message and reply by email.</p>
+    </div>
+
+    <div class="partner-form-card">
+      <form id="pForm" onsubmit="submitPartnerLead(event)">
+        <div class="form-field">
+          <label for="businessName">Business / Brand Name *</label>
+          <input type="text" id="businessName" name="businessName" placeholder="e.g. a hostel, tour company, cafe or brand" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="contactName">Your Name *</label>
+            <input type="text" id="contactName" name="contactName" placeholder="Your full name" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Work Email *</label>
+            <input type="email" id="email" name="email" placeholder="partner@yourbusiness.com" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="businessType">Business Type *</label>
+            <select id="businessType" name="businessType" required>
+              <option value="hostel_hotel">Hostel / Boutique Hotel</option>
+              <option value="bar_nightlife">Bar / Rooftop / Club</option>
+              <option value="tour_experience">Tour Guide / Outdoor Adventure</option>
+              <option value="coworking_cafe">Coworking Space / Cafe</option>
+              <option value="travel_brand">Travel Brand / Gear / App</option>
+              <option value="other">Other Experience</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="city">Primary City &amp; Country *</label>
+            <input type="text" id="city" name="city" placeholder="e.g. Goa, India" required>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="message">What would you like to do with Tablamigo? *</label>
+          <textarea id="message" name="message" rows="4" placeholder="Tell us about your business and what you have in mind: a plan you'd host, an offer for travelers, or something else." required></textarea>
+        </div>
+
+        <!-- Honeypot: hidden from people, filled in by form bots. The API stores and sends nothing when it has a value. -->
+        <div aria-hidden="true" style="position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden">
+          <label for="website">Website (leave empty)</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <p class="small" style="margin:0 0 16px">We store what you type here and email it to our team so we can reply to you. <a href="/privacy">Privacy policy</a>.</p>
+
+        <button type="submit" id="submitBtn" class="btn primary" style="width:100%;height:52px;font-size:16px;font-weight:800;justify-content:center">
+          Send message
+        </button>
+
+        <div id="formStatus" style="margin-top:14px;font-size:14px;text-align:center;font-weight:600"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+async function submitPartnerLead(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  const status = document.getElementById('formStatus');
+  btn.disabled = true;
+  btn.textContent = 'Sending...';
+  status.textContent = '';
+
+  const payload = {
+    businessName: document.getElementById('businessName').value,
+    contactName: document.getElementById('contactName').value,
+    email: document.getElementById('email').value,
+    businessType: document.getElementById('businessType').value,
+    city: document.getElementById('city').value,
+    message: document.getElementById('message').value,
+    website: document.getElementById('website').value
+  };
+
+  try {
+    const res = await fetch('https://tablamigo-api.hookstep.in/partnerships', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    const data = await res.json();
+    if (res.ok && data.ok) {
+      status.style.color = '#0B7A6C';
+      status.textContent = 'Thank you. We have your message and will reply by email.';
+      document.getElementById('pForm').reset();
+    } else {
+      throw new Error(data.message || 'Submission failed');
+    }
+  } catch (err) {
+    status.style.color = '#C8371A';
+    status.textContent = "Sorry, that didn't go through. Please email support@hookstep.in with your details instead.";
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Send message';
+  }
+}
+</script>
+</main>

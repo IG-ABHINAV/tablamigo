@@ -1,0 +1,17 @@
+# The verification selfie must come from the camera, never the gallery (lib/selfie.ts; a deliberate safety rule).
+appId: com.tablamigo.app
+---
+- runFlow: ../subflows/sign-in.yaml
+- tapOn: "Profile"
+- scrollUntilVisible:
+    element: ".*[Vv]erif.*"
+- tapOn: ".*[Vv]erif.*"
+- tapOn: "Take selfie"
+- runFlow:
+    when:
+      visible: "While using the app|Only this time"
+    commands:
+      - tapOn: "While using the app"
+# A camera opened; no photo picker or gallery choice was offered.
+- assertNotVisible: "Choose from library|Gallery|Photos|Recent"
+- back

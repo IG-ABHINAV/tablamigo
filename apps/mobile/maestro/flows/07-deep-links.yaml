@@ -1,0 +1,12 @@
+# tablamigo:// deep links: a plan that does not exist shows a message, not a blank or crashed screen.
+appId: com.tablamigo.app
+---
+- runFlow: ../subflows/sign-in.yaml
+- openLink: "tablamigo://activity/00000000-0000-4000-8000-000000000000"
+- extendedWaitUntil:
+    visible: "This plan isn't available"
+    timeout: 15000
+- openLink: "tablamigo://chat/00000000-0000-4000-8000-000000000000"
+- extendedWaitUntil:
+    visible: "Can't load this chat|Try again"
+    timeout: 15000

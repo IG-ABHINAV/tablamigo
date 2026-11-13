@@ -1,0 +1,12 @@
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    container_name: tablamigo-db
+    environment:
+      POSTGRES_USER: tablamigo
+      POSTGRES_PASSWORD: tablamigo-local
+      POSTGRES_DB: tablamigo
+    ports: ["5434:5432"]
+    volumes: [tablamigo-db:/var/lib/postgresql/data]
+volumes:
+  tablamigo-db:

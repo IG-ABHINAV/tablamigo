@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tablamigo store frame</title>
+<style>
+  @font-face { font-family: "PJS"; font-weight: 600; src: url(fonts/PlusJakartaSans_600SemiBold.ttf); }
+  @font-face { font-family: "PJS"; font-weight: 700; src: url(fonts/PlusJakartaSans_700Bold.ttf); }
+  @font-face { font-family: "PJS"; font-weight: 800; src: url(fonts/PlusJakartaSans_800ExtraBold.ttf); }
+  :root {
+    /* Brand tokens, from apps/mobile/src/lib/theme.ts and apps/web/style.css */
+    --primary: #FF5A36; --primary-dark: #E0421F; --deep: #C8371A; --soft: #FFEDE7;
+    --ink: #16161D; --women: #8E5CF7; --women-soft: #F1EAFF;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #000; }
+  #stage { position: relative; overflow: hidden; font-family: "PJS", system-ui, sans-serif; color: #fff; }
+
+  /* Background: warm coral gradient, deeper at the top so the white headline has the most contrast. */
+  .bg { position: absolute; inset: 0;
+    background:
+      radial-gradient(120% 60% at 50% 100%, rgba(255,170,120,.55), rgba(255,170,120,0) 60%),
+      radial-gradient(70% 40% at 100% 0%, rgba(255,120,80,.35), rgba(255,120,80,0) 70%),
+      linear-gradient(172deg, #D9391A 0%, #EE4A26 34%, #FF6A3D 72%, #FF8A55 100%); }
+  .bg.feature { background:
+      radial-gradient(60% 120% at 85% 60%, rgba(255,180,130,.55), rgba(255,180,130,0) 65%),
+      linear-gradient(110deg, #D9391A 0%, #EE4A26 45%, #FF6A3D 80%, #FF8A55 100%); }
+  .ring { position: absolute; border-radius: 50%; border: 2px solid rgba(255,255,255,.10); }
+  .dots { position: absolute; inset: 0; opacity: .10;
+    background-image: radial-gradient(rgba(255,255,255,.9) 1.6px, transparent 2px); background-size: 34px 34px;
+    -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 30%, #000 60%, transparent 100%); }
+  .grain { position: absolute; inset: 0; opacity: .07; mix-blend-mode: overlay; pointer-events: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' seed='7'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+
+  .copy { position: absolute; text-align: center; }
+  .brand { display: inline-flex; align-items: center; gap: 14px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 26px; }
+  .brand img { border-radius: 22%; box-shadow: 0 8px 20px -8px rgba(80,20,0,.5); }
+  h1 { font-weight: 800; letter-spacing: -0.04em; line-height: 1.0; white-space: nowrap; text-shadow: 0 4px 24px rgba(120,30,0,.18); }
+  h1 em { font-style: normal; color: #FFE3B8; }
+  .sub { font-weight: 600; opacity: .92; letter-spacing: -0.01em; line-height: 1.25; white-space: nowrap; }
+
+  /* Phone: modern Android slab, thin even bezel, punch-hole camera, side keys. */
+  .phone { position: absolute; transform-origin: 50% 50%; }
+  .phone .body { position: absolute; inset: 0; background: linear-gradient(145deg, #2C2C34, #121217 55%, #22222A);
+    box-shadow: 0 0 0 2px #3A3A44, inset 0 0 0 1.5px rgba(255,255,255,.14), 0 70px 110px -40px rgba(90,20,0,.65), 0 30px 60px -30px rgba(60,10,0,.5); }
+  .phone .screen { position: absolute; overflow: hidden; background: #fff; }
+  .phone .screen img { width: 100%; height: auto; display: block; }
+  .phone .cam { position: absolute; border-radius: 50%; background: radial-gradient(circle at 38% 36%, #3b3f55 0 18%, #0b0b10 40%); box-shadow: 0 0 0 2px rgba(255,255,255,.05); }
+  .phone .key { position: absolute; background: linear-gradient(90deg, #1a1a20, #34343c); border-radius: 0 4px 4px 0; }
+  .phone .glare { position: absolute; pointer-events: none;
+    background: linear-gradient(115deg, rgba(255,255,255,.10) 0%, rgba(255,255,255,0) 28%); }
+
+  /* Cutouts: a crop of the raw screenshot, lifted out of the phone with a white border. */
+  .cut { position: absolute; background-repeat: no-repeat; background-color: #fff;
+    box-shadow: 0 0 0 var(--bw) #fff, 0 38px 70px -24px rgba(70,15,0,.55), 0 12px 24px -12px rgba(70,15,0,.35); }
+  .chip { position: absolute; display: inline-flex; align-items: center; gap: .35em; font-weight: 700; white-space: nowrap; border-radius: 999px;
+    box-shadow: 0 0 0 var(--bw) #fff, 0 30px 60px -22px rgba(70,15,0,.55), 0 10px 20px -10px rgba(70,15,0,.3); }
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<script>
+// build(slide, defaults) renders one slide into #stage and resolves with layout metrics for render.cjs to check.
+// Coordinates: canvas pixels; cutout rects are raw-screenshot pixels [x, y, w, h].
+const $ = (tag, cls, parent, style) => { const e = document.createElement(tag); if (cls) e.className = cls; if (style) Object.assign(e.style, style); if (parent) parent.appendChild(e); return e; };
+const loadImg = src => new Promise((ok, bad) => { const i = new Image(); i.onload = () => ok(i); i.onerror = () => bad(new Error('image failed: ' + src)); i.src = src; });
+const esc = s => s.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+// "*word*" in copy renders in the accent colour; "\n" forces a line break.
+const rich = s => esc(s).replace(/\*([^*]+)\*/g, '<em>$1</em>').replace(/\n/g, '<br>');
+
+async function build(slide, D) {
+  const W = slide.width || D.width, H = slide.height || D.height;
+  const feature = slide.layout === 'feature';
+  const stage = document.getElementById('stage');
+  stage.innerHTML = ''; Object.assign(stage.style, { width: W + 'px', height: H + 'px' });
+  document.body.style.width = W + 'px';
+
+  // Background
+  $('div', 'bg' + (feature ? ' feature' : ''), stage);
+  $('div', 'dots', stage);
+  const rings = feature ? [[820, 250, 520], [820, 250, 760]] : [[W * 0.5, H * 0.62, 900], [W * 0.5, H * 0.62, 1300]];
+  for (const [cx, cy, d] of rings) $('div', 'ring', stage, { left: cx - d / 2 + 'px', top: cy - d / 2 + 'px', width: d + 'px', height: d + 'px' });
+
+  const raw = await loadImg(slide.raw);
+  const RW = raw.naturalWidth, RH = raw.naturalHeight;
+
+  // Phone geometry
+  const P = Object.assign({}, feature ? D.featurePhone : D.phone, slide.phone || {});
+  const bez = P.bezel, sw = P.width - 2 * bez, sh = sw * RH / RW, ph = sh + 2 * bez;
+  const px = (P.cx ?? W / 2) - P.width / 2, py = P.top;
+  const phone = $('div', 'phone', stage, { left: px + 'px', top: py + 'px', width: P.width + 'px', height: ph + 'px', transform: `rotate(${P.rotate || 0}deg)` });
+  const outerR = P.radius, innerR = outerR - bez;
+  $('div', 'body', phone, { borderRadius: outerR + 'px' });
+  const scr = $('div', 'screen', phone, { left: bez + 'px', top: bez + 'px', width: sw + 'px', height: sh + 'px', borderRadius: innerR + 'px' });
+  const im = $('img', '', scr); im.src = slide.raw;
+  const camD = Math.round(sw * 0.034);
+  $('div', 'cam', phone, { width: camD + 'px', height: camD + 'px', left: (P.width - camD) / 2 + 'px', top: bez + sh * 0.0115 + 'px' });
+  $('div', 'glare', phone, { left: bez + 'px', top: bez + 'px', width: sw + 'px', height: sh + 'px', borderRadius: innerR + 'px' });
+  // Side keys on the right edge: volume rocker then power.
+  const k = (t, h) => $('div', 'key', phone, { left: P.width - 1 + 'px', top: t + 'px', width: Math.max(4, P.width * 0.008) + 'px', height: h + 'px' });
+  k(ph * 0.17, ph * 0.09); k(ph * 0.29, ph * 0.055);
+
+  const s = sw / RW; // raw px -> canvas px on the phone screen (ignores phone rotation)
+  const onPhone = (x, y) => [px + bez + x * s, py + bez + y * s];
+
+  // Copy
+  const C = Object.assign({}, feature ? D.featureCopy : D.copy, slide.copy || {});
+  const copy = $('div', 'copy', stage, { left: C.left + 'px', top: C.top + 'px', width: C.width + 'px', textAlign: C.align || 'center' });
+  if (slide.brand) {
+    const b = $('div', 'brand', copy, { fontSize: C.brandSize + 'px' });
+    const i = $('img', '', b, { width: C.brandSize * 1.5 + 'px', height: C.brandSize * 1.5 + 'px' }); i.src = slide.brandIcon || D.brandIcon;
+    $('span', '', b).textContent = 'tablamigo';
+  }
+  const h1 = $('h1', '', copy); h1.innerHTML = rich(slide.headline);
+  let sub = null;
+  if (slide.sub) { sub = $('div', 'sub', copy, { marginTop: C.subGap + 'px' }); sub.innerHTML = rich(slide.sub); }
+  await document.fonts.ready;
+  // Auto-fit: shrink until the widest line fits the copy box; never below the floor.
+  const fit = (el, start, floor) => { let f = start; el.style.fontSize = f + 'px'; while (el.scrollWidth > C.width && f > floor) { f -= 1; el.style.fontSize = f + 'px'; } return f; };
+  const hSize = fit(h1, slide.headlineSize || C.headlineSize, C.headlineMin);
+  const sSize = sub ? fit(sub, C.subSize, C.subMin) : 0;
+
+  // Cutouts and chips, painted above the phone.
+  const cuts = [];
+  for (const c of slide.cutouts || []) {
+    const bw = c.border ?? D.cutBorder;
+    let w, h, cx, cy, el;
+    if (c.chip) {
+      el = $('div', 'chip', stage, { fontSize: (c.size || 44) + 'px', padding: '.38em .9em', background: c.bg || 'var(--soft)', color: c.fg || 'var(--primary-dark)' });
+      el.style.setProperty('--bw', bw + 'px'); el.textContent = c.chip;
+      w = el.offsetWidth; h = el.offsetHeight; [cx, cy] = c.at;
+    } else {
+      // "src" crops from a different raw capture than the phone shows; it must be placed with "at".
+      const srcUrl = c.src || slide.raw, srcImg = c.src ? await loadImg(c.src) : raw;
+      const [rx, ry, rw, rh] = c.rect; const k = s * (c.scale || 1.25);
+      w = rw * k; h = rh * k;
+      if (c.at) [cx, cy] = c.at; else [cx, cy] = onPhone(rx + rw / 2, ry + rh / 2);
+      cx += c.dx || 0; cy += c.dy || 0;
+      el = $('div', 'cut', stage, { width: w + 'px', height: h + 'px', borderRadius: (c.radius ?? D.cutRadius) + 'px',
+        backgroundImage: `url("${srcUrl}")`, backgroundSize: `${srcImg.naturalWidth * k}px ${srcImg.naturalHeight * k}px`, backgroundPosition: `${-rx * k}px ${-ry * k}px` });
+      el.style.setProperty('--bw', bw + 'px');
+    }
+    el.style.left = cx - w / 2 + 'px'; el.style.top = cy - h / 2 + 'px'; el.style.transform = `rotate(${c.rotate || 0}deg)`;
+    cuts.push(el);
+  }
+  $('div', 'grain', stage);
+
+  const box = el => { const r = el.getBoundingClientRect(); return { x: r.left, y: r.top, r: r.right, b: r.bottom }; };
+  // Tight ink box of the copy (union of its text line boxes), so checks test the words, not the container.
+  const ink = el => { const rs = [], tw = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    for (let n; (n = tw.nextNode());) { const r = document.createRange(); r.selectNodeContents(n); rs.push(...[...r.getClientRects()].filter(q => q.width)); }
+    return { x: Math.min(...rs.map(q => q.left)), y: Math.min(...rs.map(q => q.top)), r: Math.max(...rs.map(q => q.right)), b: Math.max(...rs.map(q => q.bottom)) }; };
+  return { W, H, headlineSize: hSize, subSize: sSize, headlineLines: Math.round(h1.offsetHeight / (hSize * 1.0)),
+    copy: ink(copy), h1: box(h1), h1Overflow: h1.scrollWidth > C.width + 1, subOverflow: sub ? sub.scrollWidth > C.width + 1 : false,
+    cuts: cuts.map(box), phone: { x: px, y: py, w: P.width, h: ph } };
+}
+window.build = build;
+</script>
+</body>
+</html>

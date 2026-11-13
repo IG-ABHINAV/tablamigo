@@ -1,0 +1,1324 @@
+<!-- standalone -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' https: data: http://localhost:4100 http://127.0.0.1:4100; connect-src https://tablamigo-api.hookstep.in http://localhost:4100 http://127.0.0.1:4100; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Tablamigo Admin</title>
+<link rel="icon" href="/favicon.png">
+<style>
+:root{
+  --coral:#FF5A36;--coral-d:#E4461F;--teal:#10B39F;--teal-t:#0A7C6E;--teal-bg:#E7F7F4;
+  --bg:#F7F7F5;--card:#FFFFFF;--line:#E8E8E3;--rule:#F0F0EC;--ink:#1D1D1B;--body:#4A4A46;--muted:#6E6E68;
+  --amber:#8A5A00;--amber-bg:#FFF4DB;--red:#B42318;--red-bg:#FDECEA;--grey-bg:#F1F1EE;
+  --r:12px;--shadow:0 1px 2px rgba(20,20,18,.04),0 2px 8px rgba(20,20,18,.04);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:14px/1.5 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--teal-t)}
+button,input,select,textarea{font:inherit;color:inherit}
+.hidden{display:none!important}
+header.top{background:var(--card);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.bar{max-width:1280px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;letter-spacing:-.01em;text-decoration:none;color:var(--ink)}
+.brand img{width:28px;height:28px;border-radius:7px}
+.brand small{font-weight:600;color:var(--muted);font-size:13px;border-left:1px solid var(--line);padding-left:10px}
+.who{margin-left:auto;display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px;min-width:0}
+.who span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+nav.tabs{max-width:1280px;margin:0 auto;padding:0 12px;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+nav.tabs::-webkit-scrollbar{display:none}
+nav.tabs a{padding:10px 12px;color:var(--muted);text-decoration:none;font-weight:600;border-bottom:2px solid transparent;white-space:nowrap;display:flex;gap:6px;align-items:center}
+nav.tabs a:hover{color:var(--ink)}
+nav.tabs a.on{color:var(--ink);border-bottom-color:var(--coral)}
+.count{background:var(--coral);color:#fff;border-radius:999px;font-size:11px;line-height:18px;padding:0 6px;font-weight:700}
+main{max-width:1280px;margin:0 auto;padding:20px 16px 64px}
+h1{font-size:20px;line-height:28px;margin:0 0 16px;letter-spacing:-.01em}
+h2{font-size:15px;margin:0 0 12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow)}
+.pad{padding:16px 18px}
+.grid{display:grid;gap:12px}
+.kpis{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));margin-bottom:12px}
+.kpi .v{font-size:26px;line-height:32px;font-weight:700;letter-spacing:-.02em}
+.kpi .l{color:var(--muted);font-size:12.5px;font-weight:600}
+.kpi .s{color:var(--muted);font-size:12.5px;margin-top:4px}
+.two{grid-template-columns:2fr 1fr}
+@media (max-width:900px){.two{grid-template-columns:1fr}}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.toolbar .grow{flex:1;min-width:180px}
+input[type=search],input[type=email],input[type=text],input[type=number],select{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 10px;min-height:36px;outline:none;max-width:100%}
+input:focus,select:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(16,179,159,.15)}
+.btn{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:#fff;border-radius:8px;padding:7px 12px;min-height:34px;font-weight:600;cursor:pointer;white-space:nowrap}
+.btn:hover{background:var(--grey-bg)}
+.btn.primary{background:var(--coral);border-color:var(--coral);color:#fff}
+.btn.primary:hover{background:var(--coral-d)}
+.btn.teal{color:var(--teal-t);border-color:#BFE8E1}
+.btn.teal:hover{background:var(--teal-bg)}
+.btn.danger{color:var(--red);border-color:#F5C6C0}
+.btn.danger:hover{background:var(--red-bg)}
+.btn.sm{padding:4px 9px;min-height:28px;font-size:12.5px}
+.btn:disabled{opacity:.5;cursor:default}
+.tablewrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:700;text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap;background:#FCFCFA}
+td{padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:middle}
+tr:last-child td{border-bottom:0}
+tbody tr.click{cursor:pointer}
+tbody tr.click:hover td{background:#FBFBF9}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+.nowrap{white-space:nowrap}
+.muted{color:var(--muted)}
+.small{font-size:12.5px}
+.person{display:flex;gap:10px;align-items:center;min-width:180px}
+.av{width:32px;height:32px;border-radius:50%;background:var(--teal-bg);color:var(--teal-t);display:grid;place-items:center;font-weight:700;font-size:12px;flex:none;object-fit:cover}
+.lightbox{position:fixed;inset:0;z-index:70;display:grid;place-items:center;background:rgba(20,20,18,.78);padding:24px}
+.lightbox figure{margin:0;max-width:min(92vw,720px);text-align:center;color:#fff}
+.lightbox img{max-width:100%;max-height:80vh;border-radius:12px;display:block;margin:0 auto}
+.lightbox .nophoto{background:var(--card);color:var(--muted);padding:40px 56px;border-radius:12px;font-weight:600}
+.lightbox figcaption{margin-top:10px;font-weight:600}
+.person b{display:block;font-weight:600;line-height:1.3}
+.person span{display:block;color:var(--muted);font-size:12.5px;line-height:1.3;max-width:240px;overflow:hidden;text-overflow:ellipsis}
+.pill{display:inline-block;border-radius:999px;padding:1px 8px;font-size:12px;font-weight:600;line-height:20px;white-space:nowrap;background:var(--grey-bg);color:var(--body)}
+.pill.teal{background:var(--teal-bg);color:var(--teal-t)}
+.pill.amber{background:var(--amber-bg);color:var(--amber)}
+.pill.red{background:var(--red-bg);color:var(--red)}
+.pill.coral{background:#FFE9E3;color:#B8340F}
+.empty{padding:36px 16px;text-align:center;color:var(--muted)}
+.chart svg{display:block;width:100%;height:auto}
+.legend{display:flex;gap:14px;flex-wrap:wrap;color:var(--muted);font-size:12.5px}
+.split{display:flex;flex-direction:column;gap:8px}
+.split .row{display:flex;justify-content:space-between;gap:8px}
+a.drill,a.ulink,a.plink{color:inherit;text-decoration:none}
+a.drill:hover,a.ulink:hover b,a.plink:hover{text-decoration:underline;color:var(--teal, #0E9383)}
+a.drill{border-bottom:1px dotted currentColor}
+.kpi a.drill{border-bottom:0}
+.lede{margin:-8px 0 16px;max-width:none;white-space:normal;overflow-wrap:anywhere}
+.meter{height:6px;border-radius:3px;background:var(--grey-bg);overflow:hidden;margin-top:4px}
+.meter i{display:block;height:100%;background:var(--teal)}
+.note{background:var(--amber-bg);color:var(--amber);border-radius:8px;padding:8px 12px;font-size:12.5px}
+.tag{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.vgrid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.pair figure{margin:0}
+.pair img,.pair .noimg{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:10px;background:var(--grey-bg);display:block}
+.pair .noimg{display:grid;place-items:center;color:var(--muted);font-size:12.5px}
+.pair figcaption{font-size:12px;color:var(--muted);margin-top:4px;text-align:center}
+.actions{display:flex;gap:6px;flex-wrap:wrap}
+.drawer{position:fixed;inset:0;z-index:40;display:flex;justify-content:flex-end;background:rgba(20,20,18,.28)}
+.drawer .panel{width:min(560px,100%);height:100%;overflow:auto;background:var(--bg);border-left:1px solid var(--line);box-shadow:-8px 0 24px rgba(0,0,0,.08)}
+.drawer .head{position:sticky;top:0;background:var(--card);border-bottom:1px solid var(--line);padding:14px 16px;display:flex;gap:12px;align-items:center;z-index:1}
+.drawer .body{padding:16px;display:flex;flex-direction:column;gap:12px}
+.kv{display:grid;grid-template-columns:130px 1fr;gap:6px 12px;font-size:13.5px}
+.kv dt{color:var(--muted)}
+.kv dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:10px;font-weight:600;z-index:60;box-shadow:0 6px 20px rgba(0,0,0,.18);max-width:calc(100% - 32px)}
+.toast.err{background:var(--red)}
+.login{max-width:400px;margin:10vh auto;padding:0 16px}
+.login .card{padding:28px}
+.login h1{margin-bottom:6px}
+.login label{display:block;font-weight:600;margin:16px 0 6px}
+.login input{width:100%;font-size:16px}
+.login .btn{width:100%;justify-content:center;margin-top:14px;min-height:42px}
+.err-text{color:var(--red);font-size:13px;margin-top:10px;min-height:1em}
+.skeleton{color:var(--muted);padding:24px 0}
+.journey-timeline{display:flex;flex-direction:column;gap:10px;position:relative;padding-left:8px;margin-top:10px}
+.journey-timeline::before{content:'';position:absolute;left:21px;top:10px;bottom:10px;width:2px;background:var(--line);z-index:0}
+.journey-item{display:flex;gap:12px;align-items:flex-start;position:relative;z-index:1}
+.journey-icon{width:28px;height:28px;border-radius:50%;background:#fff;border:1px solid var(--line);display:grid;place-items:center;font-size:13px;flex:none;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.journey-content{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 12px;flex:1;min-width:0}
+.journey-header{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:baseline}
+.journey-sub{margin-top:2px}
+@media (max-width:768px){
+  .bar{flex-wrap:wrap;padding:10px 12px;gap:8px}
+  .who{width:100%;justify-content:flex-end}
+  .toolbar{gap:6px}
+  .toolbar .grow{min-width:140px}
+  .drawer .panel{width:100%;border-left:none}
+  .drawer .head{padding:10px 12px}
+  .drawer .body{padding:12px}
+  .pair{grid-template-columns:1fr}
+}
+/* Phones and tablets: Safari zooms into any field under 16px when it is tapped and stays zoomed. */
+/* (Textareas get their font from the rule at the top, never inline: an inline font:inherit beat this and left them at 14px.)
+   Buttons are at least 44px tall on touch screens, the smallest target a finger hits reliably (Sign out was 28).
+   So are the section tabs (41), the search, filter and number fields (36) and the login button (42). input[type] matches the
+   specificity of the base field rule above, which a bare input would lose to. */
+@media (pointer:coarse){input,select,textarea{font-size:16px}.btn,.btn.sm{min-height:44px}nav.tabs a,input[type],select,.login .btn{min-height:44px}}
+@media (max-width:640px){
+  .brand small{display:none}
+  .who span{display:none}
+  .who{width:auto;margin-left:auto}
+  /* Tables with a header row become one card per row, each cell labelled with its column (labelTables() below). */
+  table.stack thead{display:none}
+  table.stack,table.stack tbody,table.stack tr,table.stack td{display:block;width:100%;box-sizing:border-box}
+  table.stack tr{padding:10px 12px;border-bottom:1px solid var(--line)}
+  table.stack tr:last-child{border-bottom:0}
+  /* Label floated left, the cell's own content (often several inline parts) flows to its right as one piece. */
+  table.stack td{padding:3px 0;border:0;text-align:right;overflow-wrap:break-word}
+  table.stack td::after{content:"";display:table;clear:both}
+  table.stack td::before{content:attr(data-label);float:left;margin-right:12px;color:var(--muted);font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;text-align:left;line-height:20px}
+  table.stack td:first-child{text-align:left;padding-bottom:6px}
+  table.stack td:first-child::before,table.stack td[data-label=""]::before{display:none}
+  table.stack td:empty{display:none}
+  main{padding:12px 12px 48px}
+  .kv{grid-template-columns:1fr}
+  .kv dt{margin-top:6px}
+  .kpis{grid-template-columns:1fr 1fr}
+}
+</style>
+
+</head>
+<body>
+
+<div id="login" class="login hidden">
+  <div class="brand" style="margin-bottom:16px"><img src="/icon-192.png" alt="">Tablamigo <small>Admin</small></div>
+  <div class="card">
+    <h1>Sign in</h1>
+    <p class="muted" style="margin:0">Admin access only. If this email belongs to an admin, we'll send it a 6-digit code.</p>
+    <form id="f-email">
+      <label for="email">Email</label>
+      <input id="email" type="email" autocomplete="email" required>
+      <button class="btn primary" type="submit">Send code</button>
+    </form>
+    <form id="f-code" class="hidden">
+      <label for="code">If <span id="code-to"></span> is an admin, a code is on its way</label>
+      <input id="code" type="text" inputmode="numeric" autocomplete="one-time-code" pattern="\d{6}" maxlength="6" required>
+      <button class="btn primary" type="submit">Sign in</button>
+      <button class="btn" type="button" id="code-back">Use a different email</button>
+    </form>
+    <div class="err-text" id="login-err" role="alert"></div>
+  </div>
+</div>
+
+<div id="app" class="hidden">
+  <header class="top">
+    <div class="bar">
+      <a class="brand" href="#overview"><img src="/icon-192.png" alt="">Tablamigo <small>Admin</small></a>
+      <div class="who"><span id="me"></span><button class="btn sm" id="signout">Sign out</button></div>
+    </div>
+    <nav class="tabs" id="tabs"></nav>
+  </header>
+  <main id="view"></main>
+</div>
+<div id="drawer"></div>
+
+<script>
+'use strict';
+// ---- setup ----------------------------------------------------------------------------------------
+const LOCAL = /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+const API = (() => {
+  // Only a locally served copy may point elsewhere, and only at a local API (never a link-supplied host).
+  const q = new URLSearchParams(location.search).get('api');
+  if (LOCAL && q && /^http:\/\/(localhost|127\.0\.0\.1):\d+$/.test(q)) return q;
+  return LOCAL ? 'http://localhost:4100' : 'https://tablamigo-api.hookstep.in';
+})();
+// localStorage, so the session outlives the tab and lasts as long as the refresh token (60 days) instead of one browser session.
+const store = {
+  get(k) { try { return localStorage.getItem('tm_admin_' + k); } catch { return null; } },
+  set(k, v) { try { v == null ? localStorage.removeItem('tm_admin_' + k) : localStorage.setItem('tm_admin_' + k, v); } catch {} },
+};
+// A tab still signed in from when the session lived in sessionStorage keeps it.
+try { for (const k of ['access', 'refresh']) { const v = sessionStorage.getItem('tm_admin_' + k); if (v && !store.get(k)) store.set(k, v); sessionStorage.removeItem('tm_admin_' + k); } } catch {}
+const $ = (s, el = document) => el.querySelector(s);
+// "Login as user": the token is read-only, lasts 15 minutes and has no refresh token (API lib/auth.ts). It goes in the URL
+// fragment, which never reaches a server log, and the app keeps it in that tab only (apps/mobile/src/lib/session.web.ts),
+// so the admin's own app session in this browser is left alone.
+const impersonationUrl = res => `https://tablamigo.hookstep.in/app/#impersonate_token=${encodeURIComponent(res.accessToken)}`;
+const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const safeImg = u => typeof u === 'string' && /^(https:\/\/|http:\/\/(localhost|127\.0\.0\.1)[:/])/.test(u) ? u : '';
+const initials = n => (String(n || '?').trim().split(/\s+/).map(w => w[0]).join('').slice(0, 2) || '?').toUpperCase();
+const inr = paise => '₹' + (Number(paise || 0) / 100).toLocaleString('en-IN', { maximumFractionDigits: 0 });
+const n = v => Number(v || 0).toLocaleString('en-IN');
+const dt = v => v ? new Date(v).toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }) : '—';
+const dtt = v => v ? new Date(v).toLocaleString('en-IN', { day: 'numeric', month: 'short', hour: 'numeric', minute: '2-digit' }) : '—';
+function ago(v) {
+  if (!v) return '—';
+  const s = (Date.now() - new Date(v).getTime()) / 1000, f = Math.abs(s), fut = s < 0;
+  const t = f < 60 ? 'just now' : f < 3600 ? Math.round(f / 60) + 'm' : f < 86400 ? Math.round(f / 3600) + 'h' : f < 86400 * 60 ? Math.round(f / 86400) + 'd' : dt(v);
+  return t === 'just now' || t.includes(' ') ? t : fut ? 'in ' + t : t + ' ago';
+}
+function toast(msg, err) {
+  const t = document.createElement('div'); t.className = 'toast' + (err ? ' err' : ''); t.textContent = msg; t.setAttribute('role', 'status');
+  document.body.appendChild(t); setTimeout(() => t.remove(), 2800);
+}
+// A photo that fails to load (deleted file, dead host) falls back to the initials circle.
+document.addEventListener('error', e => {
+  const img = e.target;
+  if (img.tagName !== 'IMG') return;
+  if (img.closest('.pair')) { const d = document.createElement('div'); d.className = 'noimg'; d.textContent = `Couldn't load image`; img.replaceWith(d); return; }
+  if (!img.classList.contains('av')) return;
+  const d = document.createElement('div'); d.className = 'av av-open'; d.textContent = img.dataset.initials || '?'; img.replaceWith(d);
+}, true);
+const person = (name, sub, photo) => `<div class="person">${safeImg(photo) ? `<img class="av av-open" data-full="${esc(safeImg(photo))}" src="${esc(safeImg(photo))}" data-initials="${esc(initials(name))}" alt="" loading="lazy">` : `<div class="av av-open">${esc(initials(name))}</div>`}<div><b>${esc(name || 'No name yet')}</b>${sub ? `<span>${esc(sub)}</span>` : ''}</div></div>`;
+// Clicking a picture in the Users list opens it full size; impersonation stays on the explicit button.
+function openPhoto(name, src) {
+  const lb = document.createElement('div');
+  lb.className = 'lightbox'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true'); lb.setAttribute('aria-label', `Photo of ${name || 'user'}`);
+  const fig = document.createElement('figure');
+  const fallback = () => { const d = document.createElement('div'); d.className = 'nophoto'; d.textContent = 'No photo'; return d; };
+  if (src) { const img = document.createElement('img'); img.src = src; img.alt = ''; img.addEventListener('error', () => img.replaceWith(fallback())); fig.appendChild(img); } else fig.appendChild(fallback());
+  const cap = document.createElement('figcaption'); cap.textContent = name || 'No name yet'; fig.appendChild(cap);
+  lb.appendChild(fig);
+  const close = () => { lb.remove(); document.removeEventListener('keydown', onKey, true); };
+  const onKey = e => { if (e.key === 'Escape') { e.stopPropagation(); close(); } };
+  lb.addEventListener('click', e => { if (!e.target.closest('img, .nophoto')) close(); });
+  document.addEventListener('keydown', onKey, true);
+  document.body.appendChild(lb);
+}
+const pill = (text, kind = '') => `<span class="pill ${kind}">${esc(text)}</span>`;
+// Every person and plan mentioned anywhere opens its drawer: <a data-open-user> / <a data-open-plan>.
+const uLink = (id, html) => id ? `<a href="#" class="ulink" data-open-user="${esc(id)}">${html}</a>` : html;
+const pLink = (id, html) => id ? `<a href="#" class="plink" data-open-plan="${esc(id)}">${html}</a>` : html;
+// A number on the Overview: a link to the list it counts.
+const drill = (href, html) => `<a class="drill" href="${esc(href)}">${html}</a>`;
+document.addEventListener('click', e => {
+  const u = e.target.closest('[data-open-user]'), p = e.target.closest('[data-open-plan]');
+  if (!u && !p) return;
+  e.preventDefault(); e.stopPropagation();
+  if (u) { closeDrawer(); openUser(u.dataset.openUser); } else { closeDrawer(); openPlan(p.dataset.openPlan); }
+}, true);
+
+// ---- API -----------------------------------------------------------------------------------------
+// The server rotates the refresh token on every use, so parallel 401s share one refresh. If it fails because another tab
+// already rotated the token, the stored pair has changed and is used instead of signing out.
+let refreshing = null;
+function refresh() {
+  return refreshing ??= (async () => {
+    const rt = store.get('refresh'); if (!rt) return false;
+    const r = await fetch(API + '/auth/refresh', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ refreshToken: rt }) }).catch(() => null);
+    if (!r || !r.ok) return store.get('refresh') !== rt && !!store.get('refresh');
+    const j = await r.json(); store.set('access', j.accessToken); store.set('refresh', j.refreshToken); return true;
+  })().finally(() => { refreshing = null; });
+}
+async function api(path, { method = 'GET', body } = {}, retried) {
+  const r = await fetch(API + path, { method, headers: { authorization: 'Bearer ' + store.get('access'), ...(body ? { 'content-type': 'application/json' } : {}) }, body: body ? JSON.stringify(body) : undefined });
+  if (r.status === 401 && !retried && await refresh()) return api(path, { method, body }, true);
+  if (r.status === 401) { signOut(); throw new Error('Signed out'); }
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw Object.assign(new Error(j.message || j.error || 'HTTP ' + r.status), { status: r.status });
+  return j;
+}
+const post = (path, body) => api(path, { method: 'POST', body: body || {} });
+
+// ---- sign in -------------------------------------------------------------------------------------
+function signOut() { store.set('access', null); store.set('refresh', null); showLogin(); }
+function showLogin(msg) {
+  $('#app').classList.add('hidden'); $('#login').classList.remove('hidden');
+  $('#f-email').classList.remove('hidden'); $('#f-code').classList.add('hidden'); $('#login-err').textContent = msg || '';
+}
+$('#f-email').addEventListener('submit', async e => {
+  e.preventDefault(); const email = $('#email').value.trim(); const b = e.submitter; b.disabled = true; $('#login-err').textContent = '';
+  try {
+    // Admin-only sign-in: a code is emailed only if this address is an admin, and the reply is the same either way.
+    const r = await fetch(API + '/admin/auth/start', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ email }) });
+    if (!r.ok) throw new Error(r.status === 429 ? 'Too many tries. Wait 10 minutes.' : 'Could not send a code.');
+    $('#code-to').textContent = email; $('#f-email').classList.add('hidden'); $('#f-code').classList.remove('hidden'); $('#code').focus();
+  } catch (err) { $('#login-err').textContent = err.message; } finally { b.disabled = false; }
+});
+$('#code-back').addEventListener('click', () => showLogin());
+$('#f-code').addEventListener('submit', async e => {
+  e.preventDefault(); const b = e.submitter; b.disabled = true; $('#login-err').textContent = '';
+  try {
+    const r = await fetch(API + '/admin/auth/verify', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ email: $('#email').value.trim(), code: $('#code').value.trim() }) });
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok) throw new Error({ wrong_code: 'That code is wrong.', code_expired: 'That code expired. Send a new one.', too_many_attempts: 'Too many tries. Send a new code.', rate_limited: 'Too many tries. Wait 10 minutes.' }[j.error] || 'Sign-in failed.');
+    store.set('access', j.accessToken); store.set('refresh', j.refreshToken); $('#code').value = '';
+    await boot();
+  } catch (err) { $('#login-err').textContent = err.message; } finally { b.disabled = false; }
+});
+$('#signout').addEventListener('click', () => {
+  const rt = store.get('refresh');
+  if (rt) fetch(API + '/auth/logout', { method: 'POST', headers: { authorization: 'Bearer ' + store.get('access'), 'content-type': 'application/json' }, body: JSON.stringify({ refreshToken: rt }) }).catch(() => {});
+  signOut();
+});
+
+// ---- shell ---------------------------------------------------------------------------------------
+const TABS = [['overview', 'Overview'], ['users', 'Users'], ['plans', 'Plans'], ['trips', 'Trips'], ['host', 'Host'], ['reports', 'Reports'], ['verifications', 'Verifications'], ['subscriptions', 'Subscriptions'], ['emails', 'Emails']];
+let counts = {};
+function renderTabs(active) {
+  $('#tabs').innerHTML = TABS.map(([k, label]) => `<a href="#${k}" class="${k === active ? 'on' : ''}">${label}${counts[k] ? `<span class="count">${counts[k]}</span>` : ''}</a>`).join('');
+}
+async function boot() {
+  if (!store.get('access')) return showLogin();
+  try {
+    const me = await api('/admin/me');
+    $('#me').textContent = me.email; $('#login').classList.add('hidden'); $('#app').classList.remove('hidden');
+    route();
+  } catch (e) {
+    if (e.status === 403) {
+      // Signed in, but not (or no longer) an admin: drop the session on the server too, then forget it.
+      const rt = store.get('refresh');
+      if (rt) fetch(API + '/auth/logout', { method: 'POST', headers: { authorization: 'Bearer ' + store.get('access'), 'content-type': 'application/json' }, body: JSON.stringify({ refreshToken: rt }) }).catch(() => {});
+      store.set('access', null); store.set('refresh', null); showLogin("This account isn't an admin.");
+    }
+    else if (e.message !== 'Signed out') showLogin('Could not reach the API: ' + e.message);
+  }
+}
+function route() {
+  const tab = (location.hash.slice(1).split('?')[0]) || 'overview';
+  const view = VIEWS[tab] ? tab : 'overview';
+  renderTabs(view);
+  $('#view').innerHTML = '<div class="skeleton">Loading…</div>';
+  VIEWS[view]().catch(e => { if (e.message !== 'Signed out') $('#view').innerHTML = `<div class="card empty">Couldn't load this page: ${esc(e.message)}</div>`; });
+}
+window.addEventListener('hashchange', route);
+
+// ---- overview ------------------------------------------------------------------------------------
+function barChart(rows) {
+  const W = 640, H = 170, pad = { l: 28, r: 6, t: 10, b: 24 };
+  const max = Math.max(1, ...rows.map(r => r.signups)), step = (W - pad.l - pad.r) / rows.length, bw = Math.max(2, step * .68);
+  const nice = max <= 4 ? max : Math.ceil(max / 4) * 4;
+  const y = v => pad.t + (H - pad.t - pad.b) * (1 - v / nice);
+  const grid = [0, .5, 1].map(f => { const v = Math.round(nice * f); return `<line x1="${pad.l}" x2="${W - pad.r}" y1="${y(v)}" y2="${y(v)}" stroke="#EFEFEA"/><text x="${pad.l - 6}" y="${y(v) + 4}" text-anchor="end" font-size="10" fill="#6E6E68">${v}</text>`; }).join('');
+  const bars = rows.map((r, i) => {
+    const x = pad.l + i * step + (step - bw) / 2, h = (H - pad.t - pad.b) * (r.signups / nice);
+    const d = new Date(r.day + 'T00:00:00');
+    const label = i % 5 === 4 || i === rows.length - 1 ? `<text x="${x + bw / 2}" y="${H - 6}" text-anchor="middle" font-size="10" fill="#6E6E68">${d.getDate()} ${d.toLocaleString('en', { month: 'short' })}</text>` : '';
+    return `<g><a href="#users?day=${esc(r.day)}"><title>${esc(r.day)}: ${r.signups} signups</title><rect x="${x}" y="${y(r.signups)}" width="${bw}" height="${Math.max(h, r.signups ? 2 : 0)}" rx="2" fill="${i === rows.length - 1 ? '#FF5A36' : '#FF8A6E'}"/>${label}</a></g>`;
+  }).join('');
+  return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Daily signups, last 30 days">${grid}${bars}</svg>`;
+}
+const VIEWS = {};
+VIEWS.overview = async () => {
+  const o = await api('/admin/overview');
+  counts = { reports: o.queues.openReports, verifications: o.queues.pendingVerifications }; renderTabs('overview');
+  const u = o.users, p = o.plus, rv = o.revenue;
+  const srcs = [['google', 'Google Play'], ['razorpay', 'Razorpay (web)'], ['pass', 'Trip Pass'], ['wallet', 'Wallet pass (not bought)'], ['comp', 'Comp'], ['other', 'Other']].filter(([k]) => p[k] || (k !== 'other' && k !== 'wallet'));
+  const subRows = Object.entries(rv.estimated.razorpaySubs);
+  $('#view').innerHTML = `
+  <h1>Overview</h1>
+  <div class="grid kpis">
+    <div class="card pad kpi"><div class="l">Users</div><div class="v">${drill('#users?filter=people', n(u.total))}</div><div class="s">${drill('#users?filter=onboarded', n(u.onboarded))} with a full profile · ${drill('#users?filter=verified', n(u.verified))} verified</div></div>
+    <div class="card pad kpi"><div class="l">Signups today</div><div class="v">${drill('#users?filter=signup_today', n(u.today))}</div><div class="s">${drill('#users?filter=signup_7d', n(u.d7))} in 7 days · ${drill('#users?filter=signup_30d', n(u.d30))} in 30</div></div>
+    <div class="card pad kpi"><div class="l">Active (DAU / WAU)</div><div class="v">${drill('#users?filter=active_1d', n(o.activity.dau))} <span class="muted" style="font-size:18px">/ ${drill('#users?filter=active_7d', n(o.activity.wau))}</span></div><div class="s">${drill('#users?filter=active_30d', n(o.activity.mau))} in 30 days</div></div>
+    <div class="card pad kpi"><div class="l">Plus now</div><div class="v">${drill('#users?filter=plus', n(p.total))}</div><div class="s">${srcs.filter(([k]) => p[k]).map(([k, l]) => drill('#users?filter=plus&plus=' + k, `${n(p[k])} ${l.split(' ')[0].toLowerCase()}`)).join(' · ') || 'none yet'}</div></div>
+    <div class="card pad kpi"><div class="l">Web MRR <span class="pill amber" style="font-size:10.5px;line-height:16px">estimate</span></div><div class="v">${drill('#subscriptions', inr(rv.estimated.mrr))}</div><div class="s">renewing Razorpay subs × plan price</div></div>
+    <div class="card pad kpi"><div class="l">Trip Pass revenue</div><div class="v">${drill('#subscriptions', inr(rv.recorded.razorpayPasses.netOfRefunds))}</div><div class="s">recorded · ${drill('#subscriptions', n(rv.recorded.razorpayPasses.count) + ' web passes')} · ${inr(rv.recorded.razorpayPasses.amount30)} in 30 days</div></div>
+  </div>
+  <div class="grid two" style="margin-bottom:12px">
+    <div class="card pad chart"><h2>Signups per day <span class="muted small" style="font-weight:400">· last 30 days, India time</span></h2>${barChart(o.daily)}</div>
+    <div class="card pad"><h2>Plus by source</h2><div class="split">${srcs.map(([k, l]) => `<div><div class="row"><span>${l}</span><b>${drill('#users?filter=plus&plus=' + k, n(p[k]))}</b></div><div class="meter"><i style="width:${p.total ? Math.round(100 * (p[k] || 0) / p.total) : 0}%"></i></div></div>`).join('')}</div></div>
+  </div>
+  <div class="grid two">
+    <div class="card"><div class="pad" style="padding-bottom:0"><h2>Revenue: only what the database knows</h2></div>
+      <div class="tablewrap"><table><thead><tr><th>Source</th><th class="num">Count</th><th class="num">Amount</th><th>Basis</th></tr></thead><tbody>
+        <tr><td>Web Trip Passes (Razorpay)</td><td class="num">${drill('#subscriptions', n(rv.recorded.razorpayPasses.count))}</td><td class="num">${inr(rv.recorded.razorpayPasses.netOfRefunds)}</td><td>${pill('recorded', 'teal')} <span class="muted small">captured payments, minus ${n(rv.recorded.razorpayPasses.refunded)} refunded</span></td></tr>
+        ${subRows.map(([k, s]) => `<tr><td>Web Plus ${esc(k === 'halfyearly' ? '6-month' : k)} (Razorpay)</td><td class="num">${drill('#subscriptions', n(s.active) + ' active')}</td><td class="num">${inr(s.estCollected)}</td><td>${pill('estimate', 'amber')} <span class="muted small">${n(s.paidCycles)} paid cycles × ${inr(rv.prices[k] ?? rv.prices.monthly)}</span></td></tr>`).join('') || '<tr><td>Web Plus (Razorpay)</td><td class="num"><a class="drill" href="#subscriptions">0</a></td><td class="num">—</td><td class="muted small">no subscriptions yet</td></tr>'}
+        <tr><td>Google Play subscriptions</td><td class="num">${drill('#subscriptions', n(rv.google.activeSubs) + ' active')}</td><td class="num muted">not stored</td><td class="muted small">see Play Console</td></tr>
+        <tr><td>Google Play Trip Passes</td><td class="num">${drill('#subscriptions', n(rv.google.passes))}</td><td class="num muted">not stored</td><td class="muted small">see Play Console</td></tr>
+      </tbody></table></div></div>
+    <div class="card pad"><h2>Queues and activity</h2><div class="split">
+      <div class="row"><a href="#reports">Open reports</a><b>${drill('#reports', n(o.queues.openReports))}</b></div>
+      <div class="row"><a href="#verifications?status=pending">Selfies being checked</a><b>${drill('#verifications?status=pending', n(o.queues.pendingVerifications))}</b></div>
+      <div class="row"><a href="#plans?host=people">Upcoming plans <span class="muted small">by people</span></a><b>${drill('#plans?host=people', n(o.queues.upcomingPlans))}</b></div>
+      <div class="row"><a href="#plans?created=7d&host=people&status=all&when=all">Plans posted, 7 days</a><b>${drill('#plans?created=7d&host=people&status=all&when=all', n(o.queues.plans7))}</b></div>
+      <div class="row"><a href="#trips">Upcoming trips</a><b>${drill('#trips', n(o.queues.upcomingTrips))}</b></div>
+      <div class="row"><a href="#emails?status=sent&days=7">Emails sent, 7 days</a><b>${drill('#emails?status=sent&days=7', n(o.queues.emails7))}</b></div>
+      <div class="row"><a href="#users?filter=banned">Banned</a><b>${drill('#users?filter=banned', n(u.banned))}</b></div>
+      <div class="row"><a href="#users?filter=deleted">Deleted accounts</a><b>${drill('#users?filter=deleted', n(u.deleted))}</b></div>
+    </div><p class="muted small" style="margin:12px 0 0">Active users come from ${esc(o.activity.source)}.</p></div>
+  </div>`;
+};
+
+// ---- users ---------------------------------------------------------------------------------------
+const PLUS_LABEL = { google: 'Google Play', razorpay: 'Razorpay', pass: 'Trip Pass', wallet: 'Wallet pass (not bought)', comp: 'Comp', other: 'Plus' };
+const PASS_PLATFORM = { google: 'Google Play', razorpay: 'Razorpay', wallet: 'Wallet (redeemed, not bought)' };
+const hashParams = () => new URLSearchParams(location.hash.split('?')[1] || '');
+// Acquisition sources (api routes/admin.ts ATTRIBUTION_SOURCES, the values sign-up records); "other" is every utm_source
+// outside the list. An account with no attribution shows as Direct and filters as Direct.
+const USER_SOURCES = [['', 'All acquisition sources'], ['Google Play', 'Google Play'], ['Google Search', 'Google Search'], ['LinkedIn', 'LinkedIn'],
+  ['Meta / Instagram', 'Meta / Instagram'], ['Reddit', 'Reddit'], ['Direct', 'Direct / web'], ['other', 'Other (utm_source)']];
+const USER_FILTERS = [['all', 'Everyone'], ['people', 'People (not the team account)'], ['onboarded', 'Full profile'], ['verified', 'Verified'],
+  ['signup_today', 'Signed up today'], ['signup_7d', 'Signed up, 7 days'], ['signup_30d', 'Signed up, 30 days'],
+  ['active_1d', 'Active today (DAU)'], ['active_7d', 'Active, 7 days (WAU)'], ['active_30d', 'Active, 30 days (MAU)'],
+  ['plus', 'Plus'], ['comp', 'Comp Plus'], ['pending', 'Verification pending'], ['unverified', 'Not verified'], ['reported', 'Open reports'], ['banned', 'Banned'], ['admin', 'Admins'], ['deleted', 'Deleted']];
+
+// "How did you hear about us?" answers (onboarding; apps/api/src/lib/heard-from.ts). Shown next to the tracked source.
+const HEARD_LABEL = { instagram: 'Instagram', youtube: 'YouTube', tiktok: 'TikTok', google: 'Google search', play_store: 'Play Store', friend: 'Friend / invite link', ai: 'ChatGPT / AI', other: 'Other', skipped: 'Skipped', not_asked: 'Not asked' };
+const heardFrom = h => h ? `<div class="muted small" style="font-size:11px">Said: ${esc(HEARD_LABEL[h] || h)}</div>` : '';
+function formatSource(attr) {
+  if (!attr || !attr.source) return '<span class="pill">Direct</span>';
+  const s = attr.source;
+  let cls = '';
+  let style = '';
+  if (s === 'Google Play') { cls = 'teal'; }
+  else if (s === 'LinkedIn') { style = 'background:#E8F0FE;color:#1A73E8;font-weight:600'; }
+  else if (s === 'Google Search') { cls = 'amber'; }
+  else if (s === 'Meta / Instagram') { style = 'background:#FCE8E6;color:#C5221F'; }
+  else if (s === 'Demo Persona') { style = 'background:#F1F5F9;color:#475569'; }
+  return `<span class="pill ${cls}" ${style ? `style="${style}"` : ''}>${esc(s)}</span>${attr.device ? `<div class="muted small" style="font-size:11px">${esc(attr.device)}</div>` : ''}`;
+}
+
+VIEWS.users = async () => {
+  const hp = hashParams();
+  // An unknown source in an old link (e.g. #users?source=Founder) falls back to all sources instead of a 400.
+  const state = { q: hp.get('q') || '', filter: hp.get('filter') || 'all', source: USER_SOURCES.some(([v]) => v === hp.get('source')) ? hp.get('source') : '', plus: hp.get('plus') || '', day: hp.get('day') || '', offset: 0 };
+  $('#view').innerHTML = `
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:12px">
+      <h1 style="margin:0">Users</h1>
+      <button class="btn sm teal" id="trigger-ai-btn">🤖 Run AI Engagement Now (15m Loop)</button>
+    </div>
+    <div class="toolbar">
+      <input class="grow" type="search" id="u-q" placeholder="Search name, email, city or id" value="${esc(state.q)}">
+      <select id="u-f">
+        ${USER_FILTERS.map(([v, l]) => `<option value="${v}" ${v === state.filter ? 'selected' : ''}>${l}</option>`).join('')}
+      </select>
+      <select id="u-src">
+        ${USER_SOURCES.map(([v, l]) => `<option value="${esc(v)}" ${v === state.source ? 'selected' : ''}>${l}</option>`).join('')}
+      </select>
+    </div>
+    ${state.plus || state.day ? `<div class="toolbar"><span class="pill teal">${state.plus ? 'Plus from ' + esc(PLUS_LABEL[state.plus] || state.plus) : ''}${state.plus && state.day ? ' · ' : ''}${state.day ? 'Signed up ' + esc(state.day) + ' (India time)' : ''}</span><a class="btn sm" href="#users">Clear</a></div>` : ''}
+    <div class="card"><div class="tablewrap" id="u-table"></div></div>
+    <div class="toolbar" style="margin-top:12px">
+      <span class="muted small" id="u-count"></span>
+      <span style="flex:1"></span>
+      <button class="btn sm" id="u-prev">Previous</button>
+      <button class="btn sm" id="u-next">Next</button>
+    </div>`;
+
+  $('#trigger-ai-btn').addEventListener('click', async () => {
+    const b = $('#trigger-ai-btn'); b.disabled = true; b.textContent = 'Running AI...';
+    try {
+      const res = await post('/admin/ai-engagement/run');
+      const count = res.actions ? res.actions.length : 0;
+      toast(`AI Engagement complete: ${count} interaction(s) triggered`);
+    } catch (e) {
+      toast(e.message, true);
+    } finally {
+      b.disabled = false; b.textContent = '🤖 Run AI Engagement Now (15m Loop)';
+    }
+  });
+
+  const load = async () => {
+    const qs = new URLSearchParams({ filter: state.filter, limit: '50', offset: String(state.offset) });
+    if (state.q) qs.set('q', state.q);
+    if (state.plus) qs.set('plus', state.plus);
+    if (state.day) qs.set('day', state.day);
+    // The API filters by source, so the count and the pages are the filtered ones.
+    if (state.source) qs.set('source', state.source);
+    const r = await api('/admin/users?' + qs);
+    const users = r.users;
+
+    $('#u-count').textContent = r.total ? `${state.offset + 1}–${state.offset + users.length} of ${n(r.total)}` : '';
+    $('#u-prev').disabled = state.offset === 0;
+    $('#u-next').disabled = state.offset + r.users.length >= r.total;
+
+    $('#u-table').innerHTML = users.length ? `
+      <table>
+        <thead>
+          <tr>
+            <th>Person</th>
+            <th>Joined</th>
+            <th>Acquisition Source</th>
+            <th>Last seen</th>
+            <th>Where</th>
+            <th>Verification</th>
+            <th>Plus</th>
+            <th class="num">Reports</th>
+            <th>Status</th>
+            <th>App Access</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${users.map(u => `
+            <tr class="click" data-id="${esc(u.id)}">
+              <td>${person(u.name, u.email + (u.age ? ` · ${u.age}` : ''), u.photoUrl)}</td>
+              <td class="nowrap">${dt(u.createdAt)}</td>
+              <td>${formatSource(u.attribution)}${heardFrom(u.heardFrom)}</td>
+              <td class="nowrap">${ago(u.lastSeenAt)}</td>
+              <td class="small">${esc([u.city, u.homeCountry].filter(Boolean).join(' · ') || '—')}</td>
+              <td>${u.verified ? pill('Verified', 'teal') : u.verification === 'pending' ? pill('Pending', 'amber') : u.verification === 'rejected' ? pill('Rejected', 'red') : '<span class="muted">—</span>'}</td>
+              <td>${u.plusSource ? `${pill(PLUS_LABEL[u.plusSource] || 'Plus', u.plusSource === 'comp' ? 'coral' : 'teal')}<div class="muted small">until ${dt(u.plusUntil)}</div>` : '<span class="muted">Free</span>'}</td>
+              <td class="num">${u.openReports ? pill(u.openReports + ' open', 'red') : u.reports ? `<span class="muted">${u.reports}</span>` : '<span class="muted">0</span>'}</td>
+              <td>${u.deletedAt ? pill('Deleted') : u.bannedAt ? pill('Banned', 'red') : u.role === 'admin' ? pill('Admin', 'teal') : !u.onboarded ? pill('No profile') : ''}</td>
+              <td onclick="event.stopPropagation()">${u.deletedAt ? '<span class="muted small">—</span>' : `<button class="btn sm teal" data-quick-imp="${esc(u.id)}" title="Login as User">👁️ Impersonate</button>`}</td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>` : '<div class="empty">No users match.</div>';
+
+    $('#u-table').querySelectorAll('tr[data-id]').forEach(tr => tr.addEventListener('click', e => {
+      const av = e.target.closest('.av-open');
+      if (av) { openPhoto(tr.querySelector('.person b')?.textContent, av.dataset.full || ''); return; }
+      openUser(tr.dataset.id, load);
+    }));
+    $('#u-table').querySelectorAll('[data-quick-imp]').forEach(btn => btn.addEventListener('click', async e => {
+      e.stopPropagation();
+      try {
+        const res = await post(`/admin/users/${btn.dataset.quickImp}/impersonate`);
+        window.open(impersonationUrl(res), '_blank');
+        toast(`Viewing as ${res.targetUser?.name || res.targetUser?.email} in a new tab (read-only, 15 min)`);
+      } catch (err) {
+        toast(err.message, true);
+      }
+    }));
+  };
+
+  let t;
+  $('#u-q').addEventListener('input', e => { clearTimeout(t); t = setTimeout(() => { state.q = e.target.value.trim(); state.offset = 0; load(); }, 250); });
+  $('#u-f').addEventListener('change', e => { state.filter = e.target.value; state.offset = 0; load(); });
+  $('#u-src').addEventListener('change', e => { state.source = e.target.value; state.offset = 0; load(); });
+  $('#u-prev').addEventListener('click', () => { state.offset = Math.max(0, state.offset - 50); load(); });
+  $('#u-next').addEventListener('click', () => { state.offset += 50; load(); });
+  await load();
+};
+
+const closeDrawer = () => { $('#drawer').innerHTML = ''; };
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && $('#drawer').firstChild) closeDrawer(); });
+
+async function openUser(id, onChange) {
+  const d = $('#drawer'), close = closeDrawer;
+  if (!d.querySelector('.drawer')) {
+    d.innerHTML = `<div class="drawer" role="dialog" aria-modal="true" aria-label="User details"><div class="panel"><div class="head"><b>Loading…</b><span style="flex:1"></span><button class="btn sm" data-close>Close</button></div></div></div>`;
+    d.querySelector('.drawer').addEventListener('click', e => { if (e.target.classList.contains('drawer') || e.target.closest('[data-close]')) close(); });
+  }
+  let r, journey;
+  try {
+    [r, journey] = await Promise.all([
+      api('/admin/users/' + encodeURIComponent(id)),
+      api('/admin/users/' + encodeURIComponent(id) + '/journey').catch(() => null)
+    ]);
+  } catch (e) {
+    toast(e.message, true); return close();
+  }
+  const u = r.user;
+  const attr = u.attribution || {};
+  const act = async (fn, ok) => { try { await fn(); toast(ok); onChange && onChange(); openUser(id, onChange); } catch (e) { toast(e.message, true); } };
+
+  d.querySelector('.panel').innerHTML = `
+    <div class="head">
+      ${person(u.name, u.email, u.photoUrl)}
+      <span style="flex:1"></span>
+      <button class="btn sm" data-close>Close</button>
+    </div>
+    <div class="body">
+      <div class="card pad">
+        <div class="actions">
+          ${u.deletedAt ? `${pill('Deleted ' + dtt(u.deletedAt), 'red')} <span class="muted small">${esc(lifespan(u.createdAt, u.deletedAt))} after signing up. The account is anonymised: nothing to impersonate or change.</span>` : `
+          <button class="btn teal" id="imp-btn" title="Open Tablamigo Web App signed in as this user">👁️ Login as User (Impersonate)</button>
+          <select id="comp-days" aria-label="Comp length"><option value="7">7 days</option><option value="30" selected>30 days</option><option value="90">90 days</option><option value="365">1 year</option></select>
+          <button class="btn" id="comp-grant">Grant comp Plus</button>
+          ${u.compUntil && new Date(u.compUntil) > new Date() ? '<button class="btn" id="comp-revoke">Revoke comp</button>' : ''}
+          ${u.billingDisputedAt ? `${pill('Chargeback ' + dtt(u.billingDisputedAt), 'red')} <button class="btn" id="dispute-clear" title="Lets them buy on the web again and brings back comp and pass Plus. Subscriptions the dispute ended stay ended.">Clear billing dispute</button>` : ''}
+          <span style="flex:1"></span>
+          ${u.bannedAt ? '<button class="btn" id="unban">Unban</button>' : u.role === 'admin' ? '' : '<button class="btn danger" id="ban">Ban</button>'}`}
+        </div>
+      </div>
+
+      <!-- User Journey Timeline & Dropoff Diagnosis -->
+      ${journey ? `
+      <div class="card pad">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-wrap:wrap;gap:8px">
+          <h2 style="margin:0">User Activity Journey <span class="muted small">(${journey.summary.totalEvents} events)</span></h2>
+          <span class="pill ${journey.summary.dropoffStage.includes('Inactive') ? 'amber' : /Dropped|Deleted|Banned/.test(journey.summary.dropoffStage) ? 'red' : 'teal'}">${esc(journey.summary.dropoffStage)}</span>
+        </div>
+        <div class="note" style="margin-bottom:12px;background:#EFF6FF;color:#1E40AF;border-radius:8px;padding:8px 12px;font-size:12.5px">
+          <b>Suggested Action / Strategy:</b> ${esc(journey.summary.recommendation)}
+        </div>
+        <div class="journey-timeline">
+          ${journey.timeline.map(item => `
+            <div class="journey-item">
+              <div class="journey-icon">${item.icon}</div>
+              <div class="journey-content">
+                <div class="journey-header">
+                  <b>${esc(item.title)}</b>
+                  <span class="muted small">${ago(item.time)} · ${dtt(item.time)}</span>
+                </div>
+                ${item.subtitle ? `<div class="journey-sub small muted">${esc(item.subtitle)}</div>` : ''}
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </div>` : ''}
+
+      <div class="card pad"><dl class="kv">
+        <dt>Status</dt><dd>${userStatus(u)} ${u.role === 'admin' ? pill('Admin', 'teal') : ''}</dd>
+        <dt>Heard about us</dt><dd>${u.heardFrom ? `<b>${esc(HEARD_LABEL[u.heardFrom] || u.heardFrom)}</b> <span class="muted small">${dtt(u.heardFromAt)}</span>` : '<span class="muted">Not asked</span>'}</dd>
+        <dt>Acquisition</dt><dd><b>${esc(attr.source || 'Direct')}</b>${attr.medium ? ` · ${esc(attr.medium)}` : ''}${attr.device ? ` · ${esc(attr.device)}` : ''}${attr.referrer ? `<div class="muted small">Referrer: ${esc(attr.referrer)}</div>` : ''}${attr.ip ? `<div class="muted small">IP: ${esc(attr.ip)}</div>` : ''}</dd>
+        <dt>Plus</dt><dd>${u.plusSource ? `${pill(PLUS_LABEL[u.plusSource] || 'Plus', 'teal')} until ${dtt(u.plusUntil)}` : 'Free'}${u.compUntil ? `<div class="muted small">comp until ${dtt(u.compUntil)}</div>` : ''}</dd>
+        <dt>Verified</dt><dd>${u.verified ? 'Yes' : 'No'}</dd>
+        <dt>Profile</dt><dd>${esc([u.age && u.age + ' yrs', u.gender, u.homeCountry].filter(Boolean).join(' · ') || '—')}</dd>
+        <dt>Bio</dt><dd>${esc(u.bio || '—')}</dd>
+        <dt>Interests</dt><dd>${esc((u.interests || []).join(', ') || '—')}</dd>
+        <dt>Last location</dt><dd>${esc(u.city || '—')} <span class="muted small">${u.locationAt ? ago(u.locationAt) : ''}</span></dd>
+        <dt>Joined</dt><dd>${dtt(u.createdAt)} · last seen ${ago(u.lastSeenAt)}</dd>
+        <dt>Activity</dt><dd>${n(u.hosted)} plans hosted · ${n(u.joined)} joined · ${n(u.vouches)} thumbs-up</dd>
+        <dt>Email prefs</dt><dd>${Object.entries(u.emailPrefs || {}).filter(([, v]) => v === false).map(([k]) => pill(k + ' off')).join(' ') || '<span class="muted">all on</span>'}</dd>
+        <dt>User id</dt><dd class="small muted">${esc(u.id)}</dd>
+      </dl></div>
+      ${section('Reports against them', r.reports, x => `<tr><td>${pill(x.reason, x.status === 'open' ? 'red' : '')}<div class="muted small">${esc(x.targetType)} · ${ago(x.createdAt)} · by ${esc(x.reporterName || 'someone')}</div></td><td class="small">${esc(x.details || '')}</td><td>${esc(x.status)}</td></tr>`)}
+      ${section('Subscriptions', r.subscriptions, s => `<tr><td>${esc(s.platform)}${s.offer ? `<div class="small">${pill(s.offer, 'teal')}</div>` : ''}<div class="muted small">${esc(s.purchaseToken)}</div></td><td class="small">${esc(s.status.replace('SUBSCRIPTION_STATE_', '').toLowerCase())}${s.cancelRequestedAt ? ' · cancelling' : ''}</td><td class="nowrap">${dt(s.expiresAt)}</td></tr>`)}
+      ${section('Trip Passes', r.passes, p => `<tr><td class="small">${esc(p.purchaseToken)}</td><td>${p.amount ? inr(p.amount) : '—'}</td><td class="nowrap">${p.voidedAt ? pill('refunded', 'red') : 'until ' + dt(p.expiresAt)}</td></tr>`)}
+      ${section('Trips', r.trips, t => `<tr><td>${esc(t.city)}, ${esc(t.countryCode)}</td><td class="nowrap">${esc(t.startDate)} → ${esc(t.endDate)}</td></tr>`)}
+      ${section('Emails', r.emails, m => `<tr><td>${esc(m.subject || m.kind)}<div class="muted small">${esc(m.kind)}</div></td><td>${pill(m.status, m.status === 'sent' ? 'teal' : m.status === 'failed' ? 'red' : '')}</td><td class="nowrap small">${dtt(m.createdAt)}</td></tr>`)}
+    </div>`;
+
+  const on = (sel, fn) => { const el = d.querySelector(sel); if (el) el.addEventListener('click', fn); };
+  on('#imp-btn', async () => {
+    try {
+      const res = await post(`/admin/users/${id}/impersonate`);
+      window.open(impersonationUrl(res), '_blank');
+      toast(`Viewing as ${res.targetUser?.name || res.targetUser?.email} in a new tab (read-only, 15 min)`);
+    } catch (err) {
+      toast(err.message, true);
+    }
+  });
+  on('#comp-grant', () => act(() => post(`/admin/users/${id}/comp`, { days: Number($('#comp-days').value) }), 'Comp Plus granted'));
+  on('#comp-revoke', () => act(() => api(`/admin/users/${id}/comp`, { method: 'DELETE' }), 'Comp revoked'));
+  on('#dispute-clear', () => confirm('Clear the billing dispute? They can buy on the web again.') && act(() => post(`/admin/users/${id}/billing-dispute/clear`, {}), 'Billing dispute cleared'));
+  on('#ban', () => { if (confirm(`Ban ${u.name || u.email}? They're signed out, hidden everywhere, and their upcoming plans are cancelled.`)) act(() => post(`/admin/users/${id}/ban`), 'Banned'); });
+  on('#unban', () => act(() => post(`/admin/users/${id}/unban`), 'Unbanned'));
+}
+
+/** "12 min", "3 h", "4 days" (the API's lifespan() in routes/admin.ts). */
+const lifespan = (from, to) => { const min = Math.max(0, Math.round((new Date(to) - new Date(from)) / 60000)); return min < 90 ? `${min} min` : min < 2880 ? `${Math.round(min / 60)} h` : `${Math.round(min / 1440)} days`; };
+/** Deleted beats banned beats everything: a deleted account is never "Active". */
+const userStatus = u => u.deletedAt ? `${pill('Deleted', 'red')} <span class="small">${esc(dtt(u.deletedAt))} · ${esc(lifespan(u.createdAt, u.deletedAt))} after signing up</span>`
+  : u.bannedAt ? pill('Banned ' + dt(u.bannedAt), 'red') : u.onboarded ? pill('Active', 'teal') : pill('No profile yet');
+const section = (title, rows, row) => `<div class="card"><div class="pad" style="padding-bottom:6px"><h2 style="margin:0">${esc(title)} <span class="muted small">${rows.length}</span></h2></div>${rows.length ? `<div class="tablewrap"><table><tbody>${rows.map(row).join('')}</tbody></table></div>` : '<div class="muted small" style="padding:0 18px 14px">None</div>'}</div>`;
+
+// ---- plans ---------------------------------------------------------------------------------------
+VIEWS.plans = async () => {
+  const hp = hashParams();
+  const st = { q: hp.get('q') || '', status: hp.get('status') || 'active', when: hp.get('when') || 'upcoming', host: hp.get('host') || 'all', created: hp.get('created') || '' };
+  const opt = (v, l, cur) => `<option value="${v}" ${v === cur ? 'selected' : ''}>${l}</option>`;
+  $('#view').innerHTML = `<h1>Plans</h1><div class="toolbar"><input class="grow" type="search" id="p-q" placeholder="Search title, city, place or host" value="${esc(st.q)}">
+    <select id="p-s">${opt('active', 'Active', st.status)}${opt('cancelled', 'Cancelled', st.status)}${opt('all', 'Any status', st.status)}</select>
+    <select id="p-w">${opt('upcoming', 'Upcoming', st.when)}${opt('past', 'Past', st.when)}${opt('all', 'Any time', st.when)}</select>
+    <select id="p-h">${opt('all', 'Any host', st.host)}${opt('people', 'Hosted by people', st.host)}</select>
+    <select id="p-c">${opt('', 'Posted any time', st.created)}${opt('7d', 'Posted in 7 days', st.created)}${opt('30d', 'Posted in 30 days', st.created)}</select></div>
+    <div class="muted small" id="p-count" style="margin:-4px 0 8px"></div>
+    <div class="card"><div class="tablewrap" id="p-table"></div></div>`;
+  const load = async () => {
+    const qs = new URLSearchParams({ status: st.status, when: st.when, host: st.host }); if (st.q) qs.set('q', st.q); if (st.created) qs.set('created', st.created);
+    const { plans } = await api('/admin/plans?' + qs);
+    $('#p-count').textContent = `${n(plans.length)} plan${plans.length === 1 ? '' : 's'}${plans.length === 300 ? ' (first 300)' : ''}`;
+    $('#p-table').innerHTML = plans.length ? `<table><thead><tr><th>Plan</th><th>When</th><th>Where</th><th>Host</th><th class="num">Going</th><th class="num">Reports</th><th></th></tr></thead><tbody>${plans.map(p => `
+      <tr><td>${pLink(p.id, `<b>${esc(p.emoji)} ${esc(p.title)}</b>`)}<div class="muted small">${esc(p.category)}${p.womenOnly ? ' · women only' : ''}${p.closed ? ' · closed' : ''} · posted ${ago(p.createdAt)}</div></td>
+      <td class="nowrap">${dtt(p.startsAt)}</td><td class="small">${esc(p.placeName)}${p.city ? `<div class="muted">${esc(p.city)}</div>` : ''}</td>
+      <td>${uLink(p.hostId, person(p.hostName, p.hostEmail))}${p.hostBannedAt ? pill('banned', 'red') : ''}</td>
+      <td class="num">${n(p.going)}${p.maxPeople ? `<span class="muted">/${p.maxPeople}</span>` : ''}</td>
+      <td class="num">${p.reports ? pill(p.reports, 'red') : '<span class="muted">0</span>'}</td>
+      <td>${p.status === 'active' ? `<button class="btn sm danger" data-cancel="${esc(p.id)}" data-title="${esc(p.title)}">Cancel</button>` : pill('cancelled')}</td></tr>`).join('')}</tbody></table>` : '<div class="empty">No plans match.</div>';
+    $('#p-table').querySelectorAll('[data-cancel]').forEach(b => b.addEventListener('click', async () => {
+      if (!confirm(`Cancel "${b.dataset.title}"? Everyone in it is told the Tablamigo team removed it.`)) return;
+      try { await post(`/admin/plans/${b.dataset.cancel}/cancel`); toast('Plan cancelled'); load(); } catch (e) { toast(e.message, true); }
+    }));
+  };
+  let t; $('#p-q').addEventListener('input', e => { clearTimeout(t); t = setTimeout(() => { st.q = e.target.value.trim(); load(); }, 250); });
+  $('#p-s').addEventListener('change', e => { st.status = e.target.value; load(); });
+  $('#p-w').addEventListener('change', e => { st.when = e.target.value; load(); });
+  $('#p-h').addEventListener('change', e => { st.host = e.target.value; load(); });
+  $('#p-c').addEventListener('change', e => { st.created = e.target.value; load(); });
+  await load();
+};
+
+async function openPlan(id) {
+  const d = $('#drawer');
+  d.innerHTML = `<div class="drawer" role="dialog" aria-modal="true" aria-label="Plan details"><div class="panel"><div class="head"><b>Loading…</b><span style="flex:1"></span><button class="btn sm" data-close>Close</button></div></div></div>`;
+  d.querySelector('.drawer').addEventListener('click', e => { if (e.target.classList.contains('drawer') || e.target.closest('[data-close]')) closeDrawer(); });
+  let r; try { r = await api('/admin/plans/' + encodeURIComponent(id)); } catch (e) { toast(e.message, true); return closeDrawer(); }
+  const p = r.plan;
+  d.querySelector('.panel').innerHTML = `
+    <div class="head"><div><b>${esc(p.emoji)} ${esc(p.title)}</b> <span class="muted small">${esc(p.category)}</span></div><span style="flex:1"></span><button class="btn sm" data-close>Close</button></div>
+    <div class="body">
+      <div class="card pad"><dl class="kv">
+        <dt>Status</dt><dd>${p.status === 'active' ? pill(new Date(p.startsAt) > new Date() ? 'upcoming' : 'past', 'teal') : pill(p.status, 'red')}${p.closed ? ' ' + pill('closed') : ''}${p.womenOnly ? ' ' + pill('women only') : ''}</dd>
+        <dt>When</dt><dd>${dtt(p.startsAt)}</dd>
+        <dt>Where</dt><dd>${esc(p.placeName)}${p.city ? ` · ${esc(p.city)}` : ''}${p.placeAddress ? `<div class="muted small">${esc(p.placeAddress)}</div>` : ''}</dd>
+        <dt>Host</dt><dd>${uLink(p.hostId, person(p.hostName, p.hostEmail, p.hostPhoto))}${p.hostKind === 'team' ? pill('team') : ''}${p.hostBannedAt ? pill('banned', 'red') : ''}${p.hostDeletedAt ? pill('deleted', 'red') : ''}</dd>
+        <dt>Going</dt><dd>${n(r.members.length)}${p.maxPeople ? ` of ${p.maxPeople}` : ''}</dd>
+        <dt>Posted</dt><dd>${dtt(p.createdAt)}</dd>
+        <dt>About</dt><dd>${esc(p.description || '—')}</dd>
+        <dt>Plan id</dt><dd class="small muted">${esc(p.id)}</dd>
+      </dl></div>
+      ${section('People in it', r.members, m => `<tr><td>${uLink(m.id, person(m.name, m.email, m.photoUrl))}${m.accountKind === 'team' ? pill('team') : ''}${m.deletedAt ? pill('deleted', 'red') : ''}</td><td>${esc(m.rsvpStatus)}${m.checkedInAt ? ' · ' + pill('checked in', 'teal') : ''}</td><td class="nowrap small">${dtt(m.joinedAt)}</td></tr>`)}
+      ${section('Reports on this plan', r.reports, x => `<tr><td>${pill(REASON[x.reason] || x.reason, x.status === 'open' ? 'red' : '')}<div class="muted small">by ${uLink(x.reporterId, esc(x.reporterName || x.reporterEmail || 'someone'))} · ${ago(x.createdAt)}</div></td><td class="small">${esc(x.details || '')}</td><td>${esc(x.status === 'actioned' ? 'resolved' : x.status)}</td></tr>`)}
+      ${p.status === 'active' ? `<div class="card pad"><button class="btn danger" id="plan-cancel">Cancel this plan</button></div>` : ''}
+    </div>`;
+  d.querySelector('#plan-cancel')?.addEventListener('click', async () => {
+    if (!confirm(`Cancel "${p.title}"? Everyone in it is told the Tablamigo team removed it.`)) return;
+    try { await post(`/admin/plans/${p.id}/cancel`); toast('Plan cancelled'); openPlan(id); } catch (e) { toast(e.message, true); }
+  });
+}
+
+// ---- trips ---------------------------------------------------------------------------------------
+VIEWS.trips = async () => {
+  const hp = hashParams();
+  const st = { q: hp.get('q') || '', when: hp.get('when') || 'upcoming' };
+  const opt = (v, l) => `<option value="${v}" ${v === st.when ? 'selected' : ''}>${l}</option>`;
+  $('#view').innerHTML = `<h1>Trips</h1><div class="toolbar"><input class="grow" type="search" id="t-q" placeholder="Search city or traveller" value="${esc(st.q)}">
+    <select id="t-w">${opt('upcoming', 'Upcoming and current')}${opt('past', 'Past')}${opt('all', 'Any time')}</select></div>
+    <div class="muted small" id="t-count" style="margin:-4px 0 8px"></div>
+    <div class="card"><div class="tablewrap" id="t-table"></div></div>`;
+  const load = async () => {
+    const qs = new URLSearchParams({ when: st.when }); if (st.q) qs.set('q', st.q);
+    const { trips } = await api('/admin/trips?' + qs);
+    $('#t-count').textContent = `${n(trips.length)} trip${trips.length === 1 ? '' : 's'}`;
+    $('#t-table').innerHTML = trips.length ? `<table><thead><tr><th>Traveller</th><th>Where</th><th>Dates</th><th class="num">Overlapping travellers</th><th>Added</th></tr></thead><tbody>${trips.map(t => `
+      <tr class="click" data-user="${esc(t.userId)}"><td>${uLink(t.userId, person(t.name, t.email, t.photoUrl))}${t.accountKind === 'team' ? pill('team') : ''}${t.bannedAt ? pill('banned', 'red') : ''}</td>
+      <td>${esc(t.city)}, ${esc(t.countryCode)}</td><td class="nowrap">${esc(t.startDate)} → ${esc(t.endDate)}</td>
+      <td class="num">${t.overlaps ? pill(n(t.overlaps), 'teal') : '<span class="muted">0</span>'}</td><td class="nowrap small">${ago(t.createdAt)}</td></tr>`).join('')}</tbody></table>` : '<div class="empty">No trips match.</div>';
+    $('#t-table').querySelectorAll('tr[data-user]').forEach(tr => tr.addEventListener('click', () => openUser(tr.dataset.user)));
+  };
+  let tm; $('#t-q').addEventListener('input', e => { clearTimeout(tm); tm = setTimeout(() => { st.q = e.target.value.trim(); load(); }, 250); });
+  $('#t-w').addEventListener('change', e => { st.when = e.target.value; load(); });
+  await load();
+};
+
+// ---- the Tablamigo Host --------------------------------------------------------------------------
+// The team account "Tablamigo Host (Team)" (api lib/host.ts): its welcome DMs, what people wrote back, and replies from the team,
+// sent as the Host (the admin who sent each one is recorded). Below: the community starter plans it lists (lib/starter-plans.ts)
+// and a preview of the exact welcome a given user would get now.
+const REQ = { accepted: ['accepted', 'teal'], pending: ['request pending', 'amber'], declined: ['declined', 'red'] };
+VIEWS.host = async () => {
+  $('#view').innerHTML = `<h1>Tablamigo Host</h1><div id="h-modes" class="muted small" style="margin-bottom:12px"></div>
+    <div class="grid two"><div class="card"><div class="tablewrap" id="h-chats"></div></div><div class="card pad" id="h-thread"><div class="muted">Pick a conversation to read it and reply.</div></div></div>
+    <h2 style="margin-top:18px">Create plan as Tablamigo team</h2>
+    <div class="card pad"><div class="muted small" style="margin-bottom:8px">Lists a public plan as the Tablamigo Host, with its group chat. The team lists it only: nobody attends, and the Host is never counted as going. Your account is recorded.</div>
+      <form id="h-np" style="display:grid;gap:8px;max-width:640px">
+        <div class="toolbar" style="margin:0"><input class="grow" type="text" id="np-q" placeholder="Venue and city, e.g. Clear Cafe Ubud" maxlength="120"><button class="btn" type="button" id="np-search">Find place</button></div>
+        <select id="np-places" size="1" style="display:none"></select>
+        <div class="muted small" id="np-picked">No place picked yet.</div>
+        <input type="text" id="np-city" placeholder="City (filled from the place)" maxlength="80" required>
+        <input type="text" id="np-title" placeholder="Title" maxlength="80" minlength="3" required>
+        <div class="toolbar" style="margin:0"><input type="text" id="np-emoji" value="☕" maxlength="8" style="width:70px"><select id="np-cat"><option>food</option><option>drinks</option><option>outdoors</option><option>explore</option><option>culture</option><option>sports</option><option>work</option><option>nightlife</option><option>other</option></select>
+          <input type="date" id="np-date" required><input type="time" id="np-time" value="16:00" required><input type="number" id="np-max" min="2" max="50" placeholder="Capacity" style="width:100px"></div>
+        <div class="muted small">Date and time are the venue's local time.</div>
+        <textarea id="np-desc" rows="3" maxlength="600" minlength="10" required style="width:100%;box-sizing:border-box;padding:8px;border:1px solid var(--line);border-radius:8px" placeholder="Description"></textarea>
+        <div class="toolbar" style="margin:0"><button class="btn primary" id="np-go">Create plan</button><span class="muted small grow" id="np-out"></span></div>
+      </form></div>
+    <h2 style="margin-top:18px">Starter plans <span class="muted small">last 7 days and upcoming</span></h2><div class="card"><div class="tablewrap" id="h-starter"></div></div>
+    <h2 style="margin-top:18px">Welcome preview</h2>
+    <form class="toolbar" id="h-pf"><input class="grow" type="text" id="h-uid" placeholder="User id (from the Users tab)" pattern="[0-9a-fA-F-]{36}" required><button class="btn">Preview</button></form>
+    <div id="h-preview"></div>`;
+  const loadChats = async () => {
+    const r = await api('/admin/host/chats');
+    const unread = r.chats.reduce((s, c) => s + (c.unread || 0), 0);
+    counts.host = unread || undefined; renderTabs('host');
+    const mode = m => pill(m, m === 'on' ? 'teal' : m === 'dry' ? 'amber' : '');
+    const w = r.stats.welcomes, q = r.stats.requests;
+    $('#h-modes').innerHTML = `HOST_WELCOME ${mode(r.modes.hostWelcome)} · STARTER_PLANS ${mode(r.modes.starterPlans)} · Welcomes sent ${n(w.sent)}${w.failed ? `, failed ${n(w.failed)}` : ''} · Requests accepted ${n(q.accepted)}, pending ${n(q.pending)}, declined ${n(q.declined)}, blocked ${n(q.blocked)} · Replied ${n(q.replied)}`;
+    $('#h-chats').innerHTML = r.chats.length ? `<table><thead><tr><th>Person</th><th>Request</th><th>Last message</th><th class="num">Unread</th></tr></thead><tbody>${r.chats.map(c => `
+      <tr data-chat="${esc(c.id)}" style="cursor:pointer"><td>${person(c.user.name, c.user.city || c.user.email, c.user.photoUrl)}${c.user.deleted ? pill('deleted', 'red') : ''}${c.user.banned ? pill('banned', 'red') : ''}${c.blockedByUser ? pill('blocked the Host', 'red') : ''}</td>
+      <td>${pill(...(REQ[c.requestStatus] || [c.requestStatus, '']))}</td>
+      <td class="small" style="max-width:320px">${c.lastMessage ? `${c.lastMessage.fromHost ? '<span class="muted">Host:</span> ' : ''}${esc(c.lastMessage.body)}<div class="muted">${ago(c.lastMessage.createdAt)}</div>` : ''}</td>
+      <td class="num">${c.unread ? pill(c.unread, 'red') : '<span class="muted">0</span>'}</td></tr>`).join('')}</tbody></table>` : '<div class="empty">No conversations yet.</div>';
+    $('#h-chats').querySelectorAll('[data-chat]').forEach(tr => tr.addEventListener('click', () => openThread(tr.dataset.chat).catch(e => toast(e.message, true))));
+  };
+  const openThread = async id => {
+    const r = await api(`/admin/host/chats/${id}/messages`);
+    const closed = r.other.requestStatus === 'declined';
+    $('#h-thread').innerHTML = `<div style="max-height:420px;overflow:auto" id="h-msgs">${r.messages.map(m => `<div style="margin:0 0 10px;${m.fromHost ? 'text-align:right' : ''}">
+        <div class="muted small">${esc(m.kind === 'system' ? 'System' : m.fromHost ? 'Tablamigo Host (Team)' : m.senderName || 'Them')} · ${dtt(m.createdAt)}</div>
+        <div style="white-space:pre-wrap;display:inline-block;text-align:left;background:${m.fromHost ? 'var(--teal-bg)' : 'var(--grey-bg)'};border-radius:10px;padding:8px 10px;max-width:100%">${esc(m.body)}</div></div>`).join('')}</div>
+      ${closed ? '<div class="muted small" style="margin-top:10px">They declined the message request, so replies would never reach them.</div>' : `<form id="h-reply" style="margin-top:10px"><textarea id="h-body" rows="3" maxlength="2000" required style="width:100%;box-sizing:border-box;padding:8px;border:1px solid var(--line);border-radius:8px" placeholder="Reply as Tablamigo Host (Team)"></textarea>
+        <div class="toolbar" style="margin:6px 0 0"><span class="muted small grow">Sent as the Host. Your account is recorded with it.</span><button class="btn primary">Send</button></div></form>`}`;
+    const box = $('#h-msgs'); box.scrollTop = box.scrollHeight;
+    $('#h-reply')?.addEventListener('submit', async e => {
+      e.preventDefault(); const body = $('#h-body').value.trim(); if (!body) return;
+      const b = e.submitter; b.disabled = true;
+      try { await post(`/admin/host/chats/${id}/messages`, { body }); toast('Sent'); await openThread(id); } catch (err) { toast(err.message, true); } finally { b.disabled = false; }
+    });
+    loadChats().catch(() => {});
+  };
+  const loadStarter = async () => {
+    const { plans } = await api('/admin/starter-plans');
+    $('#h-starter').innerHTML = plans.length ? `<table><thead><tr><th>Plan</th><th>When</th><th>Where</th><th class="num">Real going</th><th>Status</th></tr></thead><tbody>${plans.map(p => `
+      <tr><td><b>${esc(p.title)}</b><div class="muted small">${esc(p.cityKey)} · ${esc(p.slot)}</div></td><td class="nowrap">${dtt(p.startsAt)}</td>
+      <td class="small">${esc(p.venue)}${p.city ? `<div class="muted">${esc(p.city)}</div>` : ''}</td><td class="num">${n(p.realGoing)}${p.members > p.realGoing ? `<span class="muted"> of ${n(p.members)}</span>` : ''}</td>
+      <td>${p.cancelledAt ? pill(`cancelled, ${p.realGoingAtCancel ?? 0} going`, 'red') : p.status !== 'active' ? pill(p.status) : p.goAnnouncedAt ? pill('going ahead', 'teal') : pill('open', 'amber')}</td></tr>`).join('')}</tbody></table>` : '<div class="empty">No starter plans yet.</div>';
+  };
+  // Create plan as Tablamigo team (POST /admin/host/plans). A venue must come from the place search, so its point is real.
+  let picked = null;
+  $('#np-search').addEventListener('click', async () => {
+    const q = $('#np-q').value.trim(); if (q.length < 2) return;
+    try {
+      const { places } = await api('/admin/host/places?q=' + encodeURIComponent(q));
+      const sel = $('#np-places'); sel.style.display = places.length ? '' : 'none'; sel.size = Math.min(places.length, 6) || 1;
+      sel.innerHTML = places.map((p, i) => `<option value="${i}">${esc(p.name)}${p.city ? ', ' + esc(p.city) : ''}${p.country ? ' (' + esc(p.country) + ')' : ''}${p.detail ? ' · ' + esc(p.detail) : ''}</option>`).join('');
+      sel.onchange = () => { picked = places[+sel.value]; $('#np-picked').textContent = `${picked.name} · ${picked.lat.toFixed(5)}, ${picked.lng.toFixed(5)}`; if (picked.city) $('#np-city').value = picked.city; };
+      if (!places.length) toast('No place found', true);
+    } catch (e) { toast(e.message, true); }
+  });
+  $('#h-np').addEventListener('submit', async e => {
+    e.preventDefault();
+    if (!picked) return toast('Find and pick the venue first', true);
+    const max = $('#np-max').value;
+    const body = { title: $('#np-title').value.trim(), emoji: $('#np-emoji').value.trim() || '☕', category: $('#np-cat').value, description: $('#np-desc').value.trim(),
+      placeName: picked.name, lat: picked.lat, lng: picked.lng, city: $('#np-city').value.trim(), localAt: `${$('#np-date').value}T${$('#np-time').value}`, ...(max ? { maxPeople: +max } : {}) };
+    if (!confirm(`List "${body.title}" at ${body.placeName}, ${body.city}, ${body.localAt.replace('T', ' ')} local, as the Tablamigo team?`)) return;
+    const b = $('#np-go'); b.disabled = true;
+    try { const r = await post('/admin/host/plans', body); $('#np-out').textContent = `Created ${r.id}`; toast('Plan created'); loadStarter().catch(() => {}); }
+    catch (err) { toast(err.message, true); } finally { b.disabled = false; }
+  });
+  $('#h-pf').addEventListener('submit', async e => {
+    e.preventDefault();
+    try {
+      const p = await api('/admin/host/preview?userId=' + encodeURIComponent($('#h-uid').value.trim()));
+      const m = p.meta;
+      $('#h-preview').innerHTML = `<div class="card pad"><div class="muted small" style="margin-bottom:8px">${p.welcome ? `Welcome ${esc(p.welcome.status)} ${p.welcome.sentAt ? ago(p.welcome.sentAt) : ''}` : p.due ? 'Due a welcome now' : 'Not due a welcome'} · mode ${esc(p.mode)} · city ${esc(m.city || '—')} · ${n(m.plans)} plans · starter ${m.starter ? 'yes' : 'no'} · ${n(m.others)} others this week · ${n(m.chars)} characters</div><div style="white-space:pre-wrap">${esc(p.text)}</div></div>`;
+    } catch (err) { toast(err.message, true); }
+  });
+  await Promise.all([loadChats(), loadStarter()]);
+};
+
+// ---- reports -------------------------------------------------------------------------------------
+const REASON = { harassment: 'Harassment', spam: 'Spam', fake_profile: 'Fake profile', inappropriate: 'Inappropriate', unsafe: 'Unsafe', underage: 'Underage', other: 'Other' };
+VIEWS.reports = async () => {
+  let status = 'open';
+  $('#view').innerHTML = `<h1>Reports</h1><div class="toolbar"><select id="r-s"><option value="open">Open</option><option value="actioned">Resolved</option><option value="dismissed">Dismissed</option><option value="all">All</option></select></div><div class="card"><div class="tablewrap" id="r-table"></div></div>`;
+  const load = async () => {
+    const { reports } = await api('/admin/reports?status=' + status);
+    if (status === 'open') { counts.reports = reports.length; renderTabs('reports'); }
+    $('#r-table').innerHTML = reports.length ? `<table><thead><tr><th>Reported</th><th>Reason</th><th>What</th><th>By</th><th>When</th><th></th></tr></thead><tbody>${reports.map(r => `
+      <tr><td>${r.targetUserId ? `<a href="#" data-user="${esc(r.targetUserId)}" style="text-decoration:none;color:inherit">${person(r.targetUserName, r.targetUserEmail, r.targetUserPhoto)}</a>` : `<span class="muted">Target not found</span><div class="muted small">id ${esc(String(r.targetId).slice(0, 13))}</div>`}${r.targetBannedAt ? pill('banned', 'red') : ''}</td>
+      <td>${pill(REASON[r.reason] || r.reason, r.reason === 'underage' || r.reason === 'unsafe' ? 'red' : 'amber')}${r.sameTargetOpen ? `<div class="muted small">+${r.sameTargetOpen} more open</div>` : ''}</td>
+      <td class="small" style="max-width:340px"><span class="tag">${esc(r.targetType)}</span> ${r.activityTitle ? pLink(r.targetType === 'activity' ? r.targetId : null, esc(r.activityTitle)) : r.messageBody ? `“${esc(r.messageBody.slice(0, 160))}”` : ''}${r.details ? `<div class="muted">${esc(r.details)}</div>` : ''}</td>
+      <td class="small">${uLink(r.reporterId, esc(r.reporterName || r.reporterEmail || '—'))}</td><td class="nowrap small">${ago(r.createdAt)}</td>
+      <td><div class="actions">${r.status === 'open' ? `<button class="btn sm teal" data-act="resolve" data-id="${esc(r.id)}">Resolve</button><button class="btn sm" data-act="dismiss" data-id="${esc(r.id)}">Dismiss</button>` : `${pill(r.status === 'actioned' ? 'resolved' : r.status)}<button class="btn sm" data-act="reopen" data-id="${esc(r.id)}">Reopen</button>`}</div></td></tr>`).join('')}</tbody></table>` : `<div class="empty">${status === 'open' ? 'Nothing to review.' : 'No reports here.'}</div>`;
+    $('#r-table').querySelectorAll('[data-act]').forEach(b => b.addEventListener('click', async () => {
+      try { await post(`/admin/reports/${b.dataset.id}/${b.dataset.act}`); toast({ resolve: 'Resolved', dismiss: 'Dismissed', reopen: 'Reopened' }[b.dataset.act]); load(); } catch (e) { toast(e.message, true); }
+    }));
+    $('#r-table').querySelectorAll('[data-user]').forEach(a => a.addEventListener('click', e => { e.preventDefault(); openUser(a.dataset.user, load); }));
+  };
+  $('#r-s').addEventListener('change', e => { status = e.target.value; load(); });
+  await load();
+};
+
+// ---- verifications -------------------------------------------------------------------------------
+// Selfies are checked automatically (api lib/verification.ts). This is a read-only log of the outcomes with their
+// scores; the buttons only override a decision and are never needed for someone to get verified.
+const POSE = { turn_head: 'Head turned to one side', look_up: 'Chin up', two_fingers: 'Two fingers up (old app, pose not checked)', touch_ear: 'Touching an ear (old app, pose not checked)', thumbs_up: 'Thumbs up (old app, pose not checked)' };
+const VREASON = { no_face: 'No clear face', several_faces: 'Several faces', profile_photo: 'Profile photo unusable', same_photo: 'Profile photo resubmitted', no_match: "Didn't match", wrong_pose: 'Wrong pose', check_failed: 'Check failed (our side)', admin: 'Rejected by admin' };
+const vScores = s => {
+  if (!s) return '<span class="muted small">no scores</span>';
+  const f = (v, d = 2) => v == null ? '—' : Number(v).toFixed(d);
+  return `<span class="small">match <b>${f(s.similarity)}</b> · faces ${s.selfieFaces}/${s.profileFaces} · yaw ${f(s.yaw)} · pitch ${f(s.pitch)} · hash ${s.hashDistance ?? '—'} · ${s.ms ?? '—'} ms</span>`;
+};
+/** The week in one line. Selfies submitted counts every request, so 0 means nobody sent one (the nudges went out regardless). */
+const verifySummary = c => `Last 7 days: ${n(c.submitted ?? (c.approved + c.rejected + c.pending))} selfies submitted (${n(c.approved)} approved · ${n(c.rejected)} rejected · ${n(c.pending)} being checked)`
+  + (c.nudges != null ? ` · ${n(c.nudges)} "verify your profile" emails sent` : '');
+VIEWS.verifications = async () => {
+  let status = ['all', 'approved', 'rejected', 'pending'].includes(hashParams().get('status')) ? hashParams().get('status') : 'all';
+  $('#view').innerHTML = `<h1>Verifications</h1>
+    <p class="muted lede">Checked automatically in seconds: one face, same person as the profile photo, not the profile photo again, and the asked head pose. Override only if a decision is clearly wrong.</p>
+    <div class="toolbar"><select id="v-s">${[['all', 'All outcomes'], ['approved', 'Approved'], ['rejected', 'Rejected'], ['pending', 'Being checked']].map(([v, l]) => `<option value="${v}" ${v === status ? 'selected' : ''}>${l}</option>`).join('')}</select><span class="muted small" id="v-sum"></span></div>
+    <div id="v-list"></div>`;
+  const load = async () => {
+    const { requests, last7Days: c } = await api('/admin/verifications?status=' + status);
+    counts.verifications = c.pending; renderTabs('verifications');
+    $('#v-sum').textContent = verifySummary(c);
+    $('#v-list').innerHTML = requests.length ? `<div class="grid vgrid">${requests.map(r => `
+      <div class="card pad">
+        ${uLink(r.userId, person(r.name, r.email))}
+        <div class="pair">
+          <figure>${safeImg(r.photoUrl) ? `<img src="${esc(safeImg(r.photoUrl))}" alt="Profile photo">` : '<div class="noimg">No profile photo</div>'}<figcaption>Profile photo</figcaption></figure>
+          <figure>${safeImg(r.selfieUrl) ? `<img src="${esc(safeImg(r.selfieUrl))}" alt="Verification selfie">` : '<div class="noimg">No selfie</div>'}<figcaption>Selfie</figcaption></figure>
+        </div>
+        <p style="margin:0 0 6px">${r.status === 'approved' ? pill('Approved', 'teal') : r.status === 'rejected' ? pill(VREASON[r.reason] || 'Rejected', 'red') : pill('Being checked', 'amber')}
+          ${r.reviewedAt ? `<span class="muted small">overridden by ${esc(r.reviewedByEmail || 'an admin')}</span>` : r.checkedAt ? '<span class="muted small">automatic</span>' : ''}</p>
+        <p style="margin:0 0 6px">${vScores(r.scores)}</p>
+        <p style="margin:0 0 10px">Asked pose: <b>${esc(POSE[r.pose] || r.pose)}</b><br><span class="muted small">sent ${ago(r.createdAt)} · joined ${dt(r.joinedAt)}</span></p>
+        <div class="actions">${r.status !== 'approved' ? `<button class="btn sm teal" data-v="approve" data-id="${esc(r.id)}">Override: approve</button>` : ''}${r.status !== 'rejected' ? `<button class="btn sm danger" data-v="reject" data-id="${esc(r.id)}">Override: reject</button>` : ''}</div>
+      </div>`).join('')}</div>` : '<div class="card empty">No verification selfies yet.</div>';
+    $('#v-list').querySelectorAll('[data-v]').forEach(b => b.addEventListener('click', async () => {
+      if (!confirm(b.dataset.v === 'approve' ? 'Approve this selfie and give the tick?' : 'Reject this selfie and remove the tick?')) return;
+      try {
+        await post(`/admin/verifications/${b.dataset.id}/${b.dataset.v}`);
+        toast(b.dataset.v === 'approve' ? 'Approved: they get an email' : 'Rejected: they get an email');
+        await load();
+      } catch (e) { toast(e.message, true); }
+    }));
+  };
+  $('#v-s').addEventListener('change', e => { status = e.target.value; load(); });
+  await load();
+};
+
+// ---- subscriptions -------------------------------------------------------------------------------
+VIEWS.subscriptions = async () => {
+  const r = await api('/admin/subscriptions');
+  const st = s => { const k = s.replace('SUBSCRIPTION_STATE_', '').toLowerCase().replace(/_/g, ' '); return pill(k, /active|grace/.test(k) ? 'teal' : /hold|paused|pending/.test(k) ? 'amber' : k === 'canceled' ? 'coral' : ''); };
+  $('#view').innerHTML = `<h1>Subscriptions and passes</h1>
+    <div class="card" style="margin-bottom:12px"><div class="pad" style="padding-bottom:6px"><h2>Subscriptions <span class="muted small">${r.subscriptions.length}</span></h2></div>
+      ${r.subscriptions.length ? `<div class="tablewrap"><table><thead><tr><th>Person</th><th>Platform</th><th>Plan</th><th>Status</th><th>Access until</th><th>Updated</th><th>Reference</th></tr></thead><tbody>${r.subscriptions.map(s => `
+        <tr class="click" data-user="${esc(s.userId)}"><td>${uLink(s.userId, person(s.name, s.email))}</td><td>${esc(s.platform === 'google' ? 'Google Play' : 'Razorpay')}</td><td>${esc(String(s.plan || s.productId).replace('tablamigo_plus_', ''))}${s.offer ? `<div class="small">${pill(s.offer, 'teal')}</div>` : ''}</td>
+        <td>${st(s.status)}${s.cancelRequestedAt ? ' ' + pill('cancelling', 'coral') : ''}</td><td class="nowrap">${dt(s.expiresAt)}</td><td class="nowrap small">${ago(s.updatedAt)}</td><td class="small muted">${esc(s.ref)}</td></tr>`).join('')}</tbody></table></div>` : '<div class="empty">No subscriptions yet.</div>'}</div>
+    <div class="card" style="margin-bottom:12px"><div class="pad" style="padding-bottom:6px"><h2>Trip Passes <span class="muted small">${r.passes.length}</span></h2></div>
+      ${r.passes.length ? `<div class="tablewrap"><table><thead><tr><th>Person</th><th>Platform</th><th class="num">Amount</th><th>Bought</th><th>Plus until</th><th>Reference</th></tr></thead><tbody>${r.passes.map(p => `
+        <tr class="click" data-user="${esc(p.userId)}"><td>${uLink(p.userId, person(p.name, p.email))}</td><td>${esc(PASS_PLATFORM[p.platform] || p.platform)}</td><td class="num">${p.amount ? inr(p.amount) : '<span class="muted">—</span>'}</td>
+        <td class="nowrap">${dt(p.createdAt)}</td><td class="nowrap">${p.voidedAt ? pill('refunded', 'red') : dt(p.expiresAt)}</td><td class="small muted">${esc(p.ref)}</td></tr>`).join('')}</tbody></table></div>` : '<div class="empty">No passes yet.</div>'}</div>
+    <div class="card"><div class="pad" style="padding-bottom:6px"><h2>Comp Plus <span class="muted small">${r.comps.length}</span></h2></div>
+      ${r.comps.length ? `<div class="tablewrap"><table><thead><tr><th>Person</th><th>Comp until</th><th>Plus until</th></tr></thead><tbody>${r.comps.map(c => `
+        <tr class="click" data-user="${esc(c.userId)}"><td>${uLink(c.userId, person(c.name, c.email))}</td><td class="nowrap">${dt(c.compUntil)}</td><td class="nowrap">${dt(c.plusUntil)}</td></tr>`).join('')}</tbody></table></div>` : '<div class="empty">No comps. Grant one from a user\'s page.</div>'}</div>`;
+  $('#view').querySelectorAll('tr[data-user]').forEach(tr => tr.addEventListener('click', () => openUser(tr.dataset.user, VIEWS.subscriptions)));
+};
+
+// ---- emails --------------------------------------------------------------------------------------
+VIEWS.emails = async () => {
+  const hp = hashParams();
+  const st = { kind: hp.get('kind') || '', status: hp.get('status') || '', q: hp.get('q') || '', days: hp.get('days') || '' };
+  $('#view').innerHTML = `<h1>Email log</h1>${st.days ? `<div class="toolbar"><span class="pill teal">Last ${esc(st.days)} days${st.status ? ', ' + esc(st.status) : ''}</span><a class="btn sm" href="#emails">Clear</a></div>` : ''}<div class="card" style="margin-bottom:12px" id="e-kinds"></div>
+    <div class="toolbar"><input class="grow" type="search" id="e-q" placeholder="Search recipient or subject"><select id="e-k"><option value="">All kinds</option></select>
+    <select id="e-s"><option value="">Any status</option><option value="sent">Sent</option><option value="failed">Failed</option><option value="pending">Pending</option><option value="skipped">Skipped</option></select></div>
+    <div class="card"><div class="tablewrap" id="e-table"></div></div>`;
+  let kindsDone = false;
+  if (st.status) $('#e-s').value = st.status;
+  if (st.q) $('#e-q').value = st.q;
+  const load = async () => {
+    const qs = new URLSearchParams(); for (const k of ['kind', 'status', 'q', 'days']) if (st[k]) qs.set(k, st[k]);
+    const r = await api('/admin/emails?' + qs);
+    if (!kindsDone) {
+      kindsDone = true;
+      $('#e-k').insertAdjacentHTML('beforeend', r.kinds.map(k => `<option value="${esc(k.kind)}" ${k.kind === st.kind ? 'selected' : ''}>${esc(k.kind)}</option>`).join(''));
+      $('#e-kinds').innerHTML = r.kinds.length ? `<div class="tablewrap"><table><thead><tr><th>Kind</th><th class="num">Sent, 7 days</th><th class="num">Sent, 30 days</th><th class="num">Failed</th></tr></thead><tbody>${r.kinds.map(k => `<tr><td>${esc(k.kind)}</td><td class="num">${n(k.sent7)}</td><td class="num">${n(k.sent30)}</td><td class="num">${k.failed ? pill(k.failed, 'red') : '0'}</td></tr>`).join('')}</tbody></table></div>` : '<div class="empty">No emails sent yet.</div>';
+    }
+    $('#e-table').innerHTML = r.emails.length ? `<table><thead><tr><th>When</th><th>To</th><th>Subject</th><th>Kind</th><th>Status</th></tr></thead><tbody>${r.emails.map(m => `
+      <tr${m.userId ? ` class="click" data-user="${esc(m.userId)}"` : ''}><td class="nowrap small">${dtt(m.createdAt)}</td><td class="small">${uLink(m.userId, esc(m.toEmail || '—'))}</td><td>${esc(m.subject || '')}${m.error ? `<div class="small" style="color:var(--red)">${esc(m.error)}</div>` : ''}</td>
+      <td class="small muted">${esc(m.kind)}</td><td>${pill(m.status + (m.attempts > 1 ? ` ×${m.attempts}` : ''), m.status === 'sent' ? 'teal' : m.status === 'failed' ? 'red' : m.status === 'pending' ? 'amber' : '')}</td></tr>`).join('')}</tbody></table>` : '<div class="empty">Nothing matches.</div>';
+    $('#e-table').querySelectorAll('tr[data-user]').forEach(tr => tr.addEventListener('click', () => openUser(tr.dataset.user)));
+  };
+  let t; $('#e-q').addEventListener('input', e => { clearTimeout(t); t = setTimeout(() => { st.q = e.target.value.trim(); load(); }, 250); });
+  $('#e-k').addEventListener('change', e => { st.kind = e.target.value; load(); });
+  $('#e-s').addEventListener('change', e => { st.status = e.target.value; load(); });
+  await load();
+};
+
+boot();
+</script>
+<!-- ============================================================================================ -->
+<!-- Support tickets (support-autoreply branch). Self-contained on purpose so it merges cleanly:   -->
+<!-- it only registers a tab and a view on the shell above. API: apps/api/src/routes/support.ts.   -->
+<!-- ============================================================================================ -->
+<script>
+'use strict';
+TABS.push(['tickets', 'Tickets']);
+VIEWS.tickets = async () => {
+  const st = { status: 'open', q: '' };
+  $('#view').innerHTML = `<h1>Support tickets</h1>
+    <p class="muted small" style="margin:-6px 0 12px">Every in-app report opens a ticket with a TM- reference. The reporter got an automatic confirmation; replies sent here are emailed from support@. When they answer, it lands in the support@ inbox with the reference in the subject.</p>
+    <div class="toolbar"><input class="grow" type="search" id="t-q" placeholder="Search ref (TM-7K2Q), email or text">
+    <select id="t-s"><option value="open">Open</option><option value="unanswered">Open, not answered</option><option value="answered">Open, answered</option><option value="closed">Closed</option><option value="all">All</option></select></div>
+    <div class="card"><div class="tablewrap" id="t-table"></div></div>`;
+  const load = async () => {
+    const qs = new URLSearchParams({ status: st.status }); if (st.q) qs.set('q', st.q);
+    const r = await api('/admin/tickets?' + qs);
+    counts.tickets = r.counts.unanswered; renderTabs('tickets');
+    $('#t-table').innerHTML = r.tickets.length ? `<table><thead><tr><th>Ref</th><th>From</th><th>Subject</th><th>Status</th><th>When</th></tr></thead><tbody>${r.tickets.map(t => `
+      <tr class="click" data-ticket="${esc(t.id)}"><td class="nowrap"><b>${esc(t.ref)}</b></td><td>${uLink(t.userId, person(t.name, t.email))}</td>
+      <td>${esc(t.subject)}<div class="small muted">${esc(t.preview)}</div></td>
+      <td>${t.status === 'closed' ? pill('closed') : t.answeredAt ? pill('answered', 'teal') : pill('open', 'coral')}</td>
+      <td class="nowrap small">${ago(t.createdAt)}</td></tr>`).join('')}</tbody></table>` : `<div class="empty">${st.status === 'open' ? 'No open tickets.' : 'Nothing here.'}</div>`;
+    $('#t-table').querySelectorAll('tr[data-ticket]').forEach(tr => tr.addEventListener('click', () => openTicket(tr.dataset.ticket, load)));
+  };
+  let tm; $('#t-q').addEventListener('input', e => { clearTimeout(tm); tm = setTimeout(() => { st.q = e.target.value.trim(); load(); }, 250); });
+  $('#t-s').addEventListener('change', e => { st.status = e.target.value; load(); });
+  await load();
+  const linked = new URLSearchParams(location.hash.split('?')[1] || '').get('id');
+  if (linked) openTicket(linked, load);
+};
+
+async function openTicket(id, onChange) {
+  const d = $('#drawer');
+  if (!d.querySelector('.drawer')) {
+    d.innerHTML = `<div class="drawer" role="dialog" aria-modal="true" aria-label="Ticket"><div class="panel"><div class="head"><b>Loading…</b><span style="flex:1"></span><button class="btn sm" data-close>Close</button></div></div></div>`;
+    d.querySelector('.drawer').addEventListener('click', e => { if (e.target.classList.contains('drawer') || e.target.closest('[data-close]')) closeDrawer(); });
+  }
+  let r;
+  try { r = await api('/admin/tickets/' + encodeURIComponent(id)); } catch (e) { toast(e.message, true); return closeDrawer(); }
+  const t = r.ticket;
+  const act = async (fn, ok) => { try { await fn(); toast(ok); onChange && onChange(); openTicket(id, onChange); } catch (e) { toast(e.message, true); } };
+  d.querySelector('.panel').innerHTML = `
+    <div class="head"><div><b>${esc(t.ref)}</b> <span class="muted small">${esc(t.subject)}</span></div><span style="flex:1"></span><button class="btn sm" data-close>Close</button></div>
+    <div class="body">
+      <div class="card pad">
+        ${person(t.name, t.email)}
+        <div class="small muted" style="margin:8px 0">${dtt(t.createdAt)} · ${esc(t.source)}${t.reportTargetType ? ` · report on ${esc(t.reportTargetType)} ${esc(t.reportTargetId)} (${esc(t.reportStatus === 'actioned' ? 'resolved' : t.reportStatus)})` : ''}</div>
+        <div style="white-space:pre-wrap;overflow-wrap:anywhere">${esc(t.body)}</div>
+        ${t.userId ? `<div style="margin-top:10px"><button class="btn sm" data-reporter>Open reporter</button> <a class="btn sm" href="#reports">Reports queue</a></div>` : ''}
+      </div>
+      ${r.replies.map(x => `<div class="card pad"><div class="small muted" style="margin-bottom:6px">${esc(x.adminEmail || 'admin')} · ${dtt(x.createdAt)} · ${x.emailStatus === 'sent' ? pill('emailed', 'teal') : pill(x.emailStatus, 'red')}</div><div style="white-space:pre-wrap;overflow-wrap:anywhere">${esc(x.body)}</div></div>`).join('')}
+      <div class="card pad">
+        <textarea id="t-reply" rows="6" style="width:100%;box-sizing:border-box;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--card)" placeholder="Reply to ${esc(t.email)}. Sent from support@ with ${esc(t.ref)} in the subject."></textarea>
+        <div class="actions" style="margin-top:8px">
+          <button class="btn sm teal" data-send>Send reply</button>
+          ${t.status === 'open' ? '<button class="btn sm" data-close-ticket>Close ticket</button>' : '<button class="btn sm" data-reopen>Reopen</button>'}
+        </div>
+      </div>
+    </div>`;
+  const panel = d.querySelector('.panel');
+  panel.querySelector('[data-reporter]')?.addEventListener('click', () => { closeDrawer(); openUser(t.userId); });
+  panel.querySelector('[data-send]').addEventListener('click', () => {
+    const body = panel.querySelector('#t-reply').value.trim();
+    if (body.length < 2) return toast('Write a reply first', true);
+    act(async () => { const out = await api(`/admin/tickets/${id}/reply`, { method: 'POST', body: { body } }); if (!out.ok) throw new Error('Saved, but the email did not send: ' + out.emailStatus); }, 'Reply emailed to ' + t.email);
+  });
+  panel.querySelector('[data-close-ticket]')?.addEventListener('click', () => act(() => api(`/admin/tickets/${id}/close`, { method: 'POST' }), 'Ticket closed'));
+  panel.querySelector('[data-reopen]')?.addEventListener('click', () => act(() => api(`/admin/tickets/${id}/reopen`, { method: 'POST' }), 'Ticket reopened'));
+}
+</script>
+<!-- ======================================= end support tickets ================================= -->
+
+<!-- ============================================================================================ -->
+<!-- Activation Funnel & Cohort Retention (Backlog 33). Self-contained module.                     -->
+<!-- ============================================================================================ -->
+<script>
+'use strict';
+TABS.push(['funnel', 'Activation Funnel']);
+VIEWS.funnel = async () => {
+  let days = 30;
+  $('#view').innerHTML = `
+    <h1>Product Activation Funnel</h1>
+    <p class="muted small" style="margin:-6px 0 14px">Tracks user journey from account creation to first real-world meetup: Sign-up → Onboarding → First Action (Plan/Trip/DM) → First Join → First Meetup (Checked In).</p>
+    <div class="toolbar">
+      <select id="funnel-days">
+        <option value="7">Last 7 days</option>
+        <option value="30" selected>Last 30 days</option>
+        <option value="90">Last 90 days</option>
+        <option value="0">All time</option>
+      </select>
+      <button class="btn sm" id="funnel-refresh">Refresh</button>
+    </div>
+    <div class="grid kpis" id="funnel-kpis"></div>
+    <div class="card pad" style="margin-bottom:16px">
+      <h2>Conversion Funnel Stages</h2>
+      <div id="funnel-bars" style="display:flex;flex-direction:column;gap:12px;margin-top:12px"></div>
+    </div>
+    <div class="card" style="margin-bottom:16px">
+      <div class="pad" style="border-bottom:1px solid var(--line)">
+        <h2>How did you hear about us?</h2>
+        <div class="small muted">What people tapped in onboarding, for the sign-ups in this window, and how far each group got.</div>
+      </div>
+      <div class="tablewrap" id="funnel-heard"></div>
+    </div>
+    <div class="card">
+      <div class="pad" style="border-bottom:1px solid var(--line)">
+        <h2>Weekly Cohort Retention & Progression</h2>
+        <div class="small muted">Cohorts grouped by registration week, tracking milestone completion % over time.</div>
+      </div>
+      <div class="tablewrap" id="funnel-cohorts"></div>
+    </div>
+  `;
+
+  const load = async () => {
+    const r = await api('/admin/analytics/funnel?days=' + days);
+    const sum = r.summary;
+    $('#funnel-kpis').innerHTML = `
+      <div class="card pad kpi"><div class="l">Total Signups</div><div class="v">${n(sum.totalSignups)}</div><div class="s">In selected window</div></div>
+      <div class="card pad kpi"><div class="l">Onboarding Rate</div><div class="v">${sum.onboardingRate}%</div><div class="s">Profile & intent complete</div></div>
+      <div class="card pad kpi"><div class="l">Activation Rate</div><div class="v">${sum.activationRate}%</div><div class="s">Met up & checked in</div></div>
+      <div class="card pad kpi"><div class="l">Avg Hours to Join</div><div class="v">${sum.avgHoursToJoin ? sum.avgHoursToJoin + 'h' : '—'}</div><div class="s">From signup to 1st plan</div></div>
+      <div class="card pad kpi"><div class="l">Avg Hours to Meet</div><div class="v">${sum.avgHoursToMeet ? sum.avgHoursToMeet + 'h' : '—'}</div><div class="s">From signup to check-in</div></div>
+    `;
+
+    const stages = r.stages || [];
+    const maxCount = Math.max(1, ...stages.map(s => s.count));
+    $('#funnel-bars').innerHTML = stages.map((s, i) => {
+      const pctWidth = Math.max(4, Math.round((s.count / maxCount) * 100));
+      const color = ['#FF5A36', '#FF8A6E', '#10B39F', '#0E9383', '#0A7C6E'][i] || '#FF5A36';
+      return `
+        <div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;font-size:13px">
+            <div><b>${esc(s.name)}</b> <span class="muted small">(${s.count} users)</span></div>
+            <div>
+              <span class="pill teal">${s.conversionFromSignup}% of signups</span>
+              ${i > 0 ? `<span class="pill ${s.dropoffRate > 50 ? 'amber' : 'coral'}">${s.conversionFromPrevious}% from prev (${s.dropoffRate}% drop)</span>` : ''}
+            </div>
+          </div>
+          <div class="meter" style="height:10px;border-radius:5px">
+            <i style="width:${pctWidth}%;background:${color};border-radius:5px"></i>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    const heard = r.heardFrom || [];
+    $('#funnel-heard').innerHTML = heard.length ? `
+      <table>
+        <thead><tr><th>Answer</th><th class="num">Signups</th><th class="num">Onboarded</th><th class="num">Joined Plan</th><th class="num">Met Up</th></tr></thead>
+        <tbody>
+          ${heard.map(h => `
+            <tr>
+              <td><b>${esc(HEARD_LABEL[h.source] || h.source)}</b></td>
+              <td class="num">${n(h.signups)}</td>
+              <td class="num">${n(h.onboarded)}</td>
+              <td class="num">${n(h.joinedPlan)}</td>
+              <td class="num">${n(h.metUp)}</td>
+            </tr>`).join('')}
+        </tbody>
+      </table>
+    ` : `<div class="empty">No answers in this window.</div>`;
+
+    const cohorts = r.cohorts || [];
+    $('#funnel-cohorts').innerHTML = cohorts.length ? `
+      <table>
+        <thead>
+          <tr>
+            <th>Cohort Week</th>
+            <th class="num">Signups</th>
+            <th class="num">Onboarded</th>
+            <th class="num">1st Action</th>
+            <th class="num">Joined Plan</th>
+            <th class="num">Met Up</th>
+            <th class="num">Activation %</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${cohorts.map(c => `
+            <tr>
+              <td class="nowrap"><b>${esc(c.cohortWeek)}</b></td>
+              <td class="num">${n(c.signups)}</td>
+              <td class="num">${n(c.onboarded)} <span class="muted small">(${c.onboardingPct}%)</span></td>
+              <td class="num">${n(c.firstAction)} <span class="muted small">(${c.firstActionPct}%)</span></td>
+              <td class="num">${n(c.joinedPlan)} <span class="muted small">(${c.joinedPlanPct}%)</span></td>
+              <td class="num">${n(c.metUp)} <span class="muted small">(${c.metUpPct}%)</span></td>
+              <td class="num"><span class="pill ${c.metUpPct >= 20 ? 'teal' : c.metUpPct >= 10 ? 'amber' : ''}">${c.metUpPct}%</span></td>
+            </tr>
+          `).join('')}
+        </tbody>
+      </table>
+    ` : `<div class="empty">No cohort data for this window.</div>`;
+  };
+
+  $('#funnel-days').addEventListener('change', e => { days = Number(e.target.value); load(); });
+  $('#funnel-refresh').addEventListener('click', () => load());
+  await load();
+};
+</script>
+<script>
+// Phones: every table with a header row is shown as one card per row (CSS: table.stack under 640px). The tables are built as
+// HTML strings all over this page, so instead of touching each one, label each cell with its column's header whenever a
+// table appears or changes.
+function labelTables(root) {
+  for (const t of root.querySelectorAll('table')) {
+    const heads = [...t.querySelectorAll(':scope > thead th')].map(th => th.textContent.trim());
+    if (!heads.length) continue;
+    t.classList.add('stack');
+    for (const tr of t.querySelectorAll(':scope > tbody > tr')) {
+      [...tr.children].forEach((td, i) => { if (!td.hasAttribute('data-label')) td.setAttribute('data-label', heads[i] ?? ''); });
+    }
+  }
+}
+labelTables(document);
+new MutationObserver(ms => { if (ms.some(m => m.addedNodes.length)) labelTables(document); }).observe(document.body, { childList: true, subtree: true });
+</script>
+<!-- ============================================================================================ -->
+<!-- Creator partners (affiliates). API: apps/api/src/routes/admin-affiliates.ts. Owed amounts are  -->
+<!-- per currency and never converted; mark paid takes the transfer's UTR (unique per payout).      -->
+<!-- ============================================================================================ -->
+<script>
+'use strict';
+TABS.push(['affiliates', 'Affiliates']);
+const affMoney = (minor, cur) => { try { return new Intl.NumberFormat('en-IN', { style: 'currency', currency: cur, maximumFractionDigits: 2 }).format(Number(minor || 0) / 100); } catch { return `${(Number(minor || 0) / 100).toFixed(2)} ${cur}`; } };
+const affList = rows => rows.length ? rows.map(m => esc(affMoney(m.amountMinor, m.currency))).join('<br>') : '<span class="muted">—</span>';
+const AFF_SOURCE = { web_link: 'web link', play_install_referrer: 'Play install', signup_code: 'typed code', coupon: 'coupon' };
+const affTerm = a => `${a.percent}% ${a.months ? `for ${a.months} months` : 'while a partner'}`;
+VIEWS.affiliates = async () => {
+  const r = await api('/admin/affiliates');
+  const due = r.affiliates.filter(a => a.owed.some(o => o.due)).length;
+  $('#view').innerHTML = `<h1>Affiliates</h1>
+    <p class="muted small">Creator partners earn a share of what the people they bring pay (Play net of Google's fee). Owed is per currency and never converted; payouts start at ${Object.entries(r.minimums).map(([c, m]) => esc(affMoney(m, c))).join(' / ')}. Send the money first, then record it here with its UTR.${due ? ` <b>${due} partner${due > 1 ? 's' : ''} due a payout.</b>` : ''}</p>
+    <div class="card" style="margin-bottom:12px"><div class="tablewrap">${r.affiliates.length ? `<table><thead><tr><th>Partner</th><th>Code</th><th>Terms</th><th>Status</th><th class="num">Referrals</th><th class="num">Owed</th><th class="num">Paid</th></tr></thead><tbody>${r.affiliates.map(a => `
+      <tr class="click" data-aff="${esc(a.id)}"><td><b>${esc(a.name)}</b>${a.source === 'self' ? ' ' + pill('self sign-up', 'teal') : ''}${a.email ? `<div class="small muted">${esc(a.email)}</div>` : ''}</td><td><code>${esc(a.code)}</code></td><td class="small">${esc(affTerm(a))}</td>
+      <td>${pill(a.status, a.status === 'active' ? 'teal' : a.status === 'paused' ? 'amber' : '')}</td><td class="num">${n(a.referrals)}</td>
+      <td class="num">${a.owed.length ? a.owed.map(o => `${esc(affMoney(o.amountMinor, o.currency))}${o.due ? ' ' + pill('due', 'coral') : ''}`).join('<br>') : '<span class="muted">—</span>'}${a.estimated ? `<div class="small">${pill(a.estimated + ' estimated', 'amber')}</div>` : ''}</td>
+      <td class="num">${affList(a.paid)}</td></tr>`).join('')}</tbody></table>` : '<div class="empty">No partners yet. Add the first one below.</div>'}</div></div>
+    <div id="aff-detail"></div>
+    <div class="card pad"><h2>Add a partner</h2>
+      <form id="aff-new" class="toolbar" style="flex-wrap:wrap">
+        <input name="code" placeholder="CODE (4-16 letters/digits)" required pattern="[A-Za-z0-9]{4,16}" maxlength="16">
+        <input name="name" placeholder="Name" required maxlength="80">
+        <input name="email" type="email" placeholder="Partner email (optional)">
+        <input name="userEmail" type="email" placeholder="Their Tablamigo account email (optional)">
+        <input name="percent" type="number" min="1" max="${r.defaults.maxPercent}" step="0.01" value="${r.defaults.percent}" title="Commission %" style="width:90px">
+        <input name="months" type="number" min="1" max="120" placeholder="Months (empty = while partner)" style="width:220px">
+        <button class="btn primary" type="submit">Add</button>
+      </form></div>`;
+  $('#view').querySelectorAll('tr[data-aff]').forEach(tr => tr.addEventListener('click', () => affDetail(tr.dataset.aff)));
+  $('#aff-new').addEventListener('submit', async e => {
+    e.preventDefault(); const f = new FormData(e.target), b = e.submitter; b.disabled = true;
+    const body = { code: f.get('code').trim().toUpperCase(), name: f.get('name').trim(), percent: Number(f.get('percent')) };
+    for (const k of ['email', 'userEmail']) if (f.get(k).trim()) body[k] = f.get(k).trim();
+    if (f.get('months')) body.months = Number(f.get('months'));
+    try { const d = await post('/admin/affiliates', body); toast(`Added ${d.affiliate.name}`); await VIEWS.affiliates(); affDetail(d.affiliate.id); }
+    catch (err) { toast(err.message, true); } finally { b.disabled = false; }
+  });
+  const open = hashParams().get('id'); if (open) affDetail(open);
+};
+
+async function affDetail(id) {
+  const d = await api('/admin/affiliates/' + encodeURIComponent(id)), a = d.affiliate, el = $('#aff-detail');
+  el.innerHTML = `<div class="card pad" style="margin-bottom:12px">
+    <h2>${esc(a.name)} <code>${esc(a.code)}</code> ${pill(a.status, a.status === 'active' ? 'teal' : 'amber')}</h2>
+    <p class="small">Web link (works on every device; the site's Play buttons carry the code): <code>${esc(a.links.web)}</code><br>Play link (direct): <code style="word-break:break-all">${esc(a.links.play)}</code></p>
+    <p class="small">${a.source === 'self' ? `Joined from the app (self sign-up), terms ${esc(a.termsVersion)} accepted ${dt(a.termsAcceptedAt)}. ` : ''}Payout details: ${!a.payout ? '<span class="muted">none given</span>'
+      : a.payout.unreadable ? `${esc(a.payout.masked)} ${pill('unreadable, ask the partner to enter them again', 'amber')}`
+      : a.payout.details.method === 'upi' ? `UPI <code>${esc(a.payout.details.upiId)}</code>`
+      : `Bank: ${esc(a.payout.details.accountName)}, account <code>${esc(a.payout.details.accountNumber)}</code>, IFSC <code>${esc(a.payout.details.ifsc)}</code>`}${a.payout ? ` <span class="muted">(updated ${dt(a.payout.updatedAt)})</span>` : ''}</p>
+    <form id="aff-edit" class="toolbar" style="flex-wrap:wrap">
+      <label class="small">Commission % <input name="percent" type="number" min="1" max="50" step="0.01" value="${esc(a.percent)}" style="width:80px"></label>
+      <label class="small">Months <input name="months" type="number" min="1" max="120" value="${esc(a.months ?? '')}" placeholder="while partner" style="width:110px"></label>
+      <label class="small">Status <select name="status">${['active', 'paused', 'ended'].map(s => `<option ${s === a.status ? 'selected' : ''}>${s}</option>`).join('')}</select></label>
+      <label class="small">Coupon offer <input name="razorpayOfferId" value="${esc(a.razorpayOfferId ?? '')}" placeholder="offer_… (optional)"></label>
+      <label class="small grow">Payout details <input name="payoutNote" value="${esc(a.payoutNote ?? '')}" placeholder="UPI id or bank" maxlength="300"></label>
+      <button class="btn" type="submit">Save</button>
+    </form>
+    <p class="muted small">A new % or duration applies to charges from now on; recorded commissions keep theirs. Paused or ended: no new commissions.</p>
+    <h3>Owed</h3>
+    ${a.owed.length ? a.owed.map(o => `<form class="toolbar aff-pay" data-cur="${esc(o.currency)}" data-amount="${esc(o.amountMinor)}">
+      <b>${esc(affMoney(o.amountMinor, o.currency))}</b> <span class="muted small">${n(o.count)} rows${o.convert ? ' · paid in INR at today\'s rate, from ₹1,000' : o.due ? '' : ' · below the ' + esc(affMoney(o.minimum, o.currency)) + ' minimum'}</span>
+      ${o.convert ? `<input name="rate" type="number" step="0.000001" min="0" placeholder="INR per 1 ${esc(o.currency)}" style="width:150px">` : ''}
+      <input name="utr" placeholder="UTR / UPI reference" maxlength="40" ${o.due || o.convert ? '' : 'disabled'}> <button class="btn primary" type="submit" disabled>Mark paid</button></form>`).join('') : '<p class="muted">Nothing owed.</p>'}
+    <h3>Monthly statement</h3>
+    <div class="toolbar"><input type="month" id="aff-month" value="${new Date().toISOString().slice(0, 7)}"><button class="btn sm" data-stmt="csv">Download CSV</button><button class="btn sm" data-stmt="text">Download text</button><span class="muted small">To email to the partner. Customers appear only as references, never names or emails.</span></div>
+    <h3>Commissions <span class="muted small">${d.commissions.length}</span></h3>
+    ${d.commissions.length ? `<div class="tablewrap"><table><thead><tr><th>When</th><th>Customer</th><th>Charge</th><th class="num">Net</th><th class="num">Commission</th><th>Status</th></tr></thead><tbody>${d.commissions.map(c => `
+      <tr><td class="nowrap small">${dt(c.occurredAt)}</td><td class="small">${esc(c.email || '—')}</td><td class="small">${esc(c.provider === 'google_play' ? 'Play' : 'Razorpay')} · ${esc(String(c.product || '').replace('tablamigo_', ''))}${c.amountSource === 'play_list_price' ? ' ' + pill('estimate', 'amber') : ''}</td>
+      <td class="num">${esc(affMoney(c.netMinor, c.currency))}</td><td class="num">${esc(affMoney(c.commissionMinor, c.currency))} <span class="muted small">${esc(c.percent)}%</span></td>
+      <td>${c.kind === 'clawback' ? pill('clawback', 'red') : pill(c.status, c.status === 'paid' ? 'teal' : c.status === 'void' ? '' : 'amber')}${c.voidReason && c.kind === 'charge' ? ` <span class="small muted">${esc(c.voidReason)}</span>` : ''}</td></tr>`).join('')}</tbody></table></div>` : '<p class="muted">No commissions yet.</p>'}
+    <h3>Payouts</h3>
+    ${d.payouts.length ? `<div class="tablewrap"><table><thead><tr><th>Paid</th><th class="num">Amount</th><th>UTR</th></tr></thead><tbody>${d.payouts.map(p => `<tr><td class="nowrap">${dt(p.paidAt)}</td><td class="num">${esc(affMoney(p.amountMinor, p.currency))}${p.sourceCurrency ? `<div class="small muted">${esc(affMoney(p.sourceAmountMinor, p.sourceCurrency))} at ${esc(p.fxRate)}</div>` : ''}</td><td><code>${esc(p.utr)}</code></td></tr>`).join('')}</tbody></table></div>` : '<p class="muted">No payouts yet.</p>'}
+    <h3>Referrals <span class="muted small">${d.referrals.length}</span></h3>
+    ${d.referrals.length ? `<div class="tablewrap"><table><thead><tr><th>Person</th><th>How</th><th>When</th></tr></thead><tbody>${d.referrals.map(x => `<tr class="click" data-user="${esc(x.userId)}"><td>${uLink(x.userId, person(x.name, x.email))}</td><td class="small">${esc(AFF_SOURCE[x.source] || x.source)}</td><td class="nowrap small">${dt(x.createdAt)}</td></tr>`).join('')}</tbody></table></div>` : '<p class="muted">No referrals yet.</p>'}
+  </div>`;
+  el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  $('#aff-edit').addEventListener('submit', async e => {
+    e.preventDefault(); const f = new FormData(e.target), b = e.submitter; b.disabled = true;
+    const body = { percent: Number(f.get('percent')), months: f.get('months') ? Number(f.get('months')) : null, status: f.get('status'), razorpayOfferId: f.get('razorpayOfferId').trim() || null, payoutNote: f.get('payoutNote').trim() || null };
+    try { await api('/admin/affiliates/' + encodeURIComponent(id), { method: 'PATCH', body }); toast('Saved'); await VIEWS.affiliates(); affDetail(id); }
+    catch (err) { toast(err.message, true); } finally { b.disabled = false; }
+  });
+  // The button stays off until the reference looks like a UTR or UPI RRN (12-22 letters and digits; the API checks it again).
+  el.querySelectorAll('form.aff-pay').forEach(f => {
+    const input = f.querySelector('input[name=utr]'), btn = f.querySelector('button');
+    const rate = f.querySelector('input[name=rate]');
+    const check = () => { btn.disabled = !/^[A-Z0-9]{12,22}$/.test(input.value.replace(/[\s-]+/g, '').toUpperCase()) || (rate && !(Number(rate.value) > 0)); };
+    input.addEventListener('input', check); if (rate) rate.addEventListener('input', check);
+    f.addEventListener('submit', async e => {
+      e.preventDefault();
+      const amount = Number(f.dataset.amount), cur = f.dataset.cur, r = rate ? Number(rate.value) : null;
+      const what = r ? `${affMoney(Math.floor(amount * r), 'INR')} (${affMoney(amount, cur)} at ${r} INR)` : affMoney(amount, cur);
+      if (!confirm(`Record ${what} as paid to ${a.name} with UTR ${input.value.trim()}? Only do this after the money was sent.`)) return;
+      btn.disabled = true;
+      try { const p = await post(`/admin/affiliates/${encodeURIComponent(id)}/payouts`, { currency: cur, utr: input.value, amountMinor: amount, ...(r ? { inrPerUnit: r } : {}) }); toast(p.already ? 'Already recorded' : `Recorded ${affMoney(p.amountMinor, p.currency)} paid`); await VIEWS.affiliates(); affDetail(id); }
+      catch (err) { toast(err.message, true); btn.disabled = false; }
+    });
+  });
+  el.querySelectorAll('tr[data-user]').forEach(tr => tr.addEventListener('click', () => openUser(tr.dataset.user)));
+  // The statement is behind the admin token, so it is fetched and saved as a file rather than opened as a link.
+  el.querySelectorAll('[data-stmt]').forEach(b => b.addEventListener('click', async () => {
+    const month = $('#aff-month').value, format = b.dataset.stmt;
+    try {
+      const r = await fetch(`${API}/admin/affiliates/${encodeURIComponent(id)}/statement?month=${encodeURIComponent(month)}&format=${format}`, { headers: { authorization: 'Bearer ' + store.get('access') } });
+      if (!r.ok) throw new Error((await r.json().catch(() => ({}))).message || 'HTTP ' + r.status);
+      const url = URL.createObjectURL(await r.blob()), link = document.createElement('a');
+      link.href = url; link.download = `tablamigo-${a.code}-${month}.${format === 'csv' ? 'csv' : 'txt'}`; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+    } catch (err) { toast(err.message, true); }
+  }));
+}
+</script>
+</body>
+</html>

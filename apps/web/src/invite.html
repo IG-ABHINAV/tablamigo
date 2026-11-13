@@ -1,0 +1,27 @@
+<!-- title: You're invited to Tablamigo -->
+<!-- description: A friend invited you to Tablamigo, the solo-travel app for meeting travelers nearby. Sign up from this link and you both get free days of Tablamigo Plus. -->
+<!-- crumb: Invite -->
+
+<main class="wrap doc">
+<p class="updated"><a href="/">Tablamigo</a> › Invite</p>
+<h1>A friend invited you to Tablamigo</h1>
+<p class="lead">Tablamigo is a solo-travel app: see plans from travelers near you, join a dinner, drinks or a day trip, and see who'll be in your next city when you are.</p>
+<p id="invite-gift">Sign up from this link and you both get <b>{{invite_days}} days of Tablamigo Plus</b>, on the house. Nothing to pay and nothing renews.</p>
+<p class="download-cta play-cta"><a id="invite-play" class="btn primary big" href="{{play_url:invite_button}}" data-placement="invite_button">Get the app on Google Play</a></p>
+<p><a id="invite-web" class="btn" href="/app/">Use it in your browser</a> <span class="small not-android">(iPhone, iPad or a computer: same account)</span></p>
+<p class="ios-only small">On iPhone: open it in Safari, tap <b>Share</b>, then <b>Add to Home Screen</b>, and Tablamigo opens like an app. <a href="/download#iphone-install">How to add it</a></p>
+<p id="invite-code-line" class="small" hidden>Your friend's invite code is <b id="invite-code"></b>. It's applied when you sign up from this page. If it isn't, enter it in the app under Profile, Invite friends, within {{invite_redeem_days}} days of signing up.</p>
+<!-- whatis -->
+
+<h2>How it works</h2>
+<ol>
+<li><span class="not-ios">Install Tablamigo from Google Play, or open the web app.</span><span class="ios-only">Open the web app in Safari, then Share, Add to Home Screen.</span></li>
+<li>Sign in with Google or your email (we send a 6-digit code, there's no password).</li>
+<li>The invite is applied to your new account and you both get {{invite_days}} days of Plus. Plus is never needed to join plans or chat in them.</li>
+</ol>
+<p class="small">Invites work for new accounts only. Read how Tablamigo keeps meetups safe on the <a href="/safety">safety page</a>.</p>
+</main>
+<script>(function(){var m=/[?&]code=([A-Za-z0-9]{4,16})(?:&|$)/.exec(location.search);if(!m)return;var c=m[1].toUpperCase();
+var p=document.getElementById('invite-play');if(p){var h=p.getAttribute('href').split('&referrer=')[0];p.href=h+'&referrer='+encodeURIComponent('utm_source=invite&utm_medium=referral&ref='+c);}
+var w=document.getElementById('invite-web');if(w)w.href='/app/?ref='+c+'&utm_source=invite&utm_medium=referral';
+var l=document.getElementById('invite-code-line'),e=document.getElementById('invite-code');if(l&&e){e.textContent=c;l.hidden=false;}})();</script>

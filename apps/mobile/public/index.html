@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="%LANG_ISO_CODE%">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>%WEB_TITLE%</title>
+    <!-- An app shell: the marketing site at / is what should rank. -->
+    <meta name="robots" content="noindex" />
+    <meta name="description" content="Plans from other solo travelers near you: dinner, drinks, day trips. Join in minutes or post your own." />
+    <link rel="manifest" href="/app/manifest.webmanifest" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/app/icons/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/app/icons/favicon-48.png" />
+    <link rel="apple-touch-icon" href="/app/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Tablamigo" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <!-- The app is light-only (app.json userInterfaceStyle): white status bar and browser chrome to match its white headers, and
+         light native controls (date pickers, scrollbars) even when the phone is in dark mode. -->
+    <meta name="theme-color" content="#FFFFFF" />
+    <meta name="color-scheme" content="light" />
+    <!-- iPhone launch images for the installed app (scripts/make-ios-splash.mjs): the same wordmark as #splash below, so
+         launch hands over to the page without a blank white screen. -->
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 440px) and (device-height: 956px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/app/splash/1320x2868.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 402px) and (device-height: 874px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/app/splash/1206x2622.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/app/splash/1290x2796.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/app/splash/1179x2556.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/app/splash/1284x2778.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/app/splash/1170x2532.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/app/splash/1125x2436.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/app/splash/1242x2688.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/app/splash/828x1792.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="/app/splash/1242x2208.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/app/splash/750x1334.png" />
+    <link rel="apple-touch-startup-image" media="screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="/app/splash/640x1136.png" />
+    <meta name="application-name" content="Tablamigo" />
+    <!-- The weights the welcome screen paints with. The rest load on first use. -->
+    <link rel="preload" href="/app/fonts/PlusJakartaSans_800ExtraBold.latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/app/fonts/PlusJakartaSans_700Bold.latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/app/fonts/PlusJakartaSans_400Regular.latin.woff2" as="font" type="font/woff2" crossorigin />
+    <!--
+      Plus Jakarta Sans as woff2 subsets (latin + everything else in the font), ~15 KB per file against
+      95 KB per TTF. expo-font keeps its @font-face rules in this <style id>, so useFonts() in
+      app/_layout.tsx finds the families already registered, renders straight away and never fetches
+      the TTFs. Family names must match F in lib/theme.ts. Files are cached for a year: rename them if
+      they ever change.
+    -->
+    <style id="expo-generated-fonts">
+      @font-face{font-family:"PlusJakartaSans_400Regular";src:url(/app/fonts/PlusJakartaSans_400Regular.latin.woff2) format("woff2");font-display:swap;unicode-range:U+000D,U+0020-007E,U+00A0-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+2000-206F,U+20AC,U+20B9,U+2122,U+2191,U+2193,U+2212,U+2215}
+      @font-face{font-family:"PlusJakartaSans_400Regular";src:url(/app/fonts/PlusJakartaSans_400Regular.ext.woff2) format("woff2");font-display:swap;unicode-range:U+0100-0130,U+0132-0151,U+0154-024F,U+0259,U+02C7-02D9,U+02DB,U+02DD,U+0300-0303,U+0306-0307,U+0309-036F,U+0394,U+03A9,U+03C0,U+0E3F,U+1E00-1EFF,U+2070-209F,U+20A0-20AB,U+20AD-20B8,U+20BA-20CF,U+2100-2121,U+2123-218F,U+2190,U+2192,U+2194-21FF,U+2200-2211,U+2213-2214,U+2216-22FF,U+25A0-25FF,U+2600-26FF,U+2B00-2BFF,U+FB01-FB02}
+      @font-face{font-family:"PlusJakartaSans_500Medium";src:url(/app/fonts/PlusJakartaSans_500Medium.latin.woff2) format("woff2");font-display:swap;unicode-range:U+000D,U+0020-007E,U+00A0-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+2000-206F,U+20AC,U+20B9,U+2122,U+2191,U+2193,U+2212,U+2215}
+      @font-face{font-family:"PlusJakartaSans_500Medium";src:url(/app/fonts/PlusJakartaSans_500Medium.ext.woff2) format("woff2");font-display:swap;unicode-range:U+0100-0130,U+0132-0151,U+0154-024F,U+0259,U+02C7-02D9,U+02DB,U+02DD,U+0300-0303,U+0306-0307,U+0309-036F,U+0394,U+03A9,U+03C0,U+0E3F,U+1E00-1EFF,U+2070-209F,U+20A0-20AB,U+20AD-20B8,U+20BA-20CF,U+2100-2121,U+2123-218F,U+2190,U+2192,U+2194-21FF,U+2200-2211,U+2213-2214,U+2216-22FF,U+25A0-25FF,U+2600-26FF,U+2B00-2BFF,U+FB01-FB02}
+      @font-face{font-family:"PlusJakartaSans_600SemiBold";src:url(/app/fonts/PlusJakartaSans_600SemiBold.latin.woff2) format("woff2");font-display:swap;unicode-range:U+000D,U+0020-007E,U+00A0-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+2000-206F,U+20AC,U+20B9,U+2122,U+2191,U+2193,U+2212,U+2215}
+      @font-face{font-family:"PlusJakartaSans_600SemiBold";src:url(/app/fonts/PlusJakartaSans_600SemiBold.ext.woff2) format("woff2");font-display:swap;unicode-range:U+0100-0130,U+0132-0151,U+0154-024F,U+0259,U+02C7-02D9,U+02DB,U+02DD,U+0300-0303,U+0306-0307,U+0309-036F,U+0394,U+03A9,U+03C0,U+0E3F,U+1E00-1EFF,U+2070-209F,U+20A0-20AB,U+20AD-20B8,U+20BA-20CF,U+2100-2121,U+2123-218F,U+2190,U+2192,U+2194-21FF,U+2200-2211,U+2213-2214,U+2216-22FF,U+25A0-25FF,U+2600-26FF,U+2B00-2BFF,U+FB01-FB02}
+      @font-face{font-family:"PlusJakartaSans_700Bold";src:url(/app/fonts/PlusJakartaSans_700Bold.latin.woff2) format("woff2");font-display:swap;unicode-range:U+000D,U+0020-007E,U+00A0-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+2000-206F,U+20AC,U+20B9,U+2122,U+2191,U+2193,U+2212,U+2215}
+      @font-face{font-family:"PlusJakartaSans_700Bold";src:url(/app/fonts/PlusJakartaSans_700Bold.ext.woff2) format("woff2");font-display:swap;unicode-range:U+0100-0130,U+0132-0151,U+0154-024F,U+0259,U+02C7-02D9,U+02DB,U+02DD,U+0300-0303,U+0306-0307,U+0309-036F,U+0394,U+03A9,U+03C0,U+0E3F,U+1E00-1EFF,U+2070-209F,U+20A0-20AB,U+20AD-20B8,U+20BA-20CF,U+2100-2121,U+2123-218F,U+2190,U+2192,U+2194-21FF,U+2200-2211,U+2213-2214,U+2216-22FF,U+25A0-25FF,U+2600-26FF,U+2B00-2BFF,U+FB01-FB02}
+      @font-face{font-family:"PlusJakartaSans_800ExtraBold";src:url(/app/fonts/PlusJakartaSans_800ExtraBold.latin.woff2) format("woff2");font-display:swap;unicode-range:U+000D,U+0020-007E,U+00A0-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+2000-206F,U+20AC,U+20B9,U+2122,U+2191,U+2193,U+2212,U+2215}
+      @font-face{font-family:"PlusJakartaSans_800ExtraBold";src:url(/app/fonts/PlusJakartaSans_800ExtraBold.ext.woff2) format("woff2");font-display:swap;unicode-range:U+0100-0130,U+0132-0151,U+0154-024F,U+0259,U+02C7-02D9,U+02DB,U+02DD,U+0300-0303,U+0306-0307,U+0309-036F,U+0394,U+03A9,U+03C0,U+0E3F,U+1E00-1EFF,U+2070-209F,U+20A0-20AB,U+20AD-20B8,U+20BA-20CF,U+2100-2121,U+2123-218F,U+2190,U+2192,U+2194-21FF,U+2200-2211,U+2213-2214,U+2216-22FF,U+25A0-25FF,U+2600-26FF,U+2B00-2BFF,U+FB01-FB02}
+      /*
+        Ionicons (@expo/vector-icons, family "ionicons") as woff2: the glyphs src/ uses (8 KB), and the
+        full set (156 KB against the 390 KB TTF) for any icon added since. The later rule wins where the
+        ranges overlap, so the full file only downloads when a screen shows an icon the subset lacks.
+        Regenerate the subset with: pyftsubset Ionicons.ttf --flavor=woff2 --unicodes=<codepoints of the
+        names in src/ (glyphmaps/Ionicons.json)> --output-file=public/fonts/Ionicons.subset.woff2
+      */
+      @font-face{font-family:"ionicons";src:url(/app/fonts/Ionicons.woff2) format("woff2");font-display:block;unicode-range:U+F100-F64C}
+      @font-face{font-family:"ionicons";src:url(/app/fonts/Ionicons.subset.woff2) format("woff2");font-display:block;unicode-range:U+F103,U+F109-F10A,U+F145,U+F1DB,U+F211,U+F217-F218,U+F21E-F21F,U+F229,U+F23B,U+F24A-F24B,U+F283-F284,U+F2B4,U+F2BA,U+F2CC,U+F2CE,U+F2E6,U+F2EA,U+F38E-F38F,U+F391,U+F3BB,U+F3C1,U+F3C4,U+F3C7,U+F3D1,U+F434,U+F43F,U+F443,U+F451,U+F461,U+F470,U+F475,U+F47F,U+F487,U+F49F,U+F4A5,U+F4A9-F4AA,U+F50C,U+F520,U+F572,U+F578-F579,U+F57E,U+F59B-F59C,U+F5CB,U+F5D4,U+F5DE,U+F5F6,U+F637}
+    </style>
+    <!-- react-native-web's recommended reset: full-height root, no body scroll (screens scroll themselves). -->
+    <style id="expo-reset">
+      html, body { height: 100%; background: #fff; }
+      /* Fixed body: the document never scrolls or rubber-bands, so iOS cannot leave the app shifted after the keyboard. */
+      body { overflow: hidden; overscroll-behavior: none; position: fixed; left: 0; right: 0; top: 0; margin: 0; -webkit-tap-highlight-color: transparent; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+      #root { display: flex; height: 100%; flex: 1; }
+      /* lib/viewport.web.ts: while the keyboard (or a panned visual viewport) hides part of the page, the body is exactly the
+         visible area. The transform makes RN-web's modal portals (fixed children of body) follow it too. */
+      html.vv-fit body { top: var(--app-top, 0px); height: var(--app-h, 100%); transform: translateZ(0); }
+      /* Phones: Safari zooms the page into any text field under 16px on focus and leaves it zoomed. */
+      @media (pointer: coarse) { input, textarea, select { font-size: 16px !important; } }
+    </style>
+    <!-- Static first paint while the JS loads; copies the welcome screen's layout (app/(auth)/welcome.tsx). -->
+    <style>
+      #splash { position: fixed; inset: 0; z-index: 1000; display: flex; flex-direction: column; box-sizing: border-box; padding: env(safe-area-inset-top) 24px env(safe-area-inset-bottom); background: linear-gradient(#FFF4EF, #FFFFFF); color: #16161D; font: 15px PlusJakartaSans_400Regular, system-ui, sans-serif; -webkit-font-smoothing: antialiased; transition: opacity .15s; }
+      #splash div { margin: 0; }
+      /* A centred phone-width column on wide screens, as the welcome screen is; both buttons stop at Google's 400px. */
+      #splash .brand, #splash .fill, #splash .bottom { width: 100%; max-width: 432px; align-self: center; }
+      #splash .google, #splash a { width: 100%; max-width: 400px; align-self: center; box-sizing: border-box; }
+      #splash .brand { font-family: PlusJakartaSans_800ExtraBold, system-ui, sans-serif; font-size: 22px; color: #FF5A36; margin-top: 8px; }
+      #splash .fill { flex: 1; margin-top: 24px; }
+      #splash .bottom { display: flex; flex-direction: column; gap: 14px; padding-bottom: 16px; }
+      #splash h1 { margin: 0; font: 36px/42px PlusJakartaSans_800ExtraBold, system-ui, sans-serif; letter-spacing: -0.6px; }
+      #splash p { margin: 0; color: #55556A; font-size: 16px; line-height: 23px; }
+      #splash .google { margin-top: 8px; height: 40px; box-sizing: border-box; border: 1px solid #DADCE0; border-radius: 999px; background: #fff; color: #1F1F1F; display: flex; align-items: center; justify-content: center; gap: 10px; font: 500 14px Roboto, Arial, sans-serif; }
+      #splash a { height: 54px; border-radius: 999px; background: #FF5A36; color: #fff; display: flex; align-items: center; justify-content: center; font: 16px PlusJakartaSans_700Bold, system-ui, sans-serif; text-decoration: none; }
+      #splash small { color: #55556A; font-size: 12px; text-align: center; }
+      /* Signed in, or any screen but the welcome one: just the wordmark, centred on white. */
+      .shell #splash { background: #fff; align-items: center; justify-content: center; }
+      .shell #splash .fill, .shell #splash .bottom { display: none; }
+      .shell #splash .brand { margin: 0; font-size: 28px; width: auto; }
+    </style>
+    <script>
+      // Signed-in users (lib/session.web.ts keeps the tokens here) open on the tabs: the API, map tiles and icons come first.
+      (function () {
+        var signedIn = false;
+        try { signedIn = !!localStorage.getItem('tablamigo.tokens'); } catch (e) {}
+        var p = location.pathname.replace(/\/+$/, '');
+        if (signedIn || (p !== '/app' && p !== '/app/welcome')) document.documentElement.className = 'shell';
+        if (!signedIn) return;
+        var link = function (rel, href, as) {
+          var l = document.createElement('link'); l.rel = rel; l.href = href; l.crossOrigin = ''; if (as) { l.as = as; l.type = 'font/woff2'; } document.head.appendChild(l);
+        };
+        link('preconnect', 'https://tablamigo-api.hookstep.in');
+        link('preconnect', 'https://tiles.openfreemap.org');
+        link('preload', '/app/fonts/Ionicons.subset.woff2', 'font');   // tab bar icons
+      })();
+    </script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to use Tablamigo.</noscript>
+    <div id="splash">
+      <div class="brand">tablamigo</div>
+      <div class="fill"></div>
+      <div class="bottom">
+        <h1>Traveling solo?<br />Never eat alone.</h1>
+        <p>Join plans with travelers near you, or post your own. Dinner, drinks, sunsets, surf.</p>
+        <div class="google"><svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>Continue with Google</div>
+        <a href="/app/email">Continue with email</a>
+        <small>18+ only. By continuing you agree to the Terms and Privacy Policy.</small>
+      </div>
+    </div>
+    <div id="root"></div>
+    <script>
+      // Hand over to the app once its first screen has painted text.
+      (function () {
+        var root = document.getElementById('root'), splash = document.getElementById('splash');
+        var mo = new MutationObserver(function () {
+          if (!root.textContent.trim()) return;
+          mo.disconnect();
+          requestAnimationFrame(function () { requestAnimationFrame(function () {
+            splash.style.opacity = '0';
+            setTimeout(function () { splash.remove(); }, 200);
+          }); });
+        });
+        mo.observe(root, { childList: true, subtree: true, characterData: true });
+      })();
+    </script>
+    <script>
+      // Cloudflare Web Analytics, the same site token and loader as the marketing site (apps/web/build.py, BEACON_JS), with
+      // spa:true because screens here change without a page load. Cloudflare's automatic injection would otherwise put its
+      // beacon in the critical path of every page; this loads it after the window's load event and an idle moment, and only when
+      // no beacon script is on the page already, so nothing is counted twice while automatic injection is still on. Production
+      // host only: local runs and e2e-web must not send anything (and would log CORS errors the browser pass fails on).
+      (function () {
+        try {
+          if (location.hostname !== 'tablamigo.hookstep.in') return;
+          var add = function () {
+            if (document.querySelector('script[src*="cloudflareinsights.com/beacon"]')) return;
+            var s = document.createElement('script');
+            s.defer = true; s.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+            s.setAttribute('data-cf-beacon', '{"token":"88c7787047e04bab8a994b5bb649e9a1","spa":true}');
+            document.head.appendChild(s);
+          };
+          var idle = function () { if (window.requestIdleCallback) requestIdleCallback(add, { timeout: 5000 }); else setTimeout(add, 1500); };
+          if (document.readyState === 'complete') idle(); else addEventListener('load', idle, { once: true });
+        } catch (e) {}
+      })();
+    </script>
+  </body>
+</html>

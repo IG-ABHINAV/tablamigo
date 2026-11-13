@@ -1,0 +1,32 @@
+name: Feature request
+description: Suggest an improvement. Small, concrete ideas are easiest to say yes to.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Tablamigo helps solo travellers meet nearby: plans on a map, one-tap join, group chat. Ideas that fit that are welcome. Please open the issue and wait for a reply before you start coding a large change.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem does this solve?
+      description: Who is affected and what are they unable to do today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you like to see?
+      description: Describe the behaviour. If you can, name the files or screens it touches.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives you considered
+  - type: checkboxes
+    id: contribute
+    attributes:
+      label: Contributing
+      options:
+        - label: I would like to work on this myself (comment on the issue to be assigned, see CONTRIBUTING.md).
