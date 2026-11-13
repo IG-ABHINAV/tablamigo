@@ -9,8 +9,8 @@ import { installNetworkGuard } from './tests/network-guard.js';
 installNetworkGuard();
 
 // The suites delete and rewrite rows (e.g. `delete from users where email like '%@test.tablamigo'`), so they only ever run
-// against a throwaway test database. This refuses a missing DATABASE_URL (config.ts would fall back to localhost:5434, where
-// a Cloud SQL proxy to another company's production database has listened on this Mac), a non-local host, and a database
+// against a throwaway test database. This refuses a missing DATABASE_URL (config.ts would fall back to localhost:5434, which on a
+// developer machine may be some other database you must never test against), a non-local host, and a database
 // whose name doesn't say it is a test database. See TESTING.md ("Automated suites").
 assertThrowawayTestDatabase(process.env);
 
