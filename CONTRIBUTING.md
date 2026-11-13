@@ -12,7 +12,7 @@ Please read the [Code of Conduct](CODE_OF_CONDUCT.md). Pull requests from forks 
 
 ## Run it locally
 
-You need Node.js (the maintainers use Node 24), Docker, and Python 3 if you touch the website.
+You need Node.js 24 (the version everything is pinned to: `.nvmrc`, `engines`, CI) — `nvm use` picks it up — plus Docker, and Python 3 if you touch the website.
 
 ```bash
 git clone https://github.com/hookstep/tablamigo.git
