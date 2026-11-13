@@ -49,10 +49,11 @@ Every outside service (email, push, payments, AI moderation, photo storage) is o
 
 ## Tests
 
-The API tests run against your local Docker database (the one `npm run db` starts, migrated), never a remote one.
+The API tests run against your local Docker database (the one `npm run db` starts, migrated), never a remote one. Before the first `npx vitest run`, fetch the face models once: `npm run models` downloads the YuNet and SFace ONNX models into `apps/api/models` (SHA-256-checked, skipped when already present). Without them `src/verification.test.ts` fails with `face models missing`.
 
 ```bash
 cd apps/api
+npm run models                      # one-time: downloads the face models into apps/api/models
 npx vitest run                      # all API tests (npm test also type-checks and fetches the face models once)
 npx vitest run src/plans.test.ts    # one file
 npx tsc --noEmit -p .               # typecheck (npm run typecheck also covers the test files)
